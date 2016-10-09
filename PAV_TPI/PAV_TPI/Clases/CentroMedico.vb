@@ -7,4 +7,5 @@
     Public Property telefono As Integer
     Public Property mail As String
     Public Property fecha_baja As Date
+
 End Class
