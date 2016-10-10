@@ -1,4 +1,6 @@
 ﻿Public Class frm_InicioSesion
+
+    'COMENTARIO DE PRUEBA
     Enum estado
         login
         signin
