@@ -176,4 +176,10 @@ Public Class BDHelper
         End Try
     End Sub
 
+    Shared Function GetPracticas() As DataTable
+        Dim strSQL As String = "Select id_practica, nombre from Practica"
+        Return BDHelper.getDBHelper.ConsultaSQL(strSQL)
+
+    End Function
+
 End Class

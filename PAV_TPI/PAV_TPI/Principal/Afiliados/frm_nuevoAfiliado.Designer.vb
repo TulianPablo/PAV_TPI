@@ -23,6 +23,10 @@ Partial Class frm_nuevoAfiliado
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txt_nroDoc = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_apellido = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_nombre = New System.Windows.Forms.MaskedTextBox()
+        Me.lbl_afiliados_mensaje = New System.Windows.Forms.Label()
         Me.dtp_fechaNac = New System.Windows.Forms.DateTimePicker()
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.btn_aceptar = New System.Windows.Forms.Button()
@@ -46,10 +50,6 @@ Partial Class frm_nuevoAfiliado
         Me.lbl_fechaNac = New System.Windows.Forms.Label()
         Me.lbl_apeAfiliado = New System.Windows.Forms.Label()
         Me.lbl_nomAfiliado = New System.Windows.Forms.Label()
-        Me.lbl_afiliados_mensaje = New System.Windows.Forms.Label()
-        Me.txt_nombre = New System.Windows.Forms.MaskedTextBox()
-        Me.txt_apellido = New System.Windows.Forms.MaskedTextBox()
-        Me.txt_nroDoc = New System.Windows.Forms.MaskedTextBox()
         Me.GroupBox1.SuspendLayout()
         Me.gb_afiliacion.SuspendLayout()
         Me.gb_domicilio.SuspendLayout()
@@ -78,6 +78,40 @@ Partial Class frm_nuevoAfiliado
         Me.GroupBox1.TabIndex = 3
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Nuevo"
+        '
+        'txt_nroDoc
+        '
+        Me.txt_nroDoc.Location = New System.Drawing.Point(489, 44)
+        Me.txt_nroDoc.Mask = "99999999"
+        Me.txt_nroDoc.Name = "txt_nroDoc"
+        Me.txt_nroDoc.Size = New System.Drawing.Size(155, 20)
+        Me.txt_nroDoc.TabIndex = 25
+        '
+        'txt_apellido
+        '
+        Me.txt_apellido.Location = New System.Drawing.Point(64, 47)
+        Me.txt_apellido.Name = "txt_apellido"
+        Me.txt_apellido.Size = New System.Drawing.Size(305, 20)
+        Me.txt_apellido.TabIndex = 34
+        '
+        'txt_nombre
+        '
+        Me.txt_nombre.Location = New System.Drawing.Point(65, 21)
+        Me.txt_nombre.Mask = "Alfabetico"
+        Me.txt_nombre.Name = "txt_nombre"
+        Me.txt_nombre.Size = New System.Drawing.Size(304, 20)
+        Me.txt_nombre.TabIndex = 33
+        '
+        'lbl_afiliados_mensaje
+        '
+        Me.lbl_afiliados_mensaje.AutoSize = True
+        Me.lbl_afiliados_mensaje.Font = New System.Drawing.Font("Segoe UI", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_afiliados_mensaje.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.lbl_afiliados_mensaje.Location = New System.Drawing.Point(17, 334)
+        Me.lbl_afiliados_mensaje.Name = "lbl_afiliados_mensaje"
+        Me.lbl_afiliados_mensaje.Size = New System.Drawing.Size(139, 17)
+        Me.lbl_afiliados_mensaje.TabIndex = 32
+        Me.lbl_afiliados_mensaje.Text = "lbl_afiliados_mensaje"
         '
         'dtp_fechaNac
         '
@@ -297,40 +331,6 @@ Partial Class frm_nuevoAfiliado
         Me.lbl_nomAfiliado.Size = New System.Drawing.Size(44, 13)
         Me.lbl_nomAfiliado.TabIndex = 12
         Me.lbl_nomAfiliado.Text = "Nombre"
-        '
-        'lbl_afiliados_mensaje
-        '
-        Me.lbl_afiliados_mensaje.AutoSize = True
-        Me.lbl_afiliados_mensaje.Font = New System.Drawing.Font("Segoe UI", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_afiliados_mensaje.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.lbl_afiliados_mensaje.Location = New System.Drawing.Point(17, 334)
-        Me.lbl_afiliados_mensaje.Name = "lbl_afiliados_mensaje"
-        Me.lbl_afiliados_mensaje.Size = New System.Drawing.Size(139, 17)
-        Me.lbl_afiliados_mensaje.TabIndex = 32
-        Me.lbl_afiliados_mensaje.Text = "lbl_afiliados_mensaje"
-        '
-        'txt_nombre
-        '
-        Me.txt_nombre.Location = New System.Drawing.Point(65, 21)
-        Me.txt_nombre.Mask = "Alfabetico"
-        Me.txt_nombre.Name = "txt_nombre"
-        Me.txt_nombre.Size = New System.Drawing.Size(304, 20)
-        Me.txt_nombre.TabIndex = 33
-        '
-        'txt_apellido
-        '
-        Me.txt_apellido.Location = New System.Drawing.Point(64, 47)
-        Me.txt_apellido.Name = "txt_apellido"
-        Me.txt_apellido.Size = New System.Drawing.Size(305, 20)
-        Me.txt_apellido.TabIndex = 34
-        '
-        'txt_nroDoc
-        '
-        Me.txt_nroDoc.Location = New System.Drawing.Point(489, 44)
-        Me.txt_nroDoc.Mask = "99999999"
-        Me.txt_nroDoc.Name = "txt_nroDoc"
-        Me.txt_nroDoc.Size = New System.Drawing.Size(155, 20)
-        Me.txt_nroDoc.TabIndex = 25
         '
         'frm_nuevoAfiliado
         '

@@ -116,6 +116,12 @@
     <Compile Include="Principal\Afiliados\frm_nuevoAfiliado.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Principal\frm_AtencionesMedicas.Designer.vb">
+      <DependentUpon>frm_AtencionesMedicas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\frm_AtencionesMedicas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Principal\frm_CentroMedico.Designer.vb">
       <DependentUpon>frm_CentroMedico.vb</DependentUpon>
     </Compile>
@@ -182,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\Afiliados\frm_nuevoAfiliado.resx">
       <DependentUpon>frm_nuevoAfiliado.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\frm_AtencionesMedicas.resx">
+      <DependentUpon>frm_AtencionesMedicas.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\frm_CentroMedico.resx">
       <DependentUpon>frm_CentroMedico.vb</DependentUpon>

@@ -4,6 +4,7 @@
     Public form_TipoAfiliado As frm_TipoAfiliado
     Public form_Practicas As frm_Practicas
     Public form_Afiliados As frm_Afiliados
+    Public form_Atenciones As Atenciones_Medicas
 
     Private Sub btn_especialidades_Click(sender As Object, e As EventArgs) Handles btn_especialidades.Click
         form_especialidades = New frm_Especialidades
@@ -43,5 +44,10 @@
     Private Sub btn_afiliados_Click(sender As Object, e As EventArgs) Handles btn_afiliados.Click
         form_Afiliados = New frm_Afiliados
         form_Afiliados.Show()
+    End Sub
+
+    Private Sub btn_atenciones_Click(sender As Object, e As EventArgs) Handles btn_atenciones.Click
+        form_Atenciones = New Atenciones_Medicas
+        form_Atenciones.Show()
     End Sub
 End Class
