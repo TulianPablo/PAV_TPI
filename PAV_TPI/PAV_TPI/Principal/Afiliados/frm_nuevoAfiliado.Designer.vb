@@ -24,8 +24,6 @@ Partial Class frm_nuevoAfiliado
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txt_nroDoc = New System.Windows.Forms.MaskedTextBox()
-        Me.txt_apellido = New System.Windows.Forms.MaskedTextBox()
-        Me.txt_nombre = New System.Windows.Forms.MaskedTextBox()
         Me.lbl_afiliados_mensaje = New System.Windows.Forms.Label()
         Me.dtp_fechaNac = New System.Windows.Forms.DateTimePicker()
         Me.btn_cancelar = New System.Windows.Forms.Button()
@@ -50,6 +48,8 @@ Partial Class frm_nuevoAfiliado
         Me.lbl_fechaNac = New System.Windows.Forms.Label()
         Me.lbl_apeAfiliado = New System.Windows.Forms.Label()
         Me.lbl_nomAfiliado = New System.Windows.Forms.Label()
+        Me.txt_nombre = New System.Windows.Forms.TextBox()
+        Me.txt_apellido = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.gb_afiliacion.SuspendLayout()
         Me.gb_domicilio.SuspendLayout()
@@ -57,9 +57,9 @@ Partial Class frm_nuevoAfiliado
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.txt_nroDoc)
         Me.GroupBox1.Controls.Add(Me.txt_apellido)
         Me.GroupBox1.Controls.Add(Me.txt_nombre)
+        Me.GroupBox1.Controls.Add(Me.txt_nroDoc)
         Me.GroupBox1.Controls.Add(Me.lbl_afiliados_mensaje)
         Me.GroupBox1.Controls.Add(Me.dtp_fechaNac)
         Me.GroupBox1.Controls.Add(Me.btn_cancelar)
@@ -86,21 +86,6 @@ Partial Class frm_nuevoAfiliado
         Me.txt_nroDoc.Name = "txt_nroDoc"
         Me.txt_nroDoc.Size = New System.Drawing.Size(155, 20)
         Me.txt_nroDoc.TabIndex = 25
-        '
-        'txt_apellido
-        '
-        Me.txt_apellido.Location = New System.Drawing.Point(64, 47)
-        Me.txt_apellido.Name = "txt_apellido"
-        Me.txt_apellido.Size = New System.Drawing.Size(305, 20)
-        Me.txt_apellido.TabIndex = 34
-        '
-        'txt_nombre
-        '
-        Me.txt_nombre.Location = New System.Drawing.Point(65, 21)
-        Me.txt_nombre.Mask = "Alfabetico"
-        Me.txt_nombre.Name = "txt_nombre"
-        Me.txt_nombre.Size = New System.Drawing.Size(304, 20)
-        Me.txt_nombre.TabIndex = 33
         '
         'lbl_afiliados_mensaje
         '
@@ -332,6 +317,20 @@ Partial Class frm_nuevoAfiliado
         Me.lbl_nomAfiliado.TabIndex = 12
         Me.lbl_nomAfiliado.Text = "Nombre"
         '
+        'txt_nombre
+        '
+        Me.txt_nombre.Location = New System.Drawing.Point(64, 21)
+        Me.txt_nombre.Name = "txt_nombre"
+        Me.txt_nombre.Size = New System.Drawing.Size(305, 20)
+        Me.txt_nombre.TabIndex = 35
+        '
+        'txt_apellido
+        '
+        Me.txt_apellido.Location = New System.Drawing.Point(64, 44)
+        Me.txt_apellido.Name = "txt_apellido"
+        Me.txt_apellido.Size = New System.Drawing.Size(305, 20)
+        Me.txt_apellido.TabIndex = 36
+        '
         'frm_nuevoAfiliado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -374,7 +373,7 @@ Partial Class frm_nuevoAfiliado
     Friend WithEvents dtp_fechaNac As System.Windows.Forms.DateTimePicker
     Friend WithEvents mtb_fechaAlta As System.Windows.Forms.MaskedTextBox
     Friend WithEvents lbl_afiliados_mensaje As System.Windows.Forms.Label
-    Friend WithEvents txt_apellido As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents txt_nombre As System.Windows.Forms.MaskedTextBox
     Friend WithEvents txt_nroDoc As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_apellido As System.Windows.Forms.TextBox
+    Friend WithEvents txt_nombre As System.Windows.Forms.TextBox
 End Class

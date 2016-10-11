@@ -15,6 +15,7 @@
 
     Private Sub btn_editar_Click(sender As Object, e As EventArgs) Handles btn_editar.Click
         form_editarAfiliados = New frm_editarAfiliados
+        form_editarAfiliados.formConsulta = Me
         form_editarAfiliados.Show()
     End Sub
 

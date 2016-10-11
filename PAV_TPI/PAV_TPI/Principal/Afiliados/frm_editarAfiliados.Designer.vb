@@ -23,6 +23,7 @@ Partial Class frm_editarAfiliados
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.dtp_fechaNac = New System.Windows.Forms.DateTimePicker()
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.cbo_tipoDoc = New System.Windows.Forms.ComboBox()
@@ -34,6 +35,7 @@ Partial Class frm_editarAfiliados
         Me.txt_fechaAlta = New System.Windows.Forms.TextBox()
         Me.txt_fechaBaja = New System.Windows.Forms.TextBox()
         Me.gb_domicilio = New System.Windows.Forms.GroupBox()
+        Me.cbo_barrio = New System.Windows.Forms.ComboBox()
         Me.lbl_barrio = New System.Windows.Forms.Label()
         Me.lbl_calle = New System.Windows.Forms.Label()
         Me.lbl_telefono = New System.Windows.Forms.Label()
@@ -49,8 +51,6 @@ Partial Class frm_editarAfiliados
         Me.txt_apellido = New System.Windows.Forms.TextBox()
         Me.txt_nroDoc = New System.Windows.Forms.TextBox()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
-        Me.dtp_fechaNac = New System.Windows.Forms.DateTimePicker()
-        Me.cbo_barrio = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.gb_afiliacion.SuspendLayout()
         Me.gb_domicilio.SuspendLayout()
@@ -78,6 +78,14 @@ Partial Class frm_editarAfiliados
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Editar"
+        '
+        'dtp_fechaNac
+        '
+        Me.dtp_fechaNac.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp_fechaNac.Location = New System.Drawing.Point(124, 75)
+        Me.dtp_fechaNac.Name = "dtp_fechaNac"
+        Me.dtp_fechaNac.Size = New System.Drawing.Size(160, 20)
+        Me.dtp_fechaNac.TabIndex = 31
         '
         'btn_cancelar
         '
@@ -193,6 +201,14 @@ Partial Class frm_editarAfiliados
         Me.gb_domicilio.TabIndex = 24
         Me.gb_domicilio.TabStop = False
         Me.gb_domicilio.Text = "Domicilio"
+        '
+        'cbo_barrio
+        '
+        Me.cbo_barrio.FormattingEnabled = True
+        Me.cbo_barrio.Location = New System.Drawing.Point(117, 75)
+        Me.cbo_barrio.Name = "cbo_barrio"
+        Me.cbo_barrio.Size = New System.Drawing.Size(203, 21)
+        Me.cbo_barrio.TabIndex = 24
         '
         'lbl_barrio
         '
@@ -316,22 +332,6 @@ Partial Class frm_editarAfiliados
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(305, 20)
         Me.txt_nombre.TabIndex = 0
-        '
-        'dtp_fechaNac
-        '
-        Me.dtp_fechaNac.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_fechaNac.Location = New System.Drawing.Point(124, 75)
-        Me.dtp_fechaNac.Name = "dtp_fechaNac"
-        Me.dtp_fechaNac.Size = New System.Drawing.Size(160, 20)
-        Me.dtp_fechaNac.TabIndex = 31
-        '
-        'cbo_barrio
-        '
-        Me.cbo_barrio.FormattingEnabled = True
-        Me.cbo_barrio.Location = New System.Drawing.Point(117, 75)
-        Me.cbo_barrio.Name = "cbo_barrio"
-        Me.cbo_barrio.Size = New System.Drawing.Size(203, 21)
-        Me.cbo_barrio.TabIndex = 24
         '
         'frm_editarAfiliados
         '
