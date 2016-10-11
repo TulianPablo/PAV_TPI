@@ -189,6 +189,7 @@
 
     Private Sub btn_borrar_Click(sender As Object, e As EventArgs) Handles btn_borrar.Click
         form_bajaAfiliado = New frm_bajaAfiliado
+        form_bajaAfiliado.formConsulta = Me
         form_bajaAfiliado.Show()
 
     End Sub

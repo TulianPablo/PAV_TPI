@@ -28,6 +28,8 @@ Partial Class frm_bajaAfiliado
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.gb_afiliacion = New System.Windows.Forms.GroupBox()
+        Me.txt_fechaBaja = New System.Windows.Forms.TextBox()
+        Me.txt_fechaAlta = New System.Windows.Forms.TextBox()
         Me.lbl_fechaBaja = New System.Windows.Forms.Label()
         Me.cbo_tipoAfiliado = New System.Windows.Forms.ComboBox()
         Me.lbl_tipoAfiliado = New System.Windows.Forms.Label()
@@ -49,8 +51,6 @@ Partial Class frm_bajaAfiliado
         Me.txt_apellido = New System.Windows.Forms.TextBox()
         Me.txt_nroDoc = New System.Windows.Forms.TextBox()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
-        Me.txt_fechaAlta = New System.Windows.Forms.TextBox()
-        Me.txt_fechaBaja = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.gb_afiliacion.SuspendLayout()
         Me.gb_domicilio.SuspendLayout()
@@ -83,7 +83,7 @@ Partial Class frm_bajaAfiliado
         '
         Me.dtp_fechaNac.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.dtp_fechaNac.Location = New System.Drawing.Point(130, 76)
-        Me.dtp_fechaNac.MaxDate = New Date(2016, 10, 4, 0, 0, 0, 0)
+        Me.dtp_fechaNac.MaxDate = New Date(2025, 12, 31, 0, 0, 0, 0)
         Me.dtp_fechaNac.Name = "dtp_fechaNac"
         Me.dtp_fechaNac.Size = New System.Drawing.Size(200, 20)
         Me.dtp_fechaNac.TabIndex = 29
@@ -136,6 +136,20 @@ Partial Class frm_bajaAfiliado
         Me.gb_afiliacion.TabIndex = 25
         Me.gb_afiliacion.TabStop = False
         Me.gb_afiliacion.Text = "Afiliacion"
+        '
+        'txt_fechaBaja
+        '
+        Me.txt_fechaBaja.Location = New System.Drawing.Point(109, 59)
+        Me.txt_fechaBaja.Name = "txt_fechaBaja"
+        Me.txt_fechaBaja.Size = New System.Drawing.Size(110, 20)
+        Me.txt_fechaBaja.TabIndex = 25
+        '
+        'txt_fechaAlta
+        '
+        Me.txt_fechaAlta.Location = New System.Drawing.Point(109, 30)
+        Me.txt_fechaAlta.Name = "txt_fechaAlta"
+        Me.txt_fechaAlta.Size = New System.Drawing.Size(110, 20)
+        Me.txt_fechaAlta.TabIndex = 24
         '
         'lbl_fechaBaja
         '
@@ -325,20 +339,6 @@ Partial Class frm_bajaAfiliado
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(305, 20)
         Me.txt_nombre.TabIndex = 0
-        '
-        'txt_fechaAlta
-        '
-        Me.txt_fechaAlta.Location = New System.Drawing.Point(109, 30)
-        Me.txt_fechaAlta.Name = "txt_fechaAlta"
-        Me.txt_fechaAlta.Size = New System.Drawing.Size(110, 20)
-        Me.txt_fechaAlta.TabIndex = 24
-        '
-        'txt_fechaBaja
-        '
-        Me.txt_fechaBaja.Location = New System.Drawing.Point(109, 59)
-        Me.txt_fechaBaja.Name = "txt_fechaBaja"
-        Me.txt_fechaBaja.Size = New System.Drawing.Size(110, 20)
-        Me.txt_fechaBaja.TabIndex = 25
         '
         'frm_bajaAfiliado
         '
