@@ -31,7 +31,6 @@ Partial Class frm_InicioSesion
         Me.txt_LogIn_usuario = New System.Windows.Forms.TextBox()
         Me.txt_LogIn_contraseña = New System.Windows.Forms.MaskedTextBox()
         Me.txt_SignIn_contraseña = New System.Windows.Forms.MaskedTextBox()
-        Me.txt_SignIn_usuario = New System.Windows.Forms.TextBox()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.lbl_LogIn_mensaje = New System.Windows.Forms.Label()
         Me.lbl_SignIn_mensaje = New System.Windows.Forms.Label()
@@ -49,6 +48,7 @@ Partial Class frm_InicioSesion
         Me.cbo_perfil = New System.Windows.Forms.ComboBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
+        Me.txt_SignIn_usuario = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -127,14 +127,6 @@ Partial Class frm_InicioSesion
         Me.txt_SignIn_contraseña.Size = New System.Drawing.Size(259, 25)
         Me.txt_SignIn_contraseña.TabIndex = 5
         Me.txt_SignIn_contraseña.UseSystemPasswordChar = True
-        '
-        'txt_SignIn_usuario
-        '
-        Me.txt_SignIn_usuario.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_SignIn_usuario.Location = New System.Drawing.Point(657, 68)
-        Me.txt_SignIn_usuario.Name = "txt_SignIn_usuario"
-        Me.txt_SignIn_usuario.Size = New System.Drawing.Size(259, 25)
-        Me.txt_SignIn_usuario.TabIndex = 4
         '
         'Label7
         '
@@ -310,6 +302,14 @@ Partial Class frm_InicioSesion
         Me.Label12.TabIndex = 21
         Me.Label12.Text = "Perfil de Usuario"
         '
+        'txt_SignIn_usuario
+        '
+        Me.txt_SignIn_usuario.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_SignIn_usuario.Location = New System.Drawing.Point(657, 68)
+        Me.txt_SignIn_usuario.Name = "txt_SignIn_usuario"
+        Me.txt_SignIn_usuario.Size = New System.Drawing.Size(259, 25)
+        Me.txt_SignIn_usuario.TabIndex = 4
+        '
         'frm_InicioSesion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -359,7 +359,6 @@ Partial Class frm_InicioSesion
     Friend WithEvents txt_LogIn_contraseña As System.Windows.Forms.MaskedTextBox
     Friend WithEvents btn_iniciarSesion As System.Windows.Forms.Button
     Friend WithEvents txt_SignIn_contraseña As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents txt_SignIn_usuario As System.Windows.Forms.TextBox
     Friend WithEvents btn_registrarse As System.Windows.Forms.Button
     Friend WithEvents Label7 As System.Windows.Forms.Label
     Friend WithEvents lbl_LogIn_mensaje As System.Windows.Forms.Label
@@ -376,4 +375,5 @@ Partial Class frm_InicioSesion
     Friend WithEvents cbo_perfil As System.Windows.Forms.ComboBox
     Friend WithEvents Label8 As System.Windows.Forms.Label
     Friend WithEvents Label12 As System.Windows.Forms.Label
+    Friend WithEvents txt_SignIn_usuario As System.Windows.Forms.TextBox
 End Class

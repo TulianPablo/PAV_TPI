@@ -7,7 +7,7 @@ Public Class BDHelper
     ' Permite ejecutar comandos sql y retornar resultados a la capa de datos.
     ' Implementa el patrón SINGLETON, que garantiza tener solo una instancia de esta clase.
 
-    Private string_conexion As String = "Data Source=AGUSTINA-PC;Integrated Security=True;Initial Catalog=DB_ObraSocial"
+    Private string_conexion As String = "Data Source=EQUIPO-PC\SQLEXPRESS;Integrated Security=True;Initial Catalog=DB_ObraSocial"
     Private Shared instance As BDHelper 'Unica instancia de la clase
 
     Public Shared Function getDBHelper() As BDHelper

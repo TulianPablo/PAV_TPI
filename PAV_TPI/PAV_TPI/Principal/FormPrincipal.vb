@@ -5,15 +5,6 @@
     Public form_Practicas As frm_Practicas
     Public form_Afiliados As frm_Afiliados
 
-    'FORMULARIO DE PRUEBA, DESPUES HAY QUE BORRARLO ***********************************************************************************************
-    Public form_IniciarSesion As frm_InicioSesion
-    'BOTON DE PRUEBA, DESPUES HAY QUE BORRARLO ****************************************************************************************************
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        form_IniciarSesion = New frm_InicioSesion
-        form_IniciarSesion.Show()
-    End Sub
-
-
     Private Sub btn_especialidades_Click(sender As Object, e As EventArgs) Handles btn_especialidades.Click
         form_especialidades = New frm_Especialidades
         form_especialidades.Show()

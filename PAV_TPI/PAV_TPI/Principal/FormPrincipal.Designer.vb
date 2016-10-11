@@ -34,7 +34,6 @@ Partial Class frm_principal
         Me.btn_tiposAfiliados = New System.Windows.Forms.Button()
         Me.btn_informes = New System.Windows.Forms.Button()
         Me.lbl_menu = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.lbl_usuarioLogueado = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbl_portada = New System.Windows.Forms.Label()
@@ -189,18 +188,6 @@ Partial Class frm_principal
         Me.lbl_menu.Size = New System.Drawing.Size(1185, 68)
         Me.lbl_menu.TabIndex = 11
         '
-        'Button1
-        '
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.SystemColors.WindowFrame
-        Me.Button1.Location = New System.Drawing.Point(12, 12)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(140, 40)
-        Me.Button1.TabIndex = 19
-        Me.Button1.Text = "Prueba Iniciar Sesión"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
         'lbl_usuarioLogueado
         '
         Me.lbl_usuarioLogueado.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(116, Byte), Integer), CType(CType(169, Byte), Integer))
@@ -242,7 +229,6 @@ Partial Class frm_principal
         Me.ClientSize = New System.Drawing.Size(1183, 596)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lbl_usuarioLogueado)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btn_informes)
         Me.Controls.Add(Me.btn_tiposAfiliados)
         Me.Controls.Add(Me.btn_cuotas)
@@ -276,7 +262,6 @@ Partial Class frm_principal
     Friend WithEvents btn_tiposAfiliados As System.Windows.Forms.Button
     Friend WithEvents btn_informes As System.Windows.Forms.Button
     Friend WithEvents lbl_menu As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents lbl_usuarioLogueado As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
 

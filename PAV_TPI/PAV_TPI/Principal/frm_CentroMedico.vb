@@ -144,7 +144,7 @@
         btn_editar.Enabled = opc
     End Sub
 
-    Private Function validar() As Boolean
+    Private Function validar () As Boolean
 
         ' Valida los campos requeridos ' 
         If String.IsNullOrEmpty(txt_numero.Text) Then
