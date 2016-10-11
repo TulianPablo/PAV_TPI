@@ -23,6 +23,8 @@ Partial Class frm_editarAfiliados
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.btn_cancelar = New System.Windows.Forms.Button()
+        Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.cbo_tipoDoc = New System.Windows.Forms.ComboBox()
         Me.gb_afiliacion = New System.Windows.Forms.GroupBox()
         Me.cbo_tipoAfiliado = New System.Windows.Forms.ComboBox()
@@ -38,7 +40,6 @@ Partial Class frm_editarAfiliados
         Me.lbl_nroCalle = New System.Windows.Forms.Label()
         Me.txt_calle = New System.Windows.Forms.TextBox()
         Me.txt_nroCalle = New System.Windows.Forms.TextBox()
-        Me.txt_barrio = New System.Windows.Forms.TextBox()
         Me.txt_telefono = New System.Windows.Forms.TextBox()
         Me.lbl_nroDoc = New System.Windows.Forms.Label()
         Me.lbl_tipoDoc = New System.Windows.Forms.Label()
@@ -46,11 +47,10 @@ Partial Class frm_editarAfiliados
         Me.lbl_apeAfiliado = New System.Windows.Forms.Label()
         Me.lbl_nomAfiliado = New System.Windows.Forms.Label()
         Me.txt_apellido = New System.Windows.Forms.TextBox()
-        Me.txt_fechaNac = New System.Windows.Forms.TextBox()
         Me.txt_nroDoc = New System.Windows.Forms.TextBox()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
-        Me.btn_cancelar = New System.Windows.Forms.Button()
-        Me.btn_aceptar = New System.Windows.Forms.Button()
+        Me.dtp_fechaNac = New System.Windows.Forms.DateTimePicker()
+        Me.cbo_barrio = New System.Windows.Forms.ComboBox()
         Me.GroupBox1.SuspendLayout()
         Me.gb_afiliacion.SuspendLayout()
         Me.gb_domicilio.SuspendLayout()
@@ -58,6 +58,7 @@ Partial Class frm_editarAfiliados
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.dtp_fechaNac)
         Me.GroupBox1.Controls.Add(Me.btn_cancelar)
         Me.GroupBox1.Controls.Add(Me.btn_aceptar)
         Me.GroupBox1.Controls.Add(Me.cbo_tipoDoc)
@@ -69,7 +70,6 @@ Partial Class frm_editarAfiliados
         Me.GroupBox1.Controls.Add(Me.lbl_apeAfiliado)
         Me.GroupBox1.Controls.Add(Me.lbl_nomAfiliado)
         Me.GroupBox1.Controls.Add(Me.txt_apellido)
-        Me.GroupBox1.Controls.Add(Me.txt_fechaNac)
         Me.GroupBox1.Controls.Add(Me.txt_nroDoc)
         Me.GroupBox1.Controls.Add(Me.txt_nombre)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
@@ -78,6 +78,30 @@ Partial Class frm_editarAfiliados
         Me.GroupBox1.TabIndex = 2
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Editar"
+        '
+        'btn_cancelar
+        '
+        Me.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_cancelar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_cancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_cancelar.Location = New System.Drawing.Point(336, 375)
+        Me.btn_cancelar.Name = "btn_cancelar"
+        Me.btn_cancelar.Size = New System.Drawing.Size(96, 29)
+        Me.btn_cancelar.TabIndex = 30
+        Me.btn_cancelar.Text = "Cancelar"
+        Me.btn_cancelar.UseVisualStyleBackColor = True
+        '
+        'btn_aceptar
+        '
+        Me.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_aceptar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_aceptar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_aceptar.Location = New System.Drawing.Point(224, 375)
+        Me.btn_aceptar.Name = "btn_aceptar"
+        Me.btn_aceptar.Size = New System.Drawing.Size(96, 29)
+        Me.btn_aceptar.TabIndex = 29
+        Me.btn_aceptar.Text = "Aceptar"
+        Me.btn_aceptar.UseVisualStyleBackColor = True
         '
         'cbo_tipoDoc
         '
@@ -155,13 +179,13 @@ Partial Class frm_editarAfiliados
         'gb_domicilio
         '
         Me.gb_domicilio.BackColor = System.Drawing.SystemColors.Control
+        Me.gb_domicilio.Controls.Add(Me.cbo_barrio)
         Me.gb_domicilio.Controls.Add(Me.lbl_barrio)
         Me.gb_domicilio.Controls.Add(Me.lbl_calle)
         Me.gb_domicilio.Controls.Add(Me.lbl_telefono)
         Me.gb_domicilio.Controls.Add(Me.lbl_nroCalle)
         Me.gb_domicilio.Controls.Add(Me.txt_calle)
         Me.gb_domicilio.Controls.Add(Me.txt_nroCalle)
-        Me.gb_domicilio.Controls.Add(Me.txt_barrio)
         Me.gb_domicilio.Controls.Add(Me.txt_telefono)
         Me.gb_domicilio.Location = New System.Drawing.Point(13, 116)
         Me.gb_domicilio.Name = "gb_domicilio"
@@ -219,13 +243,6 @@ Partial Class frm_editarAfiliados
         Me.txt_nroCalle.Name = "txt_nroCalle"
         Me.txt_nroCalle.Size = New System.Drawing.Size(155, 20)
         Me.txt_nroCalle.TabIndex = 8
-        '
-        'txt_barrio
-        '
-        Me.txt_barrio.Location = New System.Drawing.Point(117, 75)
-        Me.txt_barrio.Name = "txt_barrio"
-        Me.txt_barrio.Size = New System.Drawing.Size(155, 20)
-        Me.txt_barrio.TabIndex = 7
         '
         'txt_telefono
         '
@@ -286,13 +303,6 @@ Partial Class frm_editarAfiliados
         Me.txt_apellido.Size = New System.Drawing.Size(305, 20)
         Me.txt_apellido.TabIndex = 11
         '
-        'txt_fechaNac
-        '
-        Me.txt_fechaNac.Location = New System.Drawing.Point(116, 73)
-        Me.txt_fechaNac.Name = "txt_fechaNac"
-        Me.txt_fechaNac.Size = New System.Drawing.Size(102, 20)
-        Me.txt_fechaNac.TabIndex = 10
-        '
         'txt_nroDoc
         '
         Me.txt_nroDoc.Location = New System.Drawing.Point(489, 47)
@@ -307,29 +317,21 @@ Partial Class frm_editarAfiliados
         Me.txt_nombre.Size = New System.Drawing.Size(305, 20)
         Me.txt_nombre.TabIndex = 0
         '
-        'btn_cancelar
+        'dtp_fechaNac
         '
-        Me.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_cancelar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_cancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_cancelar.Location = New System.Drawing.Point(336, 375)
-        Me.btn_cancelar.Name = "btn_cancelar"
-        Me.btn_cancelar.Size = New System.Drawing.Size(96, 29)
-        Me.btn_cancelar.TabIndex = 30
-        Me.btn_cancelar.Text = "Cancelar"
-        Me.btn_cancelar.UseVisualStyleBackColor = True
+        Me.dtp_fechaNac.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.dtp_fechaNac.Location = New System.Drawing.Point(124, 75)
+        Me.dtp_fechaNac.Name = "dtp_fechaNac"
+        Me.dtp_fechaNac.Size = New System.Drawing.Size(160, 20)
+        Me.dtp_fechaNac.TabIndex = 31
         '
-        'btn_aceptar
+        'cbo_barrio
         '
-        Me.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_aceptar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_aceptar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_aceptar.Location = New System.Drawing.Point(224, 375)
-        Me.btn_aceptar.Name = "btn_aceptar"
-        Me.btn_aceptar.Size = New System.Drawing.Size(96, 29)
-        Me.btn_aceptar.TabIndex = 29
-        Me.btn_aceptar.Text = "Aceptar"
-        Me.btn_aceptar.UseVisualStyleBackColor = True
+        Me.cbo_barrio.FormattingEnabled = True
+        Me.cbo_barrio.Location = New System.Drawing.Point(117, 75)
+        Me.cbo_barrio.Name = "cbo_barrio"
+        Me.cbo_barrio.Size = New System.Drawing.Size(203, 21)
+        Me.cbo_barrio.TabIndex = 24
         '
         'frm_editarAfiliados
         '
@@ -364,7 +366,6 @@ Partial Class frm_editarAfiliados
     Friend WithEvents lbl_nroCalle As System.Windows.Forms.Label
     Friend WithEvents txt_calle As System.Windows.Forms.TextBox
     Friend WithEvents txt_nroCalle As System.Windows.Forms.TextBox
-    Friend WithEvents txt_barrio As System.Windows.Forms.TextBox
     Friend WithEvents txt_telefono As System.Windows.Forms.TextBox
     Friend WithEvents lbl_nroDoc As System.Windows.Forms.Label
     Friend WithEvents lbl_tipoDoc As System.Windows.Forms.Label
@@ -372,9 +373,10 @@ Partial Class frm_editarAfiliados
     Friend WithEvents lbl_apeAfiliado As System.Windows.Forms.Label
     Friend WithEvents lbl_nomAfiliado As System.Windows.Forms.Label
     Friend WithEvents txt_apellido As System.Windows.Forms.TextBox
-    Friend WithEvents txt_fechaNac As System.Windows.Forms.TextBox
     Friend WithEvents txt_nroDoc As System.Windows.Forms.TextBox
     Friend WithEvents txt_nombre As System.Windows.Forms.TextBox
     Friend WithEvents btn_cancelar As System.Windows.Forms.Button
     Friend WithEvents btn_aceptar As System.Windows.Forms.Button
+    Friend WithEvents dtp_fechaNac As System.Windows.Forms.DateTimePicker
+    Friend WithEvents cbo_barrio As System.Windows.Forms.ComboBox
 End Class
