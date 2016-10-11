@@ -2,10 +2,13 @@
 
     Public form_editarAfiliados As frm_editarAfiliados
     Public form_nuevoAfiliado As frm_nuevoAfiliado
+    Public form_bajaAfiliado As frm_bajaAfiliado
 
     Private Sub frm_Afiliados_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         btn_editar.Enabled = False
         btn_borrar.Enabled = False
+        lbl_afiliados_mensaje.Visible = False
+        dgv_resultados.Columns(11).Visible = False
         CargarCombo(cbo_tipoAfiliado, BDHelper.GetTipoAfiliado(), "id_tipoAfiliado", "nombre")
         CargarCombo(cbo_tipoDoc, BDHelper.GetTipoDoc(), "id_tipoDoc", "nombre")
     End Sub
@@ -21,18 +24,24 @@
     End Sub
 
     Private Sub dgv_resultados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_resultados.CellContentClick
-        btn_editar.Enabled = True
-        btn_borrar.Enabled = True
+        If String.IsNullOrEmpty(dgv_resultados.CurrentRow.Cells(11).Value) Then
+            btn_editar.Enabled = True
+            btn_borrar.Enabled = True
+        Else
+            btn_borrar.Enabled = True
+        End If
+
     End Sub
 
     Private Sub btn_Buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
-        If String.IsNullOrEmpty(txt_nombre.Text) And String.IsNullOrEmpty(txt_apellido.Text) And String.IsNullOrEmpty(txt_nroDoc.Text) And
-            cbo_tipoAfiliado.SelectedValue = -1 And cbo_tipoDoc.SelectedValue = -1 And String.IsNullOrEmpty(dtp_fechaDesde.Text) And
-            String.IsNullOrEmpty(dtp_fechaHasta.Text) And chk_fechaBaja.Checked = False Then
-
-            cargar_grilla_SD()
+        dgv_resultados.Columns(11).Visible = False
+        If Not String.IsNullOrEmpty(txt_nombre.Text) Or Not String.IsNullOrEmpty(txt_apellido.Text) Or Not String.IsNullOrEmpty(txt_nroDoc.Text) Or
+            cbo_tipoDoc.SelectedValue > -1 Or cbo_tipoAfiliado.SelectedValue > -1 Or chk_fechaBaja.Checked = True Then
+            If validar_campos() Then
+                cargar_grilla_CD()
+            End If
         Else
-            cargar_grilla_CD()
+            cargar_grilla_SD()
         End If
     End Sub
 
@@ -43,6 +52,12 @@
                                                   row.Item(8).ToString, row.Item(9).ToString, row.Item(10).ToString, row.Item(11).ToString,
                                                   row.Item(12).ToString, row.Item(13).ToString})
         Next
+
+        If dgv_resultados.Rows.Count = 0 Then
+            lbl_afiliados_mensaje.Text = "No se encontraron resultados"
+            lbl_afiliados_mensaje.Visible = True
+        End If
+
     End Sub
 
     Public Sub cargar_grilla_CD()
@@ -93,6 +108,7 @@
             End If
             str &= "a.fecha_baja != NULL"
             c = 1
+            dgv_resultados.Columns(11).Visible = True
         End If
         If Not String.IsNullOrEmpty(dtp_fechaDesde.Text) Or Not String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
             If Not String.IsNullOrEmpty(dtp_fechaDesde.Text) Or String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
@@ -100,7 +116,7 @@
                     str &= " AND "
                 End If
                 dtp_fechaDesde.Value.Day.ToString()
-                str &= "a.fechaAlta BETWEEN CAST(" & dtp_fechaDesde.Text & " AS DATE) AND GETDATE()"
+                str &= "a.fecha_alta BETWEEN CAST('" & dtp_fechaDesde.Text & "' AS DATE) AND GETDATE()"
                 c = 1
             End If
             If String.IsNullOrEmpty(dtp_fechaDesde.Text) Or Not String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
@@ -108,7 +124,7 @@
                     str &= " AND "
                 End If
                 dtp_fechaDesde.Value.Day.ToString()
-                str &= "a.fechaAlta BETWEEN GETDATE() AND CAST(" & dtp_fechaDesde.Text & " AS DATE)"
+                str &= "a.fecha_alta BETWEEN GETDATE() AND CAST('" & dtp_fechaDesde.Text & "' AS DATE)"
                 c = 1
             End If
             If Not String.IsNullOrEmpty(dtp_fechaDesde.Text) And Not String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
@@ -116,7 +132,7 @@
                     str &= " AND "
                 End If
                 dtp_fechaDesde.Value.Day.ToString()
-                str &= "a.fechaAlta BETWEEN CAST(" & dtp_fechaDesde.Text & " AS DATE) AND CAST(" & dtp_fechaHasta.Text & " AS DATE)"
+                str &= "a.fecha_alta BETWEEN CAST('" & dtp_fechaDesde.Text & "' AS DATE) AND CAST('" & dtp_fechaHasta.Text & "' AS DATE)"
                 c = 1
             End If
         End If
@@ -127,50 +143,33 @@
                                                   row.Item(8).ToString, row.Item(9).ToString, row.Item(10).ToString, row.Item(11).ToString,
                                                   row.Item(12).ToString, row.Item(13).ToString})
         Next
+        'Valida si existen resultados o no
+        If dgv_resultados.Rows.Count = 0 Then
+            lbl_afiliados_mensaje.Text = "No se encontraron resultados"
+            lbl_afiliados_mensaje.Visible = True
+        End If
 
     End Sub
 
     Public Function validar_campos() As Boolean
 
-        If String.IsNullOrEmpty(txt_nombre.Text) Then
-            MsgBox("Campo <Nombre> es obligatorio.", vbOKOnly + vbCritical, "Importante")
-            txt_nombre.Focus()
-            Return False
-        Else
-            If (txt_nombre.Text >= 0) And (txt_nombre.Text <= 57) Then
-                MsgBox("El campo <Nombre> es alfabetico", vbOKOnly + vbCritical, "Importante")
-                txt_nombre.Text = 8
-                Return False
-            End If
-        End If
-
-        If String.IsNullOrEmpty(txt_apellido.Text) Then
-            MsgBox("Campo <Apellido> es obligatorio.", vbOKOnly + vbCritical, "Importante")
-            txt_nombre.Focus()
-            Return False
-        Else
-            If (txt_nombre.Text >= 0) And (txt_nombre.Text <= 57) Then
-                MsgBox("El campo <Apellido> es alfabetico", vbOKOnly + vbCritical, "Importante")
-                txt_nombre.Text = 8
-                Return False
-            End If
-        End If
-
-        If String.IsNullOrEmpty(txt_nroDoc.Text) Then
-            MsgBox("Campo <Nro Documento> es obligatorio.", vbOKOnly + vbCritical, "Importante")
-            txt_nombre.Focus()
-            Return False
-        Else
-            If (txt_nombre.Text >= 48) And (txt_nombre.Text <= 57) Then
-                MsgBox("El campo <Nro Documento> es numerico", vbOKOnly + vbCritical, "Importante")
-                txt_nombre.Text = 8
-                Return False
-            End If
-        End If
-
+        'valida que si se ingresa nro de doc tambien debe haberse ingresado tipo de doc obligatoriamente
         If cbo_tipoDoc.SelectedValue = -1 And Not String.IsNullOrEmpty(txt_nroDoc.Text) Then
-            MsgBox("Falta ingresar <Tipo de Documento>", vbOKOnly + vbCritical, "Importante")
-            cbo_tipoDoc.Focus()
+            lbl_afiliados_mensaje.Text = "Falta ingresar <Tipo de Documento>"
+            lbl_afiliados_mensaje.Visible = True
+            Return False
+        End If
+
+        't1 As Date = primera fecha a comparar
+        't2 As Date = segunda fecha a comparar
+        'DateTime.Compare(t1, t2) compara ambas fechas y devuelve un Integer
+        'Si devuelve un nro menor que 0, entonces t1<t2
+        'Si devuelve un nro mayor que 0, entonces t1>t2
+        'Si devuelve 0, entonces son iguales
+        Dim result As Integer = DateTime.Compare(dtp_fechaDesde.Value.Date, dtp_fechaHasta.Value.Date)
+        If result > 0 Then
+            lbl_afiliados_mensaje.Text = "La fecha Desde no puede ser mayor que la fecha Hasta"
+            lbl_afiliados_mensaje.Visible = True
             Return False
         End If
         Return True
@@ -185,5 +184,68 @@
         combo.SelectedIndex = -1
 
     End Sub
+
+    Private Sub btn_borrar_Click(sender As Object, e As EventArgs) Handles btn_borrar.Click
+        form_bajaAfiliado = New frm_bajaAfiliado
+        form_bajaAfiliado.Show()
+
+    End Sub
+
+    'valida que el textbox nombre sea alfabetico
+    Private Sub txt_nombre_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_nombre.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+
+        txt_nombre.Text = Trim(Replace(txt_nombre.Text, " ", ""))
+        txt_nombre.Select(txt_nombre.Text.Length, 0)
+
+    End Sub
+
+    'valida que el textBox apellido sea alfabetico
+    Private Sub txt_apellido_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_apellido.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+
+        txt_apellido.Text = Trim(Replace(txt_apellido.Text, " ", ""))
+        txt_apellido.Select(txt_apellido.Text.Length, 0)
+
+    End Sub
+
+    'valida que el textbox nro documento sea numerico
+    Private Sub txt_nroDoc_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_nroDoc.KeyPress
+
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSymbol(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+
+        txt_nroDoc.Text = Trim(Replace(txt_nroDoc.Text, "  ", " "))
+        txt_nroDoc.Select(txt_nroDoc.Text.Length, 0)
+
+    End Sub
+
 
 End Class

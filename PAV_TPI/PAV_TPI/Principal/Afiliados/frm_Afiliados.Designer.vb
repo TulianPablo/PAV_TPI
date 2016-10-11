@@ -55,12 +55,14 @@ Partial Class frm_Afiliados
         Me.col_tipoAfiliado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_fechaAlta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_fechaBaja = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lbl_afiliados_mensaje = New System.Windows.Forms.Label()
         Me.gb_titulo.SuspendLayout()
         CType(Me.dgv_resultados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'gb_titulo
         '
+        Me.gb_titulo.Controls.Add(Me.lbl_afiliados_mensaje)
         Me.gb_titulo.Controls.Add(Me.btn_buscar)
         Me.gb_titulo.Controls.Add(Me.btn_editar)
         Me.gb_titulo.Controls.Add(Me.btn_borrar)
@@ -343,6 +345,17 @@ Partial Class frm_Afiliados
         Me.col_fechaBaja.HeaderText = "Fecha Baja"
         Me.col_fechaBaja.Name = "col_fechaBaja"
         '
+        'lbl_afiliados_mensaje
+        '
+        Me.lbl_afiliados_mensaje.AutoSize = True
+        Me.lbl_afiliados_mensaje.Font = New System.Drawing.Font("Segoe UI", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_afiliados_mensaje.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.lbl_afiliados_mensaje.Location = New System.Drawing.Point(8, 107)
+        Me.lbl_afiliados_mensaje.Name = "lbl_afiliados_mensaje"
+        Me.lbl_afiliados_mensaje.Size = New System.Drawing.Size(139, 17)
+        Me.lbl_afiliados_mensaje.TabIndex = 28
+        Me.lbl_afiliados_mensaje.Text = "lbl_afiliados_mensaje"
+        '
         'frm_Afiliados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -390,4 +403,5 @@ Partial Class frm_Afiliados
     Friend WithEvents btn_borrar As System.Windows.Forms.Button
     Friend WithEvents btn_agregar As System.Windows.Forms.Button
     Friend WithEvents btn_buscar As System.Windows.Forms.Button
+    Friend WithEvents lbl_afiliados_mensaje As System.Windows.Forms.Label
 End Class
