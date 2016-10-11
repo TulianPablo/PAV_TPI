@@ -38,6 +38,7 @@
         If Not String.IsNullOrEmpty(txt_nombre.Text) Or Not String.IsNullOrEmpty(txt_apellido.Text) Or Not String.IsNullOrEmpty(txt_nroDoc.Text) Or
             cbo_tipoDoc.SelectedValue > -1 Or cbo_tipoAfiliado.SelectedValue > -1 Or chk_fechaBaja.Checked = True Then
             If validar_campos() Then
+                dgv_resultados.Rows.Clear()
                 cargar_grilla_CD()
             End If
         Else
@@ -66,7 +67,7 @@
         Dim c As Integer = 0
 
         If Not String.IsNullOrEmpty(txt_nombre.Text) Then
-            str &= "a.nombre = '" & txt_nombre.Text & "'"
+            str &= "a.nombre like '%" & txt_nombre.Text & "%'"
             c = 1
         End If
 
@@ -74,11 +75,11 @@
             If c = 1 Then
                 str &= " AND "
             End If
-            str &= "a.apellido = '" & txt_apellido.Text & "'"
+            str &= "a.apellido like '%" & txt_apellido.Text & "%'"
             c = 1
         End If
 
-        If Not cbo_tipoDoc.SelectedValue = -1 Then
+        If Not cbo_tipoDoc.SelectedValue = Nothing Then
             If c = 1 Then
                 str &= " AND "
             End If
@@ -94,7 +95,7 @@
             c = 1
         End If
 
-        If Not cbo_tipoAfiliado.SelectedValue = -1 Then
+        If Not cbo_tipoAfiliado.SelectedValue = Nothing Then
             If c = 1 Then
                 str &= " AND "
             End If
@@ -111,22 +112,22 @@
             dgv_resultados.Columns(11).Visible = True
         End If
         If Not String.IsNullOrEmpty(dtp_fechaDesde.Text) Or Not String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
-            If Not String.IsNullOrEmpty(dtp_fechaDesde.Text) Or String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
-                If c = 1 Then
-                    str &= " AND "
-                End If
-                dtp_fechaDesde.Value.Day.ToString()
-                str &= "a.fecha_alta BETWEEN CAST('" & dtp_fechaDesde.Text & "' AS DATE) AND GETDATE()"
-                c = 1
-            End If
-            If String.IsNullOrEmpty(dtp_fechaDesde.Text) Or Not String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
-                If c = 1 Then
-                    str &= " AND "
-                End If
-                dtp_fechaDesde.Value.Day.ToString()
-                str &= "a.fecha_alta BETWEEN GETDATE() AND CAST('" & dtp_fechaDesde.Text & "' AS DATE)"
-                c = 1
-            End If
+            'If Not String.IsNullOrEmpty(dtp_fechaDesde.Text) Or String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
+            '    If c = 1 Then
+            '        str &= " AND "
+            '    End If
+            '    dtp_fechaDesde.Value.Day.ToString()
+            '    str &= "a.fecha_alta BETWEEN CAST('" & dtp_fechaDesde.Text & "' AS DATE) AND GETDATE()"
+            '    c = 1
+            'End If
+            'If String.IsNullOrEmpty(dtp_fechaDesde.Text) And Not String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
+            '    If c = 1 Then
+            '        str &= " AND "
+            '    End If
+            '    dtp_fechaDesde.Value.Day.ToString()
+            '    str &= "a.fecha_alta BETWEEN GETDATE() AND CAST('" & dtp_fechaDesde.Text & "' AS DATE)"
+            '    c = 1
+            'End If
             If Not String.IsNullOrEmpty(dtp_fechaDesde.Text) And Not String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
                 If c = 1 Then
                     str &= " AND "
