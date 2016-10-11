@@ -28,9 +28,7 @@ Partial Class frm_bajaAfiliado
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.gb_afiliacion = New System.Windows.Forms.GroupBox()
-        Me.dtp_fechabaja = New System.Windows.Forms.DateTimePicker()
         Me.lbl_fechaBaja = New System.Windows.Forms.Label()
-        Me.dtp_fechaAlta = New System.Windows.Forms.DateTimePicker()
         Me.cbo_tipoAfiliado = New System.Windows.Forms.ComboBox()
         Me.lbl_tipoAfiliado = New System.Windows.Forms.Label()
         Me.lbl_fechaAlta = New System.Windows.Forms.Label()
@@ -51,6 +49,8 @@ Partial Class frm_bajaAfiliado
         Me.txt_apellido = New System.Windows.Forms.TextBox()
         Me.txt_nroDoc = New System.Windows.Forms.TextBox()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
+        Me.txt_fechaAlta = New System.Windows.Forms.TextBox()
+        Me.txt_fechaBaja = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.gb_afiliacion.SuspendLayout()
         Me.gb_domicilio.SuspendLayout()
@@ -124,9 +124,9 @@ Partial Class frm_bajaAfiliado
         'gb_afiliacion
         '
         Me.gb_afiliacion.BackColor = System.Drawing.SystemColors.Control
-        Me.gb_afiliacion.Controls.Add(Me.dtp_fechabaja)
+        Me.gb_afiliacion.Controls.Add(Me.txt_fechaBaja)
+        Me.gb_afiliacion.Controls.Add(Me.txt_fechaAlta)
         Me.gb_afiliacion.Controls.Add(Me.lbl_fechaBaja)
-        Me.gb_afiliacion.Controls.Add(Me.dtp_fechaAlta)
         Me.gb_afiliacion.Controls.Add(Me.cbo_tipoAfiliado)
         Me.gb_afiliacion.Controls.Add(Me.lbl_tipoAfiliado)
         Me.gb_afiliacion.Controls.Add(Me.lbl_fechaAlta)
@@ -137,17 +137,6 @@ Partial Class frm_bajaAfiliado
         Me.gb_afiliacion.TabStop = False
         Me.gb_afiliacion.Text = "Afiliacion"
         '
-        'dtp_fechabaja
-        '
-        Me.dtp_fechabaja.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_fechabaja.Location = New System.Drawing.Point(105, 64)
-        Me.dtp_fechabaja.MaxDate = New Date(2016, 10, 4, 0, 0, 0, 0)
-        Me.dtp_fechabaja.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
-        Me.dtp_fechabaja.Name = "dtp_fechabaja"
-        Me.dtp_fechabaja.Size = New System.Drawing.Size(107, 20)
-        Me.dtp_fechabaja.TabIndex = 24
-        Me.dtp_fechabaja.Value = New Date(2016, 10, 4, 0, 0, 0, 0)
-        '
         'lbl_fechaBaja
         '
         Me.lbl_fechaBaja.AutoSize = True
@@ -156,17 +145,6 @@ Partial Class frm_bajaAfiliado
         Me.lbl_fechaBaja.Size = New System.Drawing.Size(61, 13)
         Me.lbl_fechaBaja.TabIndex = 23
         Me.lbl_fechaBaja.Text = "Fecha Baja"
-        '
-        'dtp_fechaAlta
-        '
-        Me.dtp_fechaAlta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_fechaAlta.Location = New System.Drawing.Point(105, 29)
-        Me.dtp_fechaAlta.MaxDate = New Date(2016, 10, 4, 0, 0, 0, 0)
-        Me.dtp_fechaAlta.MinDate = New Date(1900, 1, 1, 0, 0, 0, 0)
-        Me.dtp_fechaAlta.Name = "dtp_fechaAlta"
-        Me.dtp_fechaAlta.Size = New System.Drawing.Size(107, 20)
-        Me.dtp_fechaAlta.TabIndex = 22
-        Me.dtp_fechaAlta.Value = New Date(2016, 10, 4, 0, 0, 0, 0)
         '
         'cbo_tipoAfiliado
         '
@@ -348,6 +326,20 @@ Partial Class frm_bajaAfiliado
         Me.txt_nombre.Size = New System.Drawing.Size(305, 20)
         Me.txt_nombre.TabIndex = 0
         '
+        'txt_fechaAlta
+        '
+        Me.txt_fechaAlta.Location = New System.Drawing.Point(109, 30)
+        Me.txt_fechaAlta.Name = "txt_fechaAlta"
+        Me.txt_fechaAlta.Size = New System.Drawing.Size(110, 20)
+        Me.txt_fechaAlta.TabIndex = 24
+        '
+        'txt_fechaBaja
+        '
+        Me.txt_fechaBaja.Location = New System.Drawing.Point(109, 59)
+        Me.txt_fechaBaja.Name = "txt_fechaBaja"
+        Me.txt_fechaBaja.Size = New System.Drawing.Size(110, 20)
+        Me.txt_fechaBaja.TabIndex = 25
+        '
         'frm_bajaAfiliado
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -371,9 +363,7 @@ Partial Class frm_bajaAfiliado
     Friend WithEvents btn_cancelar As System.Windows.Forms.Button
     Friend WithEvents btn_aceptar As System.Windows.Forms.Button
     Friend WithEvents gb_afiliacion As System.Windows.Forms.GroupBox
-    Friend WithEvents dtp_fechabaja As System.Windows.Forms.DateTimePicker
     Friend WithEvents lbl_fechaBaja As System.Windows.Forms.Label
-    Friend WithEvents dtp_fechaAlta As System.Windows.Forms.DateTimePicker
     Friend WithEvents cbo_tipoAfiliado As System.Windows.Forms.ComboBox
     Friend WithEvents lbl_tipoAfiliado As System.Windows.Forms.Label
     Friend WithEvents lbl_fechaAlta As System.Windows.Forms.Label
@@ -394,4 +384,6 @@ Partial Class frm_bajaAfiliado
     Friend WithEvents txt_apellido As System.Windows.Forms.TextBox
     Friend WithEvents txt_nroDoc As System.Windows.Forms.TextBox
     Friend WithEvents txt_nombre As System.Windows.Forms.TextBox
+    Friend WithEvents txt_fechaBaja As System.Windows.Forms.TextBox
+    Friend WithEvents txt_fechaAlta As System.Windows.Forms.TextBox
 End Class
