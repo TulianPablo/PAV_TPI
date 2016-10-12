@@ -77,7 +77,6 @@ Public Class BDHelper
     Shared Function GetBarrios() As DataTable
         Dim strSQL As String = "SELECT id_barrio, nombre FROM Barrio"
         Return BDHelper.getDBHelper.ConsultaSQL(strSQL)
-
     End Function
 
     Shared Function GetEspecialidades() As DataTable
