@@ -40,6 +40,11 @@ Partial Class frm_CentroMedico
         Me.Label5 = New System.Windows.Forms.Label()
         Me.txt_mail = New System.Windows.Forms.TextBox()
         Me.dvg_centrosMedicos = New System.Windows.Forms.DataGridView()
+        Me.btn_editar = New System.Windows.Forms.Button()
+        Me.btn_new = New System.Windows.Forms.Button()
+        Me.btn_borrar = New System.Windows.Forms.Button()
+        Me.btn_agregar = New System.Windows.Forms.Button()
+        Me.btn_buscar = New System.Windows.Forms.Button()
         Me.col_nroCentro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_denominacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_Calle = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -48,11 +53,6 @@ Partial Class frm_CentroMedico
         Me.col_telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_mail = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_fechaBaja = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.btn_editar = New System.Windows.Forms.Button()
-        Me.btn_new = New System.Windows.Forms.Button()
-        Me.btn_borrar = New System.Windows.Forms.Button()
-        Me.btn_agregar = New System.Windows.Forms.Button()
-        Me.btn_buscar = New System.Windows.Forms.Button()
         CType(Me.dvg_centrosMedicos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -60,16 +60,16 @@ Partial Class frm_CentroMedico
         '
         Me.lbl_nroCentroMedico.AutoSize = True
         Me.lbl_nroCentroMedico.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_nroCentroMedico.Location = New System.Drawing.Point(33, 26)
+        Me.lbl_nroCentroMedico.Location = New System.Drawing.Point(111, 26)
         Me.lbl_nroCentroMedico.Name = "lbl_nroCentroMedico"
-        Me.lbl_nroCentroMedico.Size = New System.Drawing.Size(84, 17)
+        Me.lbl_nroCentroMedico.Size = New System.Drawing.Size(77, 17)
         Me.lbl_nroCentroMedico.TabIndex = 0
-        Me.lbl_nroCentroMedico.Text = "Nro. Centro: "
+        Me.lbl_nroCentroMedico.Text = "Nro. Centro"
         '
         'txt_numero
         '
         Me.txt_numero.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_numero.Location = New System.Drawing.Point(125, 23)
+        Me.txt_numero.Location = New System.Drawing.Point(201, 23)
         Me.txt_numero.Name = "txt_numero"
         Me.txt_numero.Size = New System.Drawing.Size(129, 25)
         Me.txt_numero.TabIndex = 1
@@ -78,26 +78,26 @@ Partial Class frm_CentroMedico
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(23, 57)
+        Me.Label1.Location = New System.Drawing.Point(99, 57)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(94, 17)
+        Me.Label1.Size = New System.Drawing.Size(91, 17)
         Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Denominación:"
+        Me.Label1.Text = "Denominación"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(78, 100)
+        Me.Label2.Location = New System.Drawing.Point(154, 100)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 17)
+        Me.Label2.Size = New System.Drawing.Size(36, 17)
         Me.Label2.TabIndex = 4
-        Me.Label2.Text = "Calle:"
+        Me.Label2.Text = "Calle"
         '
         'txt_denominacion
         '
         Me.txt_denominacion.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_denominacion.Location = New System.Drawing.Point(125, 54)
+        Me.txt_denominacion.Location = New System.Drawing.Point(201, 54)
         Me.txt_denominacion.Name = "txt_denominacion"
         Me.txt_denominacion.Size = New System.Drawing.Size(298, 25)
         Me.txt_denominacion.TabIndex = 3
@@ -105,7 +105,7 @@ Partial Class frm_CentroMedico
         'txt_calle
         '
         Me.txt_calle.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_calle.Location = New System.Drawing.Point(125, 97)
+        Me.txt_calle.Location = New System.Drawing.Point(201, 97)
         Me.txt_calle.Name = "txt_calle"
         Me.txt_calle.Size = New System.Drawing.Size(298, 25)
         Me.txt_calle.TabIndex = 5
@@ -114,35 +114,35 @@ Partial Class frm_CentroMedico
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(436, 100)
+        Me.Label3.Location = New System.Drawing.Point(512, 100)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(59, 17)
+        Me.Label3.Size = New System.Drawing.Size(34, 17)
         Me.Label3.TabIndex = 6
-        Me.Label3.Text = "Número:"
+        Me.Label3.Text = "Nro."
         '
         'txt_nroCalle
         '
         Me.txt_nroCalle.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_nroCalle.Location = New System.Drawing.Point(501, 97)
+        Me.txt_nroCalle.Location = New System.Drawing.Point(552, 97)
         Me.txt_nroCalle.Name = "txt_nroCalle"
-        Me.txt_nroCalle.Size = New System.Drawing.Size(84, 25)
+        Me.txt_nroCalle.Size = New System.Drawing.Size(109, 25)
         Me.txt_nroCalle.TabIndex = 7
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(71, 131)
+        Me.Label4.Location = New System.Drawing.Point(147, 131)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(46, 17)
+        Me.Label4.Size = New System.Drawing.Size(43, 17)
         Me.Label4.TabIndex = 8
-        Me.Label4.Text = "Barrio:"
+        Me.Label4.Text = "Barrio"
         '
         'cmb_barrio
         '
         Me.cmb_barrio.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmb_barrio.FormattingEnabled = True
-        Me.cmb_barrio.Location = New System.Drawing.Point(125, 128)
+        Me.cmb_barrio.Location = New System.Drawing.Point(201, 128)
         Me.cmb_barrio.Name = "cmb_barrio"
         Me.cmb_barrio.Size = New System.Drawing.Size(200, 25)
         Me.cmb_barrio.TabIndex = 9
@@ -151,16 +151,16 @@ Partial Class frm_CentroMedico
         '
         Me.lbl_telefono.AutoSize = True
         Me.lbl_telefono.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_telefono.Location = New System.Drawing.Point(56, 162)
+        Me.lbl_telefono.Location = New System.Drawing.Point(132, 162)
         Me.lbl_telefono.Name = "lbl_telefono"
-        Me.lbl_telefono.Size = New System.Drawing.Size(61, 17)
+        Me.lbl_telefono.Size = New System.Drawing.Size(58, 17)
         Me.lbl_telefono.TabIndex = 10
-        Me.lbl_telefono.Text = "Teléfono:"
+        Me.lbl_telefono.Text = "Teléfono"
         '
         'txt_telefono
         '
         Me.txt_telefono.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_telefono.Location = New System.Drawing.Point(125, 159)
+        Me.txt_telefono.Location = New System.Drawing.Point(201, 159)
         Me.txt_telefono.Name = "txt_telefono"
         Me.txt_telefono.Size = New System.Drawing.Size(200, 25)
         Me.txt_telefono.TabIndex = 11
@@ -169,16 +169,16 @@ Partial Class frm_CentroMedico
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(78, 193)
+        Me.Label5.Location = New System.Drawing.Point(154, 193)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(36, 17)
+        Me.Label5.Size = New System.Drawing.Size(33, 17)
         Me.Label5.TabIndex = 12
-        Me.Label5.Text = "Mail:"
+        Me.Label5.Text = "Mail"
         '
         'txt_mail
         '
         Me.txt_mail.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_mail.Location = New System.Drawing.Point(125, 190)
+        Me.txt_mail.Location = New System.Drawing.Point(201, 190)
         Me.txt_mail.Name = "txt_mail"
         Me.txt_mail.Size = New System.Drawing.Size(298, 25)
         Me.txt_mail.TabIndex = 13
@@ -205,51 +205,8 @@ Partial Class frm_CentroMedico
         Me.dvg_centrosMedicos.DefaultCellStyle = DataGridViewCellStyle2
         Me.dvg_centrosMedicos.Location = New System.Drawing.Point(29, 246)
         Me.dvg_centrosMedicos.Name = "dvg_centrosMedicos"
-        Me.dvg_centrosMedicos.Size = New System.Drawing.Size(556, 156)
+        Me.dvg_centrosMedicos.Size = New System.Drawing.Size(710, 156)
         Me.dvg_centrosMedicos.TabIndex = 14
-        '
-        'col_nroCentro
-        '
-        Me.col_nroCentro.HeaderText = "Nro_Centro"
-        Me.col_nroCentro.Name = "col_nroCentro"
-        '
-        'col_denominacion
-        '
-        Me.col_denominacion.HeaderText = "Denominacion"
-        Me.col_denominacion.Name = "col_denominacion"
-        '
-        'col_Calle
-        '
-        Me.col_Calle.HeaderText = "Domicilio"
-        Me.col_Calle.Name = "col_Calle"
-        '
-        'col_nroCalle
-        '
-        Me.col_nroCalle.HeaderText = "Nro_Calle"
-        Me.col_nroCalle.Name = "col_nroCalle"
-        Me.col_nroCalle.Visible = False
-        '
-        'col_barrio
-        '
-        Me.col_barrio.HeaderText = "Barrio"
-        Me.col_barrio.Name = "col_barrio"
-        Me.col_barrio.Visible = False
-        '
-        'col_telefono
-        '
-        Me.col_telefono.HeaderText = "Telefono"
-        Me.col_telefono.Name = "col_telefono"
-        '
-        'col_mail
-        '
-        Me.col_mail.HeaderText = "Mail"
-        Me.col_mail.Name = "col_mail"
-        Me.col_mail.Visible = False
-        '
-        'col_fechaBaja
-        '
-        Me.col_fechaBaja.HeaderText = "Fecha_Baja"
-        Me.col_fechaBaja.Name = "col_fechaBaja"
         '
         'btn_editar
         '
@@ -270,7 +227,7 @@ Partial Class frm_CentroMedico
         Me.btn_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_new.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_new.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_new.Location = New System.Drawing.Point(439, 187)
+        Me.btn_new.Location = New System.Drawing.Point(515, 187)
         Me.btn_new.Name = "btn_new"
         Me.btn_new.Size = New System.Drawing.Size(80, 32)
         Me.btn_new.TabIndex = 0
@@ -307,11 +264,59 @@ Partial Class frm_CentroMedico
         '
         Me.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_buscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_buscar.Location = New System.Drawing.Point(271, 20)
+        Me.btn_buscar.Location = New System.Drawing.Point(347, 20)
         Me.btn_buscar.Name = "btn_buscar"
         Me.btn_buscar.Size = New System.Drawing.Size(30, 30)
         Me.btn_buscar.TabIndex = 1
         Me.btn_buscar.UseVisualStyleBackColor = True
+        '
+        'col_nroCentro
+        '
+        Me.col_nroCentro.HeaderText = "Nro. Centro"
+        Me.col_nroCentro.Name = "col_nroCentro"
+        Me.col_nroCentro.Width = 110
+        '
+        'col_denominacion
+        '
+        Me.col_denominacion.HeaderText = "Denominación"
+        Me.col_denominacion.Name = "col_denominacion"
+        Me.col_denominacion.Width = 200
+        '
+        'col_Calle
+        '
+        Me.col_Calle.HeaderText = "Domicilio"
+        Me.col_Calle.Name = "col_Calle"
+        Me.col_Calle.Width = 150
+        '
+        'col_nroCalle
+        '
+        Me.col_nroCalle.HeaderText = "Nro. Calle"
+        Me.col_nroCalle.Name = "col_nroCalle"
+        Me.col_nroCalle.Visible = False
+        '
+        'col_barrio
+        '
+        Me.col_barrio.HeaderText = "Barrio"
+        Me.col_barrio.Name = "col_barrio"
+        Me.col_barrio.Visible = False
+        '
+        'col_telefono
+        '
+        Me.col_telefono.HeaderText = "Teléfono"
+        Me.col_telefono.Name = "col_telefono"
+        '
+        'col_mail
+        '
+        Me.col_mail.HeaderText = "Mail"
+        Me.col_mail.Name = "col_mail"
+        Me.col_mail.Visible = False
+        Me.col_mail.Width = 150
+        '
+        'col_fechaBaja
+        '
+        Me.col_fechaBaja.HeaderText = "Fecha de Baja"
+        Me.col_fechaBaja.Name = "col_fechaBaja"
+        Me.col_fechaBaja.Width = 150
         '
         'frm_CentroMedico
         '
@@ -319,7 +324,7 @@ Partial Class frm_CentroMedico
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(617, 463)
+        Me.ClientSize = New System.Drawing.Size(761, 463)
         Me.Controls.Add(Me.btn_editar)
         Me.Controls.Add(Me.btn_new)
         Me.Controls.Add(Me.btn_borrar)
@@ -368,6 +373,7 @@ Partial Class frm_CentroMedico
     Friend WithEvents btn_agregar As System.Windows.Forms.Button
     Friend WithEvents btn_borrar As System.Windows.Forms.Button
     Friend WithEvents btn_new As System.Windows.Forms.Button
+    Friend WithEvents btn_editar As System.Windows.Forms.Button
     Friend WithEvents col_nroCentro As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_denominacion As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_Calle As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -376,5 +382,4 @@ Partial Class frm_CentroMedico
     Friend WithEvents col_telefono As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_mail As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_fechaBaja As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents btn_editar As System.Windows.Forms.Button
 End Class
