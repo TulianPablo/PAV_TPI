@@ -53,6 +53,7 @@
     Private Sub frm_InicioSesion_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         If MessageBox.Show("¿Está seguro que quiere salir?", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) = Windows.Forms.DialogResult.OK Then
             e.Cancel = False
+            End
         Else
             e.Cancel = True
         End If
