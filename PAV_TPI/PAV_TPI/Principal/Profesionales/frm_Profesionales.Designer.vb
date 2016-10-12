@@ -34,18 +34,6 @@ Partial Class frm_Profesionales
         Me.lbl_fechaAlta = New System.Windows.Forms.Label()
         Me.dtp_fechaDesde = New System.Windows.Forms.DateTimePicker()
         Me.dgv_resultados = New System.Windows.Forms.DataGridView()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.box_datosPersonales = New System.Windows.Forms.GroupBox()
-        Me.txt_matricula = New System.Windows.Forms.MaskedTextBox()
-        Me.lbl_nomAfiliado = New System.Windows.Forms.Label()
-        Me.lbl_apeAfiliado = New System.Windows.Forms.Label()
-        Me.lbl_tipoDoc = New System.Windows.Forms.Label()
-        Me.lbl_nroDoc = New System.Windows.Forms.Label()
-        Me.cbo_tipoDoc = New System.Windows.Forms.ComboBox()
-        Me.txt_nroDoc = New System.Windows.Forms.MaskedTextBox()
-        Me.txt_nombre = New System.Windows.Forms.TextBox()
-        Me.txt_apellido = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.matricula = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -58,6 +46,18 @@ Partial Class frm_Profesionales
         Me.col_telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_fechaAlta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_fechaBaja = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.box_datosPersonales = New System.Windows.Forms.GroupBox()
+        Me.txt_matricula = New System.Windows.Forms.MaskedTextBox()
+        Me.lbl_nomAfiliado = New System.Windows.Forms.Label()
+        Me.lbl_apeAfiliado = New System.Windows.Forms.Label()
+        Me.lbl_tipoDoc = New System.Windows.Forms.Label()
+        Me.lbl_nroDoc = New System.Windows.Forms.Label()
+        Me.cbo_tipoDoc = New System.Windows.Forms.ComboBox()
+        Me.txt_nroDoc = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_nombre = New System.Windows.Forms.TextBox()
+        Me.txt_apellido = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         CType(Me.dgv_resultados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.box_datosPersonales.SuspendLayout()
         Me.SuspendLayout()
@@ -177,6 +177,80 @@ Partial Class frm_Profesionales
         Me.dgv_resultados.Name = "dgv_resultados"
         Me.dgv_resultados.Size = New System.Drawing.Size(1054, 275)
         Me.dgv_resultados.TabIndex = 8
+        '
+        'matricula
+        '
+        Me.matricula.HeaderText = "Matrícula"
+        Me.matricula.Name = "matricula"
+        '
+        'col_nombre
+        '
+        Me.col_nombre.HeaderText = "Nombre"
+        Me.col_nombre.Name = "col_nombre"
+        Me.col_nombre.Width = 220
+        '
+        'col_apellido
+        '
+        Me.col_apellido.HeaderText = "Apellido"
+        Me.col_apellido.Name = "col_apellido"
+        Me.col_apellido.Width = 220
+        '
+        'col_tipoDoc
+        '
+        Me.col_tipoDoc.HeaderText = "Tipo Documento"
+        Me.col_tipoDoc.Name = "col_tipoDoc"
+        Me.col_tipoDoc.Width = 150
+        '
+        'col_nroDoc
+        '
+        Me.col_nroDoc.HeaderText = "Nro. Documento"
+        Me.col_nroDoc.Name = "col_nroDoc"
+        Me.col_nroDoc.Width = 150
+        '
+        'col_fechaNac
+        '
+        Me.col_fechaNac.HeaderText = "Fecha de Nacimiento"
+        Me.col_fechaNac.Name = "col_fechaNac"
+        Me.col_fechaNac.Visible = False
+        Me.col_fechaNac.Width = 200
+        '
+        'col_calle
+        '
+        Me.col_calle.HeaderText = "Calle"
+        Me.col_calle.Name = "col_calle"
+        Me.col_calle.Visible = False
+        Me.col_calle.Width = 200
+        '
+        'col_nroCalle
+        '
+        Me.col_nroCalle.HeaderText = "Nro."
+        Me.col_nroCalle.Name = "col_nroCalle"
+        Me.col_nroCalle.Visible = False
+        Me.col_nroCalle.Width = 50
+        '
+        'col_barrio
+        '
+        Me.col_barrio.HeaderText = "Barrio"
+        Me.col_barrio.Name = "col_barrio"
+        Me.col_barrio.Visible = False
+        '
+        'col_telefono
+        '
+        Me.col_telefono.HeaderText = "Teléfono"
+        Me.col_telefono.Name = "col_telefono"
+        Me.col_telefono.Visible = False
+        '
+        'col_fechaAlta
+        '
+        Me.col_fechaAlta.HeaderText = "Fecha Alta"
+        Me.col_fechaAlta.Name = "col_fechaAlta"
+        Me.col_fechaAlta.Width = 150
+        '
+        'col_fechaBaja
+        '
+        Me.col_fechaBaja.HeaderText = "Fecha Baja"
+        Me.col_fechaBaja.Name = "col_fechaBaja"
+        Me.col_fechaBaja.Width = 150
         '
         'Label2
         '
@@ -311,80 +385,6 @@ Partial Class frm_Profesionales
         Me.Label1.Size = New System.Drawing.Size(62, 17)
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Matrícula"
-        '
-        'matricula
-        '
-        Me.matricula.HeaderText = "Matrícula"
-        Me.matricula.Name = "matricula"
-        '
-        'col_nombre
-        '
-        Me.col_nombre.HeaderText = "Nombre"
-        Me.col_nombre.Name = "col_nombre"
-        Me.col_nombre.Width = 220
-        '
-        'col_apellido
-        '
-        Me.col_apellido.HeaderText = "Apellido"
-        Me.col_apellido.Name = "col_apellido"
-        Me.col_apellido.Width = 220
-        '
-        'col_tipoDoc
-        '
-        Me.col_tipoDoc.HeaderText = "Tipo Documento"
-        Me.col_tipoDoc.Name = "col_tipoDoc"
-        Me.col_tipoDoc.Width = 150
-        '
-        'col_nroDoc
-        '
-        Me.col_nroDoc.HeaderText = "Nro. Documento"
-        Me.col_nroDoc.Name = "col_nroDoc"
-        Me.col_nroDoc.Width = 150
-        '
-        'col_fechaNac
-        '
-        Me.col_fechaNac.HeaderText = "Fecha de Nacimiento"
-        Me.col_fechaNac.Name = "col_fechaNac"
-        Me.col_fechaNac.Visible = False
-        Me.col_fechaNac.Width = 200
-        '
-        'col_calle
-        '
-        Me.col_calle.HeaderText = "Calle"
-        Me.col_calle.Name = "col_calle"
-        Me.col_calle.Visible = False
-        Me.col_calle.Width = 200
-        '
-        'col_nroCalle
-        '
-        Me.col_nroCalle.HeaderText = "Nro."
-        Me.col_nroCalle.Name = "col_nroCalle"
-        Me.col_nroCalle.Visible = False
-        Me.col_nroCalle.Width = 50
-        '
-        'col_barrio
-        '
-        Me.col_barrio.HeaderText = "Barrio"
-        Me.col_barrio.Name = "col_barrio"
-        Me.col_barrio.Visible = False
-        '
-        'col_telefono
-        '
-        Me.col_telefono.HeaderText = "Teléfono"
-        Me.col_telefono.Name = "col_telefono"
-        Me.col_telefono.Visible = False
-        '
-        'col_fechaAlta
-        '
-        Me.col_fechaAlta.HeaderText = "Fecha Alta"
-        Me.col_fechaAlta.Name = "col_fechaAlta"
-        Me.col_fechaAlta.Width = 150
-        '
-        'col_fechaBaja
-        '
-        Me.col_fechaBaja.HeaderText = "Fecha Baja"
-        Me.col_fechaBaja.Name = "col_fechaBaja"
-        Me.col_fechaBaja.Width = 150
         '
         'frm_Profesionales
         '

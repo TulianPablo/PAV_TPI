@@ -1,11 +1,7 @@
 ﻿Public Class frm_Profesionales
     Public form_nuevoProfesional As frm_nuevoProfesional
     Public form_bajaProfesional As frm_bajaProfesional
-
-    Private Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_agregar.Click
-        form_nuevoProfesional = New frm_nuevoProfesional
-        form_nuevoProfesional.Show()
-    End Sub
+    Public form_editarProfesional As frm_editarProfesional
 
     Private Sub frm_Profesionales_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lbl_profesionales_mensaje.Visible = False
@@ -21,6 +17,16 @@
         combo.ValueMember = pk
         combo.DisplayMember = descripcion
         combo.SelectedIndex = -1
+    End Sub
+
+    Private Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_agregar.Click
+        form_nuevoProfesional = New frm_nuevoProfesional
+        form_nuevoProfesional.Show()
+    End Sub
+
+    Private Sub btn_editar_Click(sender As Object, e As EventArgs) Handles btn_editar.Click
+        form_editarProfesional = New frm_editarProfesional
+        form_editarProfesional.Show()
     End Sub
 
     Public Sub cargar_grilla_CD()
@@ -110,4 +116,37 @@
         form_bajaProfesional = New frm_bajaProfesional
         form_bajaProfesional.Show()
     End Sub
+
+
+    'PARA MODIFICAR EL COLOR DE LOS BOTONES CUANDO ESTAN DESHABILITADOS
+    Private Sub btn_agregar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_agregar.EnabledChanged
+        If (btn_agregar.Enabled = False) Then
+            btn_agregar.BackColor = Colores.GetGris
+            btn_agregar.ForeColor = Colores.GetGris
+        Else
+            btn_agregar.BackColor = Color.White
+            btn_agregar.ForeColor = Colores.GetVerdeAgua
+        End If
+    End Sub
+
+    Private Sub btn_editar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_editar.EnabledChanged
+        If (btn_editar.Enabled = False) Then
+            btn_editar.BackColor = Colores.GetGris
+            btn_editar.ForeColor = Colores.GetGris
+        Else
+            btn_editar.BackColor = Color.White
+            btn_editar.ForeColor = Colores.GetVerdeAgua
+        End If
+    End Sub
+
+    Private Sub btn_borrar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_borrar.EnabledChanged
+        If (btn_borrar.Enabled = False) Then
+            btn_borrar.BackColor = Colores.GetGris
+            btn_borrar.ForeColor = Colores.GetGris
+        Else
+            btn_borrar.BackColor = Color.White
+            btn_borrar.ForeColor = Colores.GetVerdeAgua
+        End If
+    End Sub
+
 End Class
