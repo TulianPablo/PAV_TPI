@@ -59,63 +59,107 @@
         form_Profesionales.Show()
     End Sub
 
+
+    'PARA MODIFICAR EL COLOR DE LOS BOTONES CUANDO ESTAN DESHABILITADOS
     Private Sub btn_especialidades_EnabledChanged(sender As Object, e As EventArgs) Handles btn_especialidades.EnabledChanged
         If (btn_especialidades.Enabled = False) Then
-            btn_especialidades.BackColor = Color.LightGray
+            btn_especialidades.BackColor = Colores.GetGris
+            btn_especialidades.ForeColor = Colores.GetGris
+        Else
+            btn_especialidades.BackColor = Color.White
+            btn_especialidades.ForeColor = Colores.GetVerdeAgua
         End If
     End Sub
 
     Private Sub btn_centrosMedicos_EnabledChanged(sender As Object, e As EventArgs) Handles btn_centrosMedicos.EnabledChanged
         If (btn_centrosMedicos.Enabled = False) Then
-            btn_especialidades.BackColor = Color.LightGray
+            btn_centrosMedicos.BackColor = Colores.GetGris
+            btn_centrosMedicos.ForeColor = Colores.GetGris
+        Else
+            btn_centrosMedicos.BackColor = Color.White
+            btn_centrosMedicos.ForeColor = Colores.GetVerdeAgua
         End If
     End Sub
 
     Private Sub btn_practicas_EnabledChanged(sender As Object, e As EventArgs) Handles btn_practicas.EnabledChanged
         If (btn_practicas.Enabled = False) Then
-            btn_practicas.BackColor = Color.LightGray
+            btn_practicas.BackColor = Colores.GetGris
+            btn_practicas.ForeColor = Colores.GetGris
+        Else
+            btn_practicas.BackColor = Color.White
+            btn_practicas.ForeColor = Colores.GetVerdeAgua
         End If
     End Sub
 
     Private Sub btn_afiliados_EnabledChanged(sender As Object, e As EventArgs) Handles btn_afiliados.EnabledChanged
         If (btn_afiliados.Enabled = False) Then
-            btn_afiliados.BackColor = Color.LightGray
+            btn_afiliados.BackColor = Colores.GetGris
+            btn_afiliados.ForeColor = Colores.GetGris
+        Else
+            btn_afiliados.BackColor = Color.White
+            btn_afiliados.ForeColor = Colores.GetVerdeAgua
+
         End If
     End Sub
 
     Private Sub btn_tiposAfiliados_EnabledChanged(sender As Object, e As EventArgs) Handles btn_tiposAfiliados.EnabledChanged
         If (btn_tiposAfiliados.Enabled = False) Then
-            btn_tiposAfiliados.BackColor = Color.LightGray
+            btn_tiposAfiliados.BackColor = Colores.GetGris
+            btn_tiposAfiliados.ForeColor = Colores.GetGris
+        Else
+            btn_tiposAfiliados.BackColor = Color.White
+            btn_tiposAfiliados.ForeColor = Colores.GetVerdeAgua
         End If
     End Sub
 
     Private Sub btn_profesionales_EnabledChanged(sender As Object, e As EventArgs) Handles btn_profesionales.EnabledChanged
         If (btn_profesionales.Enabled = False) Then
-            btn_profesionales.BackColor = Color.LightGray
+            btn_profesionales.BackColor = Colores.GetGris
+            btn_profesionales.ForeColor = Colores.GetGris
+        Else
+            btn_profesionales.BackColor = Color.White
+            btn_profesionales.ForeColor = Colores.GetVerdeAgua
         End If
     End Sub
 
     Private Sub btn_cuotas_Click(sender As Object, e As EventArgs) Handles btn_cuotas.Click
         If (btn_cuotas.Enabled = False) Then
-            btn_cuotas.BackColor = Color.LightGray
+            btn_cuotas.BackColor = Colores.GetGris
+            btn_cuotas.ForeColor = Colores.GetGris
+        Else
+            btn_cuotas.BackColor = Color.White
+            btn_cuotas.ForeColor = Colores.GetVerdeAgua
         End If
     End Sub
 
     Private Sub btn_informes_Click(sender As Object, e As EventArgs) Handles btn_informes.Click
         If (btn_informes.Enabled = False) Then
-            btn_informes.BackColor = Color.LightGray
+            btn_informes.BackColor = Colores.GetGris
+            btn_informes.ForeColor = Colores.GetGris
+        Else
+            btn_informes.BackColor = Color.White
+            btn_informes.ForeColor = Colores.GetVerdeAgua
         End If
     End Sub
 
     Private Sub btn_atenciones_EnabledChanged(sender As Object, e As EventArgs) Handles btn_atenciones.EnabledChanged
         If (btn_atenciones.Enabled = False) Then
-            btn_atenciones.BackColor = Color.LightGray
+            btn_atenciones.BackColor = Colores.GetGris
+            btn_atenciones.ForeColor = Colores.GetGris
+        Else
+            btn_atenciones.BackColor = Color.White
+            btn_atenciones.ForeColor = Colores.GetVerdeAgua
         End If
     End Sub
 
     Private Sub btn_pagos_Click(sender As Object, e As EventArgs) Handles btn_pagos.Click
         If (btn_pagos.Enabled = False) Then
-            btn_pagos.BackColor = Color.LightGray
+            btn_pagos.BackColor = Colores.GetGris
+            btn_pagos.ForeColor = Colores.GetGris
+        Else
+            btn_pagos.BackColor = Color.White
+            btn_pagos.ForeColor = Colores.GetVerdeAgua
         End If
     End Sub
+
 End Class

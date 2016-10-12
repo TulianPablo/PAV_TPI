@@ -87,7 +87,7 @@ Partial Class frm_principal
         Me.btn_centrosMedicos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_centrosMedicos.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_centrosMedicos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
-        Me.btn_centrosMedicos.Location = New System.Drawing.Point(13, 317)
+        Me.btn_centrosMedicos.Location = New System.Drawing.Point(309, 317)
         Me.btn_centrosMedicos.Name = "btn_centrosMedicos"
         Me.btn_centrosMedicos.Size = New System.Drawing.Size(142, 33)
         Me.btn_centrosMedicos.TabIndex = 0
@@ -101,7 +101,7 @@ Partial Class frm_principal
         Me.btn_especialidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_especialidades.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_especialidades.ForeColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
-        Me.btn_especialidades.Location = New System.Drawing.Point(161, 317)
+        Me.btn_especialidades.Location = New System.Drawing.Point(13, 317)
         Me.btn_especialidades.Name = "btn_especialidades"
         Me.btn_especialidades.Size = New System.Drawing.Size(142, 33)
         Me.btn_especialidades.TabIndex = 1
@@ -129,7 +129,7 @@ Partial Class frm_principal
         Me.btn_practicas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_practicas.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_practicas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
-        Me.btn_practicas.Location = New System.Drawing.Point(309, 317)
+        Me.btn_practicas.Location = New System.Drawing.Point(161, 317)
         Me.btn_practicas.Name = "btn_practicas"
         Me.btn_practicas.Size = New System.Drawing.Size(142, 33)
         Me.btn_practicas.TabIndex = 2
