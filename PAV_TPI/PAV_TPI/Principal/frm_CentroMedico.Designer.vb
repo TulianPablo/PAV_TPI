@@ -24,6 +24,7 @@ Partial Class frm_CentroMedico
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_CentroMedico))
         Me.lbl_nroCentroMedico = New System.Windows.Forms.Label()
         Me.txt_numero = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -339,6 +340,7 @@ Partial Class frm_CentroMedico
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txt_numero)
         Me.Controls.Add(Me.lbl_nroCentroMedico)
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "frm_CentroMedico"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Centros Médicos"
