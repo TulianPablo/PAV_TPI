@@ -18,7 +18,6 @@
         lbl_SignIn_mensaje.Visible = False
         CargarCombo(cbo_perfil, BDHelper.GetPerfiles(), "id_perfil", "nombre")
         enable_login(True)
-
     End Sub
 
     Private Sub enable_login(flag As Boolean)
@@ -151,7 +150,7 @@
         If (validar_campos()) Then  
             If (verificar_existencia(txt_SignIn_usuario.Text)) Then
                 If (registrar_usuario() = termino.aprobado) Then
-                    lbl_SignIn_mensaje.Text = "El usuario se grabo con Exito."
+                    lbl_SignIn_mensaje.Text = "El usuario se registró con éxito."
                     lbl_SignIn_mensaje.Visible = True
                 End If
             Else
