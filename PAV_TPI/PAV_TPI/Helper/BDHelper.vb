@@ -1,13 +1,15 @@
 ﻿Imports System
 Imports System.Data
 Imports System.Data.SqlClient
+Imports System.Configuration
 
 Public Class BDHelper
     ' La clase BDHelper permite quitar del código del formulario todo lo relacionado con el acceso a bd.
     ' Permite ejecutar comandos sql y retornar resultados a la capa de datos.
     ' Implementa el patrón SINGLETON, que garantiza tener solo una instancia de esta clase.
 
-    Private string_conexion As String = "Data Source=EQUIPO-PC\SQLEXPRESS;Integrated Security=True;Initial Catalog=DB_ObraSocial"
+    Private string_conexion As String = "Data Source=AGUSTINA-PC;Integrated Security=True;Initial Catalog=DB_ObraSocial"
+    'Private string_conexion As String = ConfigurationManager.ConnectionStrings("DB_ObraSocial").ConfigurationString
     Private Shared instance As BDHelper 'Unica instancia de la clase
 
     Public Shared Function getDBHelper() As BDHelper
@@ -73,7 +75,7 @@ Public Class BDHelper
     End Function
 
     Shared Function GetBarrios() As DataTable
-        Dim strSQL As String = "Select id_barrio, nombre from Barrio"
+        Dim strSQL As String = "SELECT id_barrio, nombre FROM Barrio"
         Return BDHelper.getDBHelper.ConsultaSQL(strSQL)
 
     End Function
@@ -84,21 +86,18 @@ Public Class BDHelper
     End Function
 
     Shared Function GetTipoAfiliado() As DataTable
-        Dim strSQL As String = "Select id_tipoAfiliado, nombre from TipoAfiliado"
+        Dim strSQL As String = "SELECT id_tipoAfiliado, nombre FROMm TipoAfiliado"
         Return BDHelper.getDBHelper.ConsultaSQL(strSQL)
-
     End Function
 
     Shared Function GetTipoDoc() As DataTable
-        Dim strSQL As String = "Select id_tipoDoc, nombre from TipoDoc"
+        Dim strSQL As String = "SELECT id_tipoDoc, nombre FROM TipoDoc"
         Return BDHelper.getDBHelper.ConsultaSQL(strSQL)
-
     End Function
 
     Shared Function GetPerfiles() As DataTable
-        Dim strSQL As String = "Select * from Perfil"
+        Dim strSQL As String = "SELECT * FROM Perfil"
         Return BDHelper.getDBHelper.ConsultaSQL(strSQL)
-
     End Function
 
     Shared Function GetCentroMedico(ByVal numero As String) As CentroMedico
@@ -121,7 +120,7 @@ Public Class BDHelper
             Dim reader As SqlDataReader = cmd.ExecuteReader()
             ' Mientras el SqlDataReader tenga datos
             If (reader.Read()) Then
-                CentroMedico.nro_centroMedico = reader.Item("nro_centroMedico")
+                centroMedico.nro_centroMedico = reader.Item("nro_centroMedico")
                 centroMedico.denominacion = reader.Item("denominacion")
                 centroMedico.calle = reader.Item("calle")
                 centroMedico.numero = reader.Item("numero")
@@ -129,9 +128,6 @@ Public Class BDHelper
                 centroMedico.telefono = reader.Item("telefono")
                 centroMedico.mail = reader.Item("mail")
                 'centroMedico.fecha_baja = Convert.ToDateTime(reader.Item("fecha_baja"))
-
-
-
             End If
         Catch ex As Exception
             Throw ex
@@ -179,7 +175,6 @@ Public Class BDHelper
     Shared Function GetPracticas() As DataTable
         Dim strSQL As String = "Select id_practica, nombre from Practica"
         Return BDHelper.getDBHelper.ConsultaSQL(strSQL)
-
     End Function
 
 End Class
