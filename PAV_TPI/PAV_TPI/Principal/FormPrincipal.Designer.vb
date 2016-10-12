@@ -51,7 +51,7 @@ Partial Class frm_principal
         Me.btn_atenciones.Name = "btn_atenciones"
         Me.btn_atenciones.Size = New System.Drawing.Size(218, 57)
         Me.btn_atenciones.TabIndex = 8
-        Me.btn_atenciones.Text = "Atenciones"
+        Me.btn_atenciones.Text = "Atenciones Médicas"
         Me.btn_atenciones.UseVisualStyleBackColor = False
         '
         'btn_pagos
