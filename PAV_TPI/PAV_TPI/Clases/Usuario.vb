@@ -8,4 +8,5 @@
     Public Property fecha_alta As Date
     Public Property fecha_baja As Date
     Public Property id_perfil As Integer
+
 End Class
