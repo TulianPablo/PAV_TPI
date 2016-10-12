@@ -18,6 +18,8 @@
         txt_telefono.Text = formConsulta.dgv_resultados.CurrentRow.Cells(8).Value
         cbo_tipoAfiliado.SelectedValue = formConsulta.dgv_resultados.CurrentRow.Cells(9).Value
         txt_fechaAlta.Text = formConsulta.dgv_resultados.CurrentRow.Cells(10).Value
+
+
         txt_fechaAlta.Enabled = False
 
         cbo_tipoDoc.Enabled = False
