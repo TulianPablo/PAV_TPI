@@ -50,7 +50,7 @@ Partial Class frm_principal
         Me.btn_atenciones.Location = New System.Drawing.Point(480, 415)
         Me.btn_atenciones.Name = "btn_atenciones"
         Me.btn_atenciones.Size = New System.Drawing.Size(218, 57)
-        Me.btn_atenciones.TabIndex = 1
+        Me.btn_atenciones.TabIndex = 8
         Me.btn_atenciones.Text = "Atenciones"
         Me.btn_atenciones.UseVisualStyleBackColor = False
         '
@@ -64,7 +64,7 @@ Partial Class frm_principal
         Me.btn_pagos.Location = New System.Drawing.Point(480, 478)
         Me.btn_pagos.Name = "btn_pagos"
         Me.btn_pagos.Size = New System.Drawing.Size(218, 57)
-        Me.btn_pagos.TabIndex = 2
+        Me.btn_pagos.TabIndex = 9
         Me.btn_pagos.Text = "Pagos a Centros Médicos"
         Me.btn_pagos.UseVisualStyleBackColor = False
         '
@@ -77,7 +77,7 @@ Partial Class frm_principal
         Me.lbl_obraSocial.Location = New System.Drawing.Point(0, 254)
         Me.lbl_obraSocial.Name = "lbl_obraSocial"
         Me.lbl_obraSocial.Size = New System.Drawing.Size(1205, 48)
-        Me.lbl_obraSocial.TabIndex = 3
+        Me.lbl_obraSocial.TabIndex = 13
         Me.lbl_obraSocial.Text = " Obra Social"
         '
         'btn_centrosMedicos
@@ -90,7 +90,7 @@ Partial Class frm_principal
         Me.btn_centrosMedicos.Location = New System.Drawing.Point(13, 317)
         Me.btn_centrosMedicos.Name = "btn_centrosMedicos"
         Me.btn_centrosMedicos.Size = New System.Drawing.Size(142, 33)
-        Me.btn_centrosMedicos.TabIndex = 12
+        Me.btn_centrosMedicos.TabIndex = 0
         Me.btn_centrosMedicos.Text = "Centros Médicos"
         Me.btn_centrosMedicos.UseVisualStyleBackColor = False
         '
@@ -104,7 +104,7 @@ Partial Class frm_principal
         Me.btn_especialidades.Location = New System.Drawing.Point(161, 317)
         Me.btn_especialidades.Name = "btn_especialidades"
         Me.btn_especialidades.Size = New System.Drawing.Size(142, 33)
-        Me.btn_especialidades.TabIndex = 13
+        Me.btn_especialidades.TabIndex = 1
         Me.btn_especialidades.Text = "Especialidades"
         Me.btn_especialidades.UseVisualStyleBackColor = False
         '
@@ -118,7 +118,7 @@ Partial Class frm_principal
         Me.btn_afiliados.Location = New System.Drawing.Point(457, 317)
         Me.btn_afiliados.Name = "btn_afiliados"
         Me.btn_afiliados.Size = New System.Drawing.Size(142, 33)
-        Me.btn_afiliados.TabIndex = 14
+        Me.btn_afiliados.TabIndex = 3
         Me.btn_afiliados.Text = "Afiliados"
         Me.btn_afiliados.UseVisualStyleBackColor = False
         '
@@ -132,7 +132,7 @@ Partial Class frm_principal
         Me.btn_practicas.Location = New System.Drawing.Point(309, 317)
         Me.btn_practicas.Name = "btn_practicas"
         Me.btn_practicas.Size = New System.Drawing.Size(142, 33)
-        Me.btn_practicas.TabIndex = 15
+        Me.btn_practicas.TabIndex = 2
         Me.btn_practicas.Text = "Prácticas"
         Me.btn_practicas.UseVisualStyleBackColor = False
         '
@@ -146,7 +146,7 @@ Partial Class frm_principal
         Me.btn_cuotas.Location = New System.Drawing.Point(901, 317)
         Me.btn_cuotas.Name = "btn_cuotas"
         Me.btn_cuotas.Size = New System.Drawing.Size(142, 33)
-        Me.btn_cuotas.TabIndex = 16
+        Me.btn_cuotas.TabIndex = 6
         Me.btn_cuotas.Text = "Cuotas"
         Me.btn_cuotas.UseVisualStyleBackColor = False
         '
@@ -160,7 +160,7 @@ Partial Class frm_principal
         Me.btn_tiposAfiliados.Location = New System.Drawing.Point(605, 317)
         Me.btn_tiposAfiliados.Name = "btn_tiposAfiliados"
         Me.btn_tiposAfiliados.Size = New System.Drawing.Size(142, 33)
-        Me.btn_tiposAfiliados.TabIndex = 17
+        Me.btn_tiposAfiliados.TabIndex = 4
         Me.btn_tiposAfiliados.Text = "Tipos de afiliados"
         Me.btn_tiposAfiliados.UseVisualStyleBackColor = False
         '
@@ -174,7 +174,7 @@ Partial Class frm_principal
         Me.btn_informes.Location = New System.Drawing.Point(1049, 317)
         Me.btn_informes.Name = "btn_informes"
         Me.btn_informes.Size = New System.Drawing.Size(142, 33)
-        Me.btn_informes.TabIndex = 18
+        Me.btn_informes.TabIndex = 7
         Me.btn_informes.Text = "Informes"
         Me.btn_informes.UseVisualStyleBackColor = False
         '
@@ -183,11 +183,11 @@ Partial Class frm_principal
         Me.lbl_menu.BackColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
         Me.lbl_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.lbl_menu.Font = New System.Drawing.Font("Segoe UI Semilight", 18.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_menu.ForeColor = System.Drawing.Color.White
+        Me.lbl_menu.ForeColor = System.Drawing.Color.DarkGray
         Me.lbl_menu.Location = New System.Drawing.Point(0, 302)
         Me.lbl_menu.Name = "lbl_menu"
         Me.lbl_menu.Size = New System.Drawing.Size(1205, 68)
-        Me.lbl_menu.TabIndex = 11
+        Me.lbl_menu.TabIndex = 14
         '
         'lbl_usuarioLogueado
         '
@@ -197,7 +197,7 @@ Partial Class frm_principal
         Me.lbl_usuarioLogueado.Location = New System.Drawing.Point(864, 267)
         Me.lbl_usuarioLogueado.Name = "lbl_usuarioLogueado"
         Me.lbl_usuarioLogueado.Size = New System.Drawing.Size(261, 23)
-        Me.lbl_usuarioLogueado.TabIndex = 20
+        Me.lbl_usuarioLogueado.TabIndex = 10
         Me.lbl_usuarioLogueado.Text = "lbl_usuarioLogueado"
         Me.lbl_usuarioLogueado.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
@@ -210,7 +210,7 @@ Partial Class frm_principal
         Me.Label1.Location = New System.Drawing.Point(1131, 258)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(40, 40)
-        Me.Label1.TabIndex = 21
+        Me.Label1.TabIndex = 11
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'lbl_portada
@@ -220,7 +220,7 @@ Partial Class frm_principal
         Me.lbl_portada.Location = New System.Drawing.Point(-3, -2)
         Me.lbl_portada.Name = "lbl_portada"
         Me.lbl_portada.Size = New System.Drawing.Size(1208, 256)
-        Me.lbl_portada.TabIndex = 0
+        Me.lbl_portada.TabIndex = 12
         '
         'btn_profesionales
         '
@@ -232,7 +232,7 @@ Partial Class frm_principal
         Me.btn_profesionales.Location = New System.Drawing.Point(753, 317)
         Me.btn_profesionales.Name = "btn_profesionales"
         Me.btn_profesionales.Size = New System.Drawing.Size(142, 33)
-        Me.btn_profesionales.TabIndex = 22
+        Me.btn_profesionales.TabIndex = 5
         Me.btn_profesionales.Text = "Profesionales"
         Me.btn_profesionales.UseVisualStyleBackColor = False
         '
@@ -257,6 +257,7 @@ Partial Class frm_principal
         Me.Controls.Add(Me.btn_pagos)
         Me.Controls.Add(Me.btn_atenciones)
         Me.Controls.Add(Me.lbl_portada)
+        Me.ForeColor = System.Drawing.SystemColors.AppWorkspace
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
         Me.Name = "frm_principal"

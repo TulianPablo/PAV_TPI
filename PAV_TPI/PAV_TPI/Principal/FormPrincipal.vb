@@ -58,4 +58,64 @@
         form_Profesionales = New frm_Profesionales
         form_Profesionales.Show()
     End Sub
+
+    Private Sub btn_especialidades_EnabledChanged(sender As Object, e As EventArgs) Handles btn_especialidades.EnabledChanged
+        If (btn_especialidades.Enabled = False) Then
+            btn_especialidades.BackColor = Color.LightGray
+        End If
+    End Sub
+
+    Private Sub btn_centrosMedicos_EnabledChanged(sender As Object, e As EventArgs) Handles btn_centrosMedicos.EnabledChanged
+        If (btn_centrosMedicos.Enabled = False) Then
+            btn_especialidades.BackColor = Color.LightGray
+        End If
+    End Sub
+
+    Private Sub btn_practicas_EnabledChanged(sender As Object, e As EventArgs) Handles btn_practicas.EnabledChanged
+        If (btn_practicas.Enabled = False) Then
+            btn_practicas.BackColor = Color.LightGray
+        End If
+    End Sub
+
+    Private Sub btn_afiliados_EnabledChanged(sender As Object, e As EventArgs) Handles btn_afiliados.EnabledChanged
+        If (btn_afiliados.Enabled = False) Then
+            btn_afiliados.BackColor = Color.LightGray
+        End If
+    End Sub
+
+    Private Sub btn_tiposAfiliados_EnabledChanged(sender As Object, e As EventArgs) Handles btn_tiposAfiliados.EnabledChanged
+        If (btn_tiposAfiliados.Enabled = False) Then
+            btn_tiposAfiliados.BackColor = Color.LightGray
+        End If
+    End Sub
+
+    Private Sub btn_profesionales_EnabledChanged(sender As Object, e As EventArgs) Handles btn_profesionales.EnabledChanged
+        If (btn_profesionales.Enabled = False) Then
+            btn_profesionales.BackColor = Color.LightGray
+        End If
+    End Sub
+
+    Private Sub btn_cuotas_Click(sender As Object, e As EventArgs) Handles btn_cuotas.Click
+        If (btn_cuotas.Enabled = False) Then
+            btn_cuotas.BackColor = Color.LightGray
+        End If
+    End Sub
+
+    Private Sub btn_informes_Click(sender As Object, e As EventArgs) Handles btn_informes.Click
+        If (btn_informes.Enabled = False) Then
+            btn_informes.BackColor = Color.LightGray
+        End If
+    End Sub
+
+    Private Sub btn_atenciones_EnabledChanged(sender As Object, e As EventArgs) Handles btn_atenciones.EnabledChanged
+        If (btn_atenciones.Enabled = False) Then
+            btn_atenciones.BackColor = Color.LightGray
+        End If
+    End Sub
+
+    Private Sub btn_pagos_Click(sender As Object, e As EventArgs) Handles btn_pagos.Click
+        If (btn_pagos.Enabled = False) Then
+            btn_pagos.BackColor = Color.LightGray
+        End If
+    End Sub
 End Class
