@@ -98,6 +98,7 @@
         userLog = validar_existencia(txt_LogIn_usuario.Text, txt_LogIn_contraseña.Text)
         If (userLog IsNot Nothing) Then
             frm_principal.lbl_usuarioLogueado.Text = txt_LogIn_usuario.Text
+
             'Obtencion del perfil logueado 
             perfil_log = getPerfilLogueado(userLog.id_perfil)
             habilitar_deshabilitarPorPerfil(perfil_log)
