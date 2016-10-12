@@ -61,7 +61,7 @@ Partial Class frm_nuevoProfesional
         Me.txt_apellido.Location = New System.Drawing.Point(100, 97)
         Me.txt_apellido.Name = "txt_apellido"
         Me.txt_apellido.Size = New System.Drawing.Size(247, 25)
-        Me.txt_apellido.TabIndex = 51
+        Me.txt_apellido.TabIndex = 2
         '
         'txt_nombre
         '
@@ -69,7 +69,7 @@ Partial Class frm_nuevoProfesional
         Me.txt_nombre.Location = New System.Drawing.Point(100, 66)
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(247, 25)
-        Me.txt_nombre.TabIndex = 50
+        Me.txt_nombre.TabIndex = 1
         '
         'txt_nroDoc
         '
@@ -78,7 +78,7 @@ Partial Class frm_nuevoProfesional
         Me.txt_nroDoc.Mask = "99999999"
         Me.txt_nroDoc.Name = "txt_nroDoc"
         Me.txt_nroDoc.Size = New System.Drawing.Size(182, 25)
-        Me.txt_nroDoc.TabIndex = 43
+        Me.txt_nroDoc.TabIndex = 4
         Me.txt_nroDoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'lbl_profesionales_mensaje
@@ -89,7 +89,7 @@ Partial Class frm_nuevoProfesional
         Me.lbl_profesionales_mensaje.Location = New System.Drawing.Point(71, 461)
         Me.lbl_profesionales_mensaje.Name = "lbl_profesionales_mensaje"
         Me.lbl_profesionales_mensaje.Size = New System.Drawing.Size(167, 17)
-        Me.lbl_profesionales_mensaje.TabIndex = 49
+        Me.lbl_profesionales_mensaje.TabIndex = 7
         Me.lbl_profesionales_mensaje.Text = "lbl_profesionales_mensaje"
         '
         'dtp_fechaNac
@@ -100,7 +100,7 @@ Partial Class frm_nuevoProfesional
         Me.dtp_fechaNac.MaxDate = New Date(2016, 10, 9, 0, 0, 0, 0)
         Me.dtp_fechaNac.Name = "dtp_fechaNac"
         Me.dtp_fechaNac.Size = New System.Drawing.Size(182, 25)
-        Me.dtp_fechaNac.TabIndex = 48
+        Me.dtp_fechaNac.TabIndex = 5
         Me.dtp_fechaNac.Value = New Date(2016, 10, 9, 0, 0, 0, 0)
         '
         'btn_cancelar
@@ -111,7 +111,7 @@ Partial Class frm_nuevoProfesional
         Me.btn_cancelar.Location = New System.Drawing.Point(445, 495)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(96, 29)
-        Me.btn_cancelar.TabIndex = 47
+        Me.btn_cancelar.TabIndex = 4
         Me.btn_cancelar.Text = "Cancelar"
         Me.btn_cancelar.UseVisualStyleBackColor = True
         '
@@ -123,7 +123,7 @@ Partial Class frm_nuevoProfesional
         Me.btn_aceptar.Location = New System.Drawing.Point(333, 495)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(96, 29)
-        Me.btn_aceptar.TabIndex = 46
+        Me.btn_aceptar.TabIndex = 3
         Me.btn_aceptar.Text = "Aceptar"
         Me.btn_aceptar.UseVisualStyleBackColor = True
         '
@@ -134,7 +134,7 @@ Partial Class frm_nuevoProfesional
         Me.cbo_tipoDoc.Location = New System.Drawing.Point(522, 33)
         Me.cbo_tipoDoc.Name = "cbo_tipoDoc"
         Me.cbo_tipoDoc.Size = New System.Drawing.Size(182, 25)
-        Me.cbo_tipoDoc.TabIndex = 45
+        Me.cbo_tipoDoc.TabIndex = 3
         '
         'txt_fechaAlta
         '
@@ -143,7 +143,7 @@ Partial Class frm_nuevoProfesional
         Me.txt_fechaAlta.Mask = "00/00/0000"
         Me.txt_fechaAlta.Name = "txt_fechaAlta"
         Me.txt_fechaAlta.Size = New System.Drawing.Size(100, 25)
-        Me.txt_fechaAlta.TabIndex = 22
+        Me.txt_fechaAlta.TabIndex = 2
         Me.txt_fechaAlta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txt_fechaAlta.ValidatingType = GetType(Date)
         '
@@ -154,7 +154,7 @@ Partial Class frm_nuevoProfesional
         Me.lbl_fechaAlta.Location = New System.Drawing.Point(96, 414)
         Me.lbl_fechaAlta.Name = "lbl_fechaAlta"
         Me.lbl_fechaAlta.Size = New System.Drawing.Size(67, 17)
-        Me.lbl_fechaAlta.TabIndex = 17
+        Me.lbl_fechaAlta.TabIndex = 5
         Me.lbl_fechaAlta.Text = "Fecha Alta"
         '
         'lbl_telefono
@@ -165,7 +165,7 @@ Partial Class frm_nuevoProfesional
         Me.lbl_telefono.Location = New System.Drawing.Point(458, 129)
         Me.lbl_telefono.Name = "lbl_telefono"
         Me.lbl_telefono.Size = New System.Drawing.Size(58, 17)
-        Me.lbl_telefono.TabIndex = 23
+        Me.lbl_telefono.TabIndex = 13
         Me.lbl_telefono.Text = "Teléfono"
         '
         'lbl_nroDoc
@@ -176,7 +176,7 @@ Partial Class frm_nuevoProfesional
         Me.lbl_nroDoc.Location = New System.Drawing.Point(414, 67)
         Me.lbl_nroDoc.Name = "lbl_nroDoc"
         Me.lbl_nroDoc.Size = New System.Drawing.Size(105, 17)
-        Me.lbl_nroDoc.TabIndex = 41
+        Me.lbl_nroDoc.TabIndex = 11
         Me.lbl_nroDoc.Text = "Nro. Documento"
         '
         'lbl_tipoDoc
@@ -187,7 +187,7 @@ Partial Class frm_nuevoProfesional
         Me.lbl_tipoDoc.Location = New System.Drawing.Point(414, 38)
         Me.lbl_tipoDoc.Name = "lbl_tipoDoc"
         Me.lbl_tipoDoc.Size = New System.Drawing.Size(105, 17)
-        Me.lbl_tipoDoc.TabIndex = 40
+        Me.lbl_tipoDoc.TabIndex = 10
         Me.lbl_tipoDoc.Text = "Tipo Documento"
         '
         'lbl_fechaNac
@@ -198,7 +198,7 @@ Partial Class frm_nuevoProfesional
         Me.lbl_fechaNac.Location = New System.Drawing.Point(382, 100)
         Me.lbl_fechaNac.Name = "lbl_fechaNac"
         Me.lbl_fechaNac.Size = New System.Drawing.Size(130, 17)
-        Me.lbl_fechaNac.TabIndex = 39
+        Me.lbl_fechaNac.TabIndex = 12
         Me.lbl_fechaNac.Text = "Fecha de Nacimiento"
         '
         'lbl_apeAfiliado
@@ -209,7 +209,7 @@ Partial Class frm_nuevoProfesional
         Me.lbl_apeAfiliado.Location = New System.Drawing.Point(37, 103)
         Me.lbl_apeAfiliado.Name = "lbl_apeAfiliado"
         Me.lbl_apeAfiliado.Size = New System.Drawing.Size(56, 17)
-        Me.lbl_apeAfiliado.TabIndex = 38
+        Me.lbl_apeAfiliado.TabIndex = 9
         Me.lbl_apeAfiliado.Text = "Apellido"
         '
         'lbl_nomAfiliado
@@ -220,7 +220,7 @@ Partial Class frm_nuevoProfesional
         Me.lbl_nomAfiliado.Location = New System.Drawing.Point(37, 69)
         Me.lbl_nomAfiliado.Name = "lbl_nomAfiliado"
         Me.lbl_nomAfiliado.Size = New System.Drawing.Size(57, 17)
-        Me.lbl_nomAfiliado.TabIndex = 37
+        Me.lbl_nomAfiliado.TabIndex = 8
         Me.lbl_nomAfiliado.Text = "Nombre"
         '
         'Label1
@@ -231,7 +231,7 @@ Partial Class frm_nuevoProfesional
         Me.Label1.Location = New System.Drawing.Point(31, 38)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(62, 17)
-        Me.Label1.TabIndex = 53
+        Me.Label1.TabIndex = 7
         Me.Label1.Text = "Matrícula"
         '
         'txt_matricula
@@ -241,7 +241,7 @@ Partial Class frm_nuevoProfesional
         Me.txt_matricula.Mask = "99999"
         Me.txt_matricula.Name = "txt_matricula"
         Me.txt_matricula.Size = New System.Drawing.Size(100, 25)
-        Me.txt_matricula.TabIndex = 54
+        Me.txt_matricula.TabIndex = 0
         Me.txt_matricula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txt_matricula.ValidatingType = GetType(Integer)
         '
@@ -252,7 +252,7 @@ Partial Class frm_nuevoProfesional
         Me.txt_telefono.Mask = "(999)000-000-000"
         Me.txt_telefono.Name = "txt_telefono"
         Me.txt_telefono.Size = New System.Drawing.Size(182, 25)
-        Me.txt_telefono.TabIndex = 55
+        Me.txt_telefono.TabIndex = 6
         Me.txt_telefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
@@ -263,7 +263,7 @@ Partial Class frm_nuevoProfesional
         Me.Label2.Location = New System.Drawing.Point(24, 23)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(211, 32)
-        Me.Label2.TabIndex = 56
+        Me.Label2.TabIndex = 6
         Me.Label2.Text = "Nuevo Profesional"
         '
         'cbo_barrio
@@ -273,7 +273,7 @@ Partial Class frm_nuevoProfesional
         Me.cbo_barrio.Location = New System.Drawing.Point(100, 66)
         Me.cbo_barrio.Name = "cbo_barrio"
         Me.cbo_barrio.Size = New System.Drawing.Size(247, 25)
-        Me.cbo_barrio.TabIndex = 62
+        Me.cbo_barrio.TabIndex = 2
         '
         'lbl_barrio
         '
@@ -283,7 +283,7 @@ Partial Class frm_nuevoProfesional
         Me.lbl_barrio.Location = New System.Drawing.Point(46, 69)
         Me.lbl_barrio.Name = "lbl_barrio"
         Me.lbl_barrio.Size = New System.Drawing.Size(43, 17)
-        Me.lbl_barrio.TabIndex = 61
+        Me.lbl_barrio.TabIndex = 5
         Me.lbl_barrio.Text = "Barrio"
         '
         'lbl_calle
@@ -294,7 +294,7 @@ Partial Class frm_nuevoProfesional
         Me.lbl_calle.Location = New System.Drawing.Point(53, 38)
         Me.lbl_calle.Name = "lbl_calle"
         Me.lbl_calle.Size = New System.Drawing.Size(36, 17)
-        Me.lbl_calle.TabIndex = 60
+        Me.lbl_calle.TabIndex = 3
         Me.lbl_calle.Text = "Calle"
         '
         'lbl_nroCalle
@@ -305,7 +305,7 @@ Partial Class frm_nuevoProfesional
         Me.lbl_nroCalle.Location = New System.Drawing.Point(377, 38)
         Me.lbl_nroCalle.Name = "lbl_nroCalle"
         Me.lbl_nroCalle.Size = New System.Drawing.Size(34, 17)
-        Me.lbl_nroCalle.TabIndex = 59
+        Me.lbl_nroCalle.TabIndex = 4
         Me.lbl_nroCalle.Text = "Nro."
         '
         'txt_calle
@@ -314,7 +314,7 @@ Partial Class frm_nuevoProfesional
         Me.txt_calle.Location = New System.Drawing.Point(100, 35)
         Me.txt_calle.Name = "txt_calle"
         Me.txt_calle.Size = New System.Drawing.Size(247, 25)
-        Me.txt_calle.TabIndex = 58
+        Me.txt_calle.TabIndex = 0
         '
         'box_datosPersonales
         '
@@ -338,7 +338,7 @@ Partial Class frm_nuevoProfesional
         Me.box_datosPersonales.Location = New System.Drawing.Point(74, 80)
         Me.box_datosPersonales.Name = "box_datosPersonales"
         Me.box_datosPersonales.Size = New System.Drawing.Size(736, 182)
-        Me.box_datosPersonales.TabIndex = 63
+        Me.box_datosPersonales.TabIndex = 0
         Me.box_datosPersonales.TabStop = False
         Me.box_datosPersonales.Text = "Datos personales"
         '
@@ -356,7 +356,7 @@ Partial Class frm_nuevoProfesional
         Me.GroupBox1.Location = New System.Drawing.Point(74, 280)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(736, 111)
-        Me.GroupBox1.TabIndex = 64
+        Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Domicilio"
         '
@@ -366,7 +366,8 @@ Partial Class frm_nuevoProfesional
         Me.txt_nroCalle.Mask = "9999"
         Me.txt_nroCalle.Name = "txt_nroCalle"
         Me.txt_nroCalle.Size = New System.Drawing.Size(100, 25)
-        Me.txt_nroCalle.TabIndex = 63
+        Me.txt_nroCalle.TabIndex = 1
+        Me.txt_nroCalle.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'frm_nuevoProfesional
         '
