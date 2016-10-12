@@ -95,10 +95,23 @@
         End If
     End Sub
 
+    Public Sub cargar_grilla_SD()
+        For Each row As DataRow In BDHelper.getDBHelper.ConsultaSQL("SELECT * FROM Profesional").Rows
+            dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString, row.Item(2).ToString, row.Item(3).ToString,
+                                                  row.Item(4).ToString, row.Item(5).ToString, row.Item(6).ToString, row.Item(7).ToString,
+                                                  row.Item(8).ToString, row.Item(9).ToString, row.Item(10).ToString, row.Item(11).ToString,
+                                                  row.Item(12).ToString, row.Item(13).ToString})
+        Next
+        If dgv_resultados.Rows.Count = 0 Then
+            lbl_profesionales_mensaje.Text = "No se encontraron resultados."
+            lbl_profesionales_mensaje.Visible = True
+        End If
+    End Sub
+
     Public Function validar_campos() As Boolean
         'valida que si se ingresa nro de doc tambien debe haberse ingresado tipo de doc obligatoriamente
         If cbo_tipoDoc.SelectedValue = -1 And Not String.IsNullOrEmpty(txt_nroDoc.Text) Then
-            lbl_profesionales_mensaje.Text = "Falta ingresar Tipo de Documento."
+            lbl_profesionales_mensaje.Text = "Falta ingresar el Tipo de Documento."
             lbl_profesionales_mensaje.Visible = True
             Return False
         End If
@@ -112,6 +125,19 @@
         Return True
     End Function
 
+    Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
+        dgv_resultados.Columns(11).Visible = False
+        If Not String.IsNullOrEmpty(txt_nombre.Text) Or Not String.IsNullOrEmpty(txt_apellido.Text) Or Not String.IsNullOrEmpty(txt_nroDoc.Text) Or
+            chk_fechaBaja.Checked = True Then
+            If validar_campos() Then
+                dgv_resultados.Rows.Clear()
+                cargar_grilla_CD()
+            End If
+        Else
+            cargar_grilla_SD()
+        End If
+    End Sub
+
     Private Sub btn_borrar_Click(sender As Object, e As EventArgs) Handles btn_borrar.Click
         form_bajaProfesional = New frm_bajaProfesional
         form_bajaProfesional.Show()
@@ -120,33 +146,18 @@
 
     'PARA MODIFICAR EL COLOR DE LOS BOTONES CUANDO ESTAN DESHABILITADOS
     Private Sub btn_agregar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_agregar.EnabledChanged
-        If (btn_agregar.Enabled = False) Then
-            btn_agregar.BackColor = Colores.GetGris
-            btn_agregar.ForeColor = Colores.GetGris
-        Else
-            btn_agregar.BackColor = Color.White
-            btn_agregar.ForeColor = Colores.GetVerdeAgua
-        End If
+        Colores.ChangeColor(btn_agregar)
     End Sub
 
     Private Sub btn_editar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_editar.EnabledChanged
-        If (btn_editar.Enabled = False) Then
-            btn_editar.BackColor = Colores.GetGris
-            btn_editar.ForeColor = Colores.GetGris
-        Else
-            btn_editar.BackColor = Color.White
-            btn_editar.ForeColor = Colores.GetVerdeAgua
-        End If
+        Colores.ChangeColor(btn_editar)
     End Sub
 
     Private Sub btn_borrar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_borrar.EnabledChanged
-        If (btn_borrar.Enabled = False) Then
-            btn_borrar.BackColor = Colores.GetGris
-            btn_borrar.ForeColor = Colores.GetGris
-        Else
-            btn_borrar.BackColor = Color.White
-            btn_borrar.ForeColor = Colores.GetVerdeAgua
-        End If
+        Colores.ChangeColor(btn_borrar)
     End Sub
 
+    Private Sub btn_buscar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_buscar.EnabledChanged
+        Colores.ChangeColor(btn_buscar)
+    End Sub
 End Class
