@@ -267,4 +267,21 @@
         End If
     End Sub
 
+
+    'PARA MODIFICAR EL COLOR DE LOS BOTONES CUANDO ESTAN DESHABILITADOS
+    Private Sub btn_agregar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_agregar.EnabledChanged
+        Colores.ChangeColor(btn_agregar)
+    End Sub
+
+    Private Sub btn_editar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_editar.EnabledChanged
+        Colores.ChangeColor(btn_editar)
+    End Sub
+
+    Private Sub btn_borrar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_borrar.EnabledChanged
+        Colores.ChangeColor(btn_borrar)
+    End Sub
+
+    Private Sub btn_new_EnabledChanged(sender As Object, e As EventArgs) Handles btn_new.EnabledChanged
+        Colores.ChangeColor(btn_new)
+    End Sub
 End Class

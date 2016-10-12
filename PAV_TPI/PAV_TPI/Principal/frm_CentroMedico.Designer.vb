@@ -99,7 +99,7 @@ Partial Class frm_CentroMedico
         Me.txt_denominacion.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_denominacion.Location = New System.Drawing.Point(201, 54)
         Me.txt_denominacion.Name = "txt_denominacion"
-        Me.txt_denominacion.Size = New System.Drawing.Size(298, 25)
+        Me.txt_denominacion.Size = New System.Drawing.Size(365, 25)
         Me.txt_denominacion.TabIndex = 3
         '
         'txt_calle
@@ -107,14 +107,14 @@ Partial Class frm_CentroMedico
         Me.txt_calle.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_calle.Location = New System.Drawing.Point(201, 97)
         Me.txt_calle.Name = "txt_calle"
-        Me.txt_calle.Size = New System.Drawing.Size(298, 25)
+        Me.txt_calle.Size = New System.Drawing.Size(200, 25)
         Me.txt_calle.TabIndex = 5
         '
         'Label3
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(512, 100)
+        Me.Label3.Location = New System.Drawing.Point(417, 100)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(34, 17)
         Me.Label3.TabIndex = 6
@@ -123,7 +123,7 @@ Partial Class frm_CentroMedico
         'txt_nroCalle
         '
         Me.txt_nroCalle.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_nroCalle.Location = New System.Drawing.Point(552, 97)
+        Me.txt_nroCalle.Location = New System.Drawing.Point(457, 97)
         Me.txt_nroCalle.Name = "txt_nroCalle"
         Me.txt_nroCalle.Size = New System.Drawing.Size(109, 25)
         Me.txt_nroCalle.TabIndex = 7
@@ -180,7 +180,7 @@ Partial Class frm_CentroMedico
         Me.txt_mail.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_mail.Location = New System.Drawing.Point(201, 190)
         Me.txt_mail.Name = "txt_mail"
-        Me.txt_mail.Size = New System.Drawing.Size(298, 25)
+        Me.txt_mail.Size = New System.Drawing.Size(365, 25)
         Me.txt_mail.TabIndex = 13
         '
         'dvg_centrosMedicos
@@ -205,7 +205,7 @@ Partial Class frm_CentroMedico
         Me.dvg_centrosMedicos.DefaultCellStyle = DataGridViewCellStyle2
         Me.dvg_centrosMedicos.Location = New System.Drawing.Point(29, 246)
         Me.dvg_centrosMedicos.Name = "dvg_centrosMedicos"
-        Me.dvg_centrosMedicos.Size = New System.Drawing.Size(710, 156)
+        Me.dvg_centrosMedicos.Size = New System.Drawing.Size(755, 156)
         Me.dvg_centrosMedicos.TabIndex = 14
         '
         'btn_editar
@@ -227,7 +227,7 @@ Partial Class frm_CentroMedico
         Me.btn_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_new.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_new.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_new.Location = New System.Drawing.Point(515, 187)
+        Me.btn_new.Location = New System.Drawing.Point(593, 185)
         Me.btn_new.Name = "btn_new"
         Me.btn_new.Size = New System.Drawing.Size(80, 32)
         Me.btn_new.TabIndex = 0
@@ -324,7 +324,7 @@ Partial Class frm_CentroMedico
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.ClientSize = New System.Drawing.Size(761, 463)
+        Me.ClientSize = New System.Drawing.Size(815, 463)
         Me.Controls.Add(Me.btn_editar)
         Me.Controls.Add(Me.btn_new)
         Me.Controls.Add(Me.btn_borrar)
