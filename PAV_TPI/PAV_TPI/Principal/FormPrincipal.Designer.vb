@@ -37,6 +37,7 @@ Partial Class frm_principal
         Me.lbl_usuarioLogueado = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lbl_portada = New System.Windows.Forms.Label()
+        Me.btn_profesionales = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_atenciones
@@ -71,24 +72,24 @@ Partial Class frm_principal
         '
         Me.lbl_obraSocial.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(116, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.lbl_obraSocial.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.lbl_obraSocial.Font = New System.Drawing.Font("Segoe UI Semibold", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_obraSocial.Font = New System.Drawing.Font("Segoe UI", 21.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_obraSocial.ForeColor = System.Drawing.Color.White
         Me.lbl_obraSocial.Location = New System.Drawing.Point(0, 254)
         Me.lbl_obraSocial.Name = "lbl_obraSocial"
-        Me.lbl_obraSocial.Size = New System.Drawing.Size(1185, 48)
+        Me.lbl_obraSocial.Size = New System.Drawing.Size(1205, 48)
         Me.lbl_obraSocial.TabIndex = 3
-        Me.lbl_obraSocial.Text = "Obra Social"
+        Me.lbl_obraSocial.Text = " Obra Social"
         '
         'btn_centrosMedicos
         '
         Me.btn_centrosMedicos.AutoSize = True
-        Me.btn_centrosMedicos.BackColor = System.Drawing.Color.FromArgb(CType(CType(233, Byte), Integer), CType(CType(212, Byte), Integer), CType(CType(96, Byte), Integer))
+        Me.btn_centrosMedicos.BackColor = System.Drawing.Color.FromArgb(CType(CType(102, Byte), Integer), CType(CType(204, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.btn_centrosMedicos.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_centrosMedicos.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_centrosMedicos.ForeColor = System.Drawing.Color.White
-        Me.btn_centrosMedicos.Location = New System.Drawing.Point(3, 317)
+        Me.btn_centrosMedicos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
+        Me.btn_centrosMedicos.Location = New System.Drawing.Point(13, 317)
         Me.btn_centrosMedicos.Name = "btn_centrosMedicos"
-        Me.btn_centrosMedicos.Size = New System.Drawing.Size(163, 33)
+        Me.btn_centrosMedicos.Size = New System.Drawing.Size(142, 33)
         Me.btn_centrosMedicos.TabIndex = 12
         Me.btn_centrosMedicos.Text = "Centros Médicos"
         Me.btn_centrosMedicos.UseVisualStyleBackColor = False
@@ -99,10 +100,10 @@ Partial Class frm_principal
         Me.btn_especialidades.BackColor = System.Drawing.Color.FromArgb(CType(CType(82, Byte), Integer), CType(CType(179, Byte), Integer), CType(CType(217, Byte), Integer))
         Me.btn_especialidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_especialidades.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_especialidades.ForeColor = System.Drawing.Color.White
-        Me.btn_especialidades.Location = New System.Drawing.Point(172, 317)
+        Me.btn_especialidades.ForeColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
+        Me.btn_especialidades.Location = New System.Drawing.Point(161, 317)
         Me.btn_especialidades.Name = "btn_especialidades"
-        Me.btn_especialidades.Size = New System.Drawing.Size(163, 33)
+        Me.btn_especialidades.Size = New System.Drawing.Size(142, 33)
         Me.btn_especialidades.TabIndex = 13
         Me.btn_especialidades.Text = "Especialidades"
         Me.btn_especialidades.UseVisualStyleBackColor = False
@@ -110,13 +111,13 @@ Partial Class frm_principal
         'btn_afiliados
         '
         Me.btn_afiliados.AutoSize = True
-        Me.btn_afiliados.BackColor = System.Drawing.Color.FromArgb(CType(CType(245, Byte), Integer), CType(CType(171, Byte), Integer), CType(CType(53, Byte), Integer))
+        Me.btn_afiliados.BackColor = System.Drawing.Color.FromArgb(CType(CType(235, Byte), Integer), CType(CType(151, Byte), Integer), CType(CType(78, Byte), Integer))
         Me.btn_afiliados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_afiliados.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_afiliados.ForeColor = System.Drawing.Color.White
-        Me.btn_afiliados.Location = New System.Drawing.Point(510, 317)
+        Me.btn_afiliados.ForeColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
+        Me.btn_afiliados.Location = New System.Drawing.Point(457, 317)
         Me.btn_afiliados.Name = "btn_afiliados"
-        Me.btn_afiliados.Size = New System.Drawing.Size(163, 33)
+        Me.btn_afiliados.Size = New System.Drawing.Size(142, 33)
         Me.btn_afiliados.TabIndex = 14
         Me.btn_afiliados.Text = "Afiliados"
         Me.btn_afiliados.UseVisualStyleBackColor = False
@@ -127,10 +128,10 @@ Partial Class frm_principal
         Me.btn_practicas.BackColor = System.Drawing.Color.FromArgb(CType(CType(129, Byte), Integer), CType(CType(207, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.btn_practicas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_practicas.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_practicas.ForeColor = System.Drawing.Color.White
-        Me.btn_practicas.Location = New System.Drawing.Point(341, 317)
+        Me.btn_practicas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
+        Me.btn_practicas.Location = New System.Drawing.Point(309, 317)
         Me.btn_practicas.Name = "btn_practicas"
-        Me.btn_practicas.Size = New System.Drawing.Size(163, 33)
+        Me.btn_practicas.Size = New System.Drawing.Size(142, 33)
         Me.btn_practicas.TabIndex = 15
         Me.btn_practicas.Text = "Prácticas"
         Me.btn_practicas.UseVisualStyleBackColor = False
@@ -141,10 +142,10 @@ Partial Class frm_principal
         Me.btn_cuotas.BackColor = System.Drawing.Color.FromArgb(CType(CType(3, Byte), Integer), CType(CType(201, Byte), Integer), CType(CType(169, Byte), Integer))
         Me.btn_cuotas.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_cuotas.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_cuotas.ForeColor = System.Drawing.Color.White
-        Me.btn_cuotas.Location = New System.Drawing.Point(848, 317)
+        Me.btn_cuotas.ForeColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
+        Me.btn_cuotas.Location = New System.Drawing.Point(901, 317)
         Me.btn_cuotas.Name = "btn_cuotas"
-        Me.btn_cuotas.Size = New System.Drawing.Size(163, 33)
+        Me.btn_cuotas.Size = New System.Drawing.Size(142, 33)
         Me.btn_cuotas.TabIndex = 16
         Me.btn_cuotas.Text = "Cuotas"
         Me.btn_cuotas.UseVisualStyleBackColor = False
@@ -155,10 +156,10 @@ Partial Class frm_principal
         Me.btn_tiposAfiliados.BackColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(106, Byte), Integer))
         Me.btn_tiposAfiliados.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_tiposAfiliados.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_tiposAfiliados.ForeColor = System.Drawing.Color.White
-        Me.btn_tiposAfiliados.Location = New System.Drawing.Point(679, 317)
+        Me.btn_tiposAfiliados.ForeColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
+        Me.btn_tiposAfiliados.Location = New System.Drawing.Point(605, 317)
         Me.btn_tiposAfiliados.Name = "btn_tiposAfiliados"
-        Me.btn_tiposAfiliados.Size = New System.Drawing.Size(163, 33)
+        Me.btn_tiposAfiliados.Size = New System.Drawing.Size(142, 33)
         Me.btn_tiposAfiliados.TabIndex = 17
         Me.btn_tiposAfiliados.Text = "Tipos de afiliados"
         Me.btn_tiposAfiliados.UseVisualStyleBackColor = False
@@ -170,9 +171,9 @@ Partial Class frm_principal
         Me.btn_informes.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_informes.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_informes.ForeColor = System.Drawing.Color.White
-        Me.btn_informes.Location = New System.Drawing.Point(1017, 317)
+        Me.btn_informes.Location = New System.Drawing.Point(1049, 317)
         Me.btn_informes.Name = "btn_informes"
-        Me.btn_informes.Size = New System.Drawing.Size(163, 33)
+        Me.btn_informes.Size = New System.Drawing.Size(142, 33)
         Me.btn_informes.TabIndex = 18
         Me.btn_informes.Text = "Informes"
         Me.btn_informes.UseVisualStyleBackColor = False
@@ -185,7 +186,7 @@ Partial Class frm_principal
         Me.lbl_menu.ForeColor = System.Drawing.Color.White
         Me.lbl_menu.Location = New System.Drawing.Point(0, 302)
         Me.lbl_menu.Name = "lbl_menu"
-        Me.lbl_menu.Size = New System.Drawing.Size(1185, 68)
+        Me.lbl_menu.Size = New System.Drawing.Size(1205, 68)
         Me.lbl_menu.TabIndex = 11
         '
         'lbl_usuarioLogueado
@@ -218,15 +219,30 @@ Partial Class frm_principal
         Me.lbl_portada.Image = CType(resources.GetObject("lbl_portada.Image"), System.Drawing.Image)
         Me.lbl_portada.Location = New System.Drawing.Point(-3, -2)
         Me.lbl_portada.Name = "lbl_portada"
-        Me.lbl_portada.Size = New System.Drawing.Size(1188, 256)
+        Me.lbl_portada.Size = New System.Drawing.Size(1208, 256)
         Me.lbl_portada.TabIndex = 0
+        '
+        'btn_profesionales
+        '
+        Me.btn_profesionales.AutoSize = True
+        Me.btn_profesionales.BackColor = System.Drawing.Color.FromArgb(CType(CType(155, Byte), Integer), CType(CType(89, Byte), Integer), CType(CType(152, Byte), Integer))
+        Me.btn_profesionales.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_profesionales.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_profesionales.ForeColor = System.Drawing.Color.FromArgb(CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer), CType(CType(238, Byte), Integer))
+        Me.btn_profesionales.Location = New System.Drawing.Point(753, 317)
+        Me.btn_profesionales.Name = "btn_profesionales"
+        Me.btn_profesionales.Size = New System.Drawing.Size(142, 33)
+        Me.btn_profesionales.TabIndex = 22
+        Me.btn_profesionales.Text = "Profesionales"
+        Me.btn_profesionales.UseVisualStyleBackColor = False
         '
         'frm_principal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ControlLightLight
-        Me.ClientSize = New System.Drawing.Size(1183, 596)
+        Me.ClientSize = New System.Drawing.Size(1204, 585)
+        Me.Controls.Add(Me.btn_profesionales)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.lbl_usuarioLogueado)
         Me.Controls.Add(Me.btn_informes)
@@ -264,5 +280,6 @@ Partial Class frm_principal
     Friend WithEvents lbl_menu As System.Windows.Forms.Label
     Friend WithEvents lbl_usuarioLogueado As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents btn_profesionales As System.Windows.Forms.Button
 
 End Class

@@ -5,6 +5,7 @@
     Public form_Practicas As frm_Practicas
     Public form_Afiliados As frm_Afiliados
     Public form_Atenciones As Atenciones_Medicas
+    Public form_Profesionales As frm_Profesionales
 
     Private Sub btn_especialidades_Click(sender As Object, e As EventArgs) Handles btn_especialidades.Click
         form_especialidades = New frm_Especialidades
@@ -26,6 +27,8 @@
     Private Sub frm_principal_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
         If MessageBox.Show("¿Está seguro que quiere salir?", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) = Windows.Forms.DialogResult.OK Then
             e.Cancel = False
+            Dim form_inicioSesion = New frm_InicioSesion
+            form_inicioSesion.Show()
         Else
             e.Cancel = True
         End If
@@ -49,5 +52,10 @@
     Private Sub btn_atenciones_Click(sender As Object, e As EventArgs) Handles btn_atenciones.Click
         form_Atenciones = New Atenciones_Medicas
         form_Atenciones.Show()
+    End Sub
+
+    Private Sub btn_profesionales_Click(sender As Object, e As EventArgs) Handles btn_profesionales.Click
+        form_Profesionales = New frm_Profesionales
+        form_Profesionales.Show()
     End Sub
 End Class
