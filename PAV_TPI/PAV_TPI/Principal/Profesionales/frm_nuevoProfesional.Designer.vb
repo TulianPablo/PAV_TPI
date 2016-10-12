@@ -26,12 +26,12 @@ Partial Class frm_nuevoProfesional
         Me.txt_apellido = New System.Windows.Forms.TextBox()
         Me.txt_nombre = New System.Windows.Forms.TextBox()
         Me.txt_nroDoc = New System.Windows.Forms.MaskedTextBox()
-        Me.lbl_afiliados_mensaje = New System.Windows.Forms.Label()
+        Me.lbl_profesionales_mensaje = New System.Windows.Forms.Label()
         Me.dtp_fechaNac = New System.Windows.Forms.DateTimePicker()
         Me.btn_cancelar = New System.Windows.Forms.Button()
         Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.cbo_tipoDoc = New System.Windows.Forms.ComboBox()
-        Me.mtb_fechaAlta = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_fechaAlta = New System.Windows.Forms.MaskedTextBox()
         Me.lbl_fechaAlta = New System.Windows.Forms.Label()
         Me.lbl_telefono = New System.Windows.Forms.Label()
         Me.lbl_nroDoc = New System.Windows.Forms.Label()
@@ -40,17 +40,17 @@ Partial Class frm_nuevoProfesional
         Me.lbl_apeAfiliado = New System.Windows.Forms.Label()
         Me.lbl_nomAfiliado = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.MaskedTextBox1 = New System.Windows.Forms.MaskedTextBox()
-        Me.MaskedTextBox2 = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_matricula = New System.Windows.Forms.MaskedTextBox()
+        Me.txt_telefono = New System.Windows.Forms.MaskedTextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.cbo_barrio = New System.Windows.Forms.ComboBox()
         Me.lbl_barrio = New System.Windows.Forms.Label()
         Me.lbl_calle = New System.Windows.Forms.Label()
         Me.lbl_nroCalle = New System.Windows.Forms.Label()
         Me.txt_calle = New System.Windows.Forms.TextBox()
-        Me.txt_nroCalle = New System.Windows.Forms.TextBox()
         Me.box_datosPersonales = New System.Windows.Forms.GroupBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.txt_nroCalle = New System.Windows.Forms.MaskedTextBox()
         Me.box_datosPersonales.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -81,16 +81,16 @@ Partial Class frm_nuevoProfesional
         Me.txt_nroDoc.TabIndex = 43
         Me.txt_nroDoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'lbl_afiliados_mensaje
+        'lbl_profesionales_mensaje
         '
-        Me.lbl_afiliados_mensaje.AutoSize = True
-        Me.lbl_afiliados_mensaje.Font = New System.Drawing.Font("Segoe UI", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_afiliados_mensaje.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.lbl_afiliados_mensaje.Location = New System.Drawing.Point(71, 461)
-        Me.lbl_afiliados_mensaje.Name = "lbl_afiliados_mensaje"
-        Me.lbl_afiliados_mensaje.Size = New System.Drawing.Size(167, 17)
-        Me.lbl_afiliados_mensaje.TabIndex = 49
-        Me.lbl_afiliados_mensaje.Text = "lbl_profesionales_mensaje"
+        Me.lbl_profesionales_mensaje.AutoSize = True
+        Me.lbl_profesionales_mensaje.Font = New System.Drawing.Font("Segoe UI", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_profesionales_mensaje.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.lbl_profesionales_mensaje.Location = New System.Drawing.Point(71, 461)
+        Me.lbl_profesionales_mensaje.Name = "lbl_profesionales_mensaje"
+        Me.lbl_profesionales_mensaje.Size = New System.Drawing.Size(167, 17)
+        Me.lbl_profesionales_mensaje.TabIndex = 49
+        Me.lbl_profesionales_mensaje.Text = "lbl_profesionales_mensaje"
         '
         'dtp_fechaNac
         '
@@ -136,16 +136,16 @@ Partial Class frm_nuevoProfesional
         Me.cbo_tipoDoc.Size = New System.Drawing.Size(182, 25)
         Me.cbo_tipoDoc.TabIndex = 45
         '
-        'mtb_fechaAlta
+        'txt_fechaAlta
         '
-        Me.mtb_fechaAlta.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.mtb_fechaAlta.Location = New System.Drawing.Point(174, 411)
-        Me.mtb_fechaAlta.Mask = "00/00/0000"
-        Me.mtb_fechaAlta.Name = "mtb_fechaAlta"
-        Me.mtb_fechaAlta.Size = New System.Drawing.Size(100, 25)
-        Me.mtb_fechaAlta.TabIndex = 22
-        Me.mtb_fechaAlta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.mtb_fechaAlta.ValidatingType = GetType(Date)
+        Me.txt_fechaAlta.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_fechaAlta.Location = New System.Drawing.Point(174, 411)
+        Me.txt_fechaAlta.Mask = "00/00/0000"
+        Me.txt_fechaAlta.Name = "txt_fechaAlta"
+        Me.txt_fechaAlta.Size = New System.Drawing.Size(100, 25)
+        Me.txt_fechaAlta.TabIndex = 22
+        Me.txt_fechaAlta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_fechaAlta.ValidatingType = GetType(Date)
         '
         'lbl_fechaAlta
         '
@@ -234,26 +234,26 @@ Partial Class frm_nuevoProfesional
         Me.Label1.TabIndex = 53
         Me.Label1.Text = "Matrícula"
         '
-        'MaskedTextBox1
+        'txt_matricula
         '
-        Me.MaskedTextBox1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MaskedTextBox1.Location = New System.Drawing.Point(100, 35)
-        Me.MaskedTextBox1.Mask = "99999"
-        Me.MaskedTextBox1.Name = "MaskedTextBox1"
-        Me.MaskedTextBox1.Size = New System.Drawing.Size(100, 25)
-        Me.MaskedTextBox1.TabIndex = 54
-        Me.MaskedTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.MaskedTextBox1.ValidatingType = GetType(Integer)
+        Me.txt_matricula.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_matricula.Location = New System.Drawing.Point(100, 35)
+        Me.txt_matricula.Mask = "99999"
+        Me.txt_matricula.Name = "txt_matricula"
+        Me.txt_matricula.Size = New System.Drawing.Size(100, 25)
+        Me.txt_matricula.TabIndex = 54
+        Me.txt_matricula.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_matricula.ValidatingType = GetType(Integer)
         '
-        'MaskedTextBox2
+        'txt_telefono
         '
-        Me.MaskedTextBox2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MaskedTextBox2.Location = New System.Drawing.Point(522, 126)
-        Me.MaskedTextBox2.Mask = "(999)000-000-000"
-        Me.MaskedTextBox2.Name = "MaskedTextBox2"
-        Me.MaskedTextBox2.Size = New System.Drawing.Size(182, 25)
-        Me.MaskedTextBox2.TabIndex = 55
-        Me.MaskedTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_telefono.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_telefono.Location = New System.Drawing.Point(522, 126)
+        Me.txt_telefono.Mask = "(999)000-000-000"
+        Me.txt_telefono.Name = "txt_telefono"
+        Me.txt_telefono.Size = New System.Drawing.Size(182, 25)
+        Me.txt_telefono.TabIndex = 55
+        Me.txt_telefono.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label2
         '
@@ -316,17 +316,9 @@ Partial Class frm_nuevoProfesional
         Me.txt_calle.Size = New System.Drawing.Size(247, 25)
         Me.txt_calle.TabIndex = 58
         '
-        'txt_nroCalle
-        '
-        Me.txt_nroCalle.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_nroCalle.Location = New System.Drawing.Point(417, 35)
-        Me.txt_nroCalle.Name = "txt_nroCalle"
-        Me.txt_nroCalle.Size = New System.Drawing.Size(92, 25)
-        Me.txt_nroCalle.TabIndex = 57
-        '
         'box_datosPersonales
         '
-        Me.box_datosPersonales.Controls.Add(Me.MaskedTextBox1)
+        Me.box_datosPersonales.Controls.Add(Me.txt_matricula)
         Me.box_datosPersonales.Controls.Add(Me.lbl_nomAfiliado)
         Me.box_datosPersonales.Controls.Add(Me.lbl_apeAfiliado)
         Me.box_datosPersonales.Controls.Add(Me.lbl_fechaNac)
@@ -336,7 +328,7 @@ Partial Class frm_nuevoProfesional
         Me.box_datosPersonales.Controls.Add(Me.dtp_fechaNac)
         Me.box_datosPersonales.Controls.Add(Me.lbl_telefono)
         Me.box_datosPersonales.Controls.Add(Me.txt_nroDoc)
-        Me.box_datosPersonales.Controls.Add(Me.MaskedTextBox2)
+        Me.box_datosPersonales.Controls.Add(Me.txt_telefono)
         Me.box_datosPersonales.Controls.Add(Me.txt_nombre)
         Me.box_datosPersonales.Controls.Add(Me.txt_apellido)
         Me.box_datosPersonales.Controls.Add(Me.Label1)
@@ -352,8 +344,8 @@ Partial Class frm_nuevoProfesional
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.lbl_calle)
         Me.GroupBox1.Controls.Add(Me.txt_nroCalle)
+        Me.GroupBox1.Controls.Add(Me.lbl_calle)
         Me.GroupBox1.Controls.Add(Me.cbo_barrio)
         Me.GroupBox1.Controls.Add(Me.txt_calle)
         Me.GroupBox1.Controls.Add(Me.lbl_barrio)
@@ -368,6 +360,14 @@ Partial Class frm_nuevoProfesional
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Domicilio"
         '
+        'txt_nroCalle
+        '
+        Me.txt_nroCalle.Location = New System.Drawing.Point(419, 35)
+        Me.txt_nroCalle.Mask = "9999"
+        Me.txt_nroCalle.Name = "txt_nroCalle"
+        Me.txt_nroCalle.Size = New System.Drawing.Size(100, 25)
+        Me.txt_nroCalle.TabIndex = 63
+        '
         'frm_nuevoProfesional
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -376,10 +376,10 @@ Partial Class frm_nuevoProfesional
         Me.ClientSize = New System.Drawing.Size(874, 551)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.box_datosPersonales)
-        Me.Controls.Add(Me.mtb_fechaAlta)
+        Me.Controls.Add(Me.txt_fechaAlta)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.lbl_fechaAlta)
-        Me.Controls.Add(Me.lbl_afiliados_mensaje)
+        Me.Controls.Add(Me.lbl_profesionales_mensaje)
         Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_aceptar)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -398,12 +398,12 @@ Partial Class frm_nuevoProfesional
     Friend WithEvents txt_apellido As System.Windows.Forms.TextBox
     Friend WithEvents txt_nombre As System.Windows.Forms.TextBox
     Friend WithEvents txt_nroDoc As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents lbl_afiliados_mensaje As System.Windows.Forms.Label
+    Friend WithEvents lbl_profesionales_mensaje As System.Windows.Forms.Label
     Friend WithEvents dtp_fechaNac As System.Windows.Forms.DateTimePicker
     Friend WithEvents btn_cancelar As System.Windows.Forms.Button
     Friend WithEvents btn_aceptar As System.Windows.Forms.Button
     Friend WithEvents cbo_tipoDoc As System.Windows.Forms.ComboBox
-    Friend WithEvents mtb_fechaAlta As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_fechaAlta As System.Windows.Forms.MaskedTextBox
     Friend WithEvents lbl_fechaAlta As System.Windows.Forms.Label
     Friend WithEvents lbl_telefono As System.Windows.Forms.Label
     Friend WithEvents lbl_nroDoc As System.Windows.Forms.Label
@@ -412,15 +412,15 @@ Partial Class frm_nuevoProfesional
     Friend WithEvents lbl_apeAfiliado As System.Windows.Forms.Label
     Friend WithEvents lbl_nomAfiliado As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents MaskedTextBox1 As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents MaskedTextBox2 As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_matricula As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents txt_telefono As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents cbo_barrio As System.Windows.Forms.ComboBox
     Friend WithEvents lbl_barrio As System.Windows.Forms.Label
     Friend WithEvents lbl_calle As System.Windows.Forms.Label
     Friend WithEvents lbl_nroCalle As System.Windows.Forms.Label
     Friend WithEvents txt_calle As System.Windows.Forms.TextBox
-    Friend WithEvents txt_nroCalle As System.Windows.Forms.TextBox
     Friend WithEvents box_datosPersonales As System.Windows.Forms.GroupBox
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents txt_nroCalle As System.Windows.Forms.MaskedTextBox
 End Class
