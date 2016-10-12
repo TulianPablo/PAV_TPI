@@ -61,7 +61,7 @@ Partial Class frm_bajaProfesional
         Me.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_cancelar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_cancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_cancelar.Location = New System.Drawing.Point(444, 481)
+        Me.btn_cancelar.Location = New System.Drawing.Point(446, 481)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(96, 29)
         Me.btn_cancelar.TabIndex = 41
@@ -91,7 +91,7 @@ Partial Class frm_bajaProfesional
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Teal
-        Me.GroupBox1.Location = New System.Drawing.Point(74, 283)
+        Me.GroupBox1.Location = New System.Drawing.Point(74, 285)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(736, 111)
         Me.GroupBox1.TabIndex = 45
@@ -362,7 +362,7 @@ Partial Class frm_bajaProfesional
         'txt_fechaBaja
         '
         Me.txt_fechaBaja.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_fechaBaja.Location = New System.Drawing.Point(545, 426)
+        Me.txt_fechaBaja.Location = New System.Drawing.Point(548, 426)
         Me.txt_fechaBaja.Mask = "00/00/0000"
         Me.txt_fechaBaja.Name = "txt_fechaBaja"
         Me.txt_fechaBaja.Size = New System.Drawing.Size(100, 25)
@@ -374,7 +374,7 @@ Partial Class frm_bajaProfesional
         '
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.Location = New System.Drawing.Point(451, 429)
+        Me.Label13.Location = New System.Drawing.Point(454, 429)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(88, 17)
         Me.Label13.TabIndex = 50
@@ -385,7 +385,7 @@ Partial Class frm_bajaProfesional
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(873, 535)
+        Me.ClientSize = New System.Drawing.Size(881, 537)
         Me.Controls.Add(Me.txt_fechaBaja)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
