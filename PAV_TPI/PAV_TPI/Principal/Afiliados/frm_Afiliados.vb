@@ -11,6 +11,8 @@
         dgv_resultados.Columns(11).Visible = False
         CargarCombo(cbo_tipoAfiliado, BDHelper.GetTipoAfiliado(), "id_tipoAfiliado", "nombre")
         CargarCombo(cbo_tipoDoc, BDHelper.GetTipoDoc(), "id_tipoDoc", "nombre")
+
+
     End Sub
 
     Private Sub btn_editar_Click(sender As Object, e As EventArgs) Handles btn_editar.Click
@@ -113,22 +115,6 @@
             dgv_resultados.Columns(11).Visible = True
         End If
         If Not String.IsNullOrEmpty(dtp_fechaDesde.Text) Or Not String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
-            'If Not String.IsNullOrEmpty(dtp_fechaDesde.Text) Or String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
-            '    If c = 1 Then
-            '        str &= " AND "
-            '    End If
-            '    dtp_fechaDesde.Value.Day.ToString()
-            '    str &= "a.fecha_alta BETWEEN CAST('" & dtp_fechaDesde.Text & "' AS DATE) AND GETDATE()"
-            '    c = 1
-            'End If
-            'If String.IsNullOrEmpty(dtp_fechaDesde.Text) And Not String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
-            '    If c = 1 Then
-            '        str &= " AND "
-            '    End If
-            '    dtp_fechaDesde.Value.Day.ToString()
-            '    str &= "a.fecha_alta BETWEEN GETDATE() AND CAST('" & dtp_fechaDesde.Text & "' AS DATE)"
-            '    c = 1
-            'End If
             If Not String.IsNullOrEmpty(dtp_fechaDesde.Text) And Not String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
                 If c = 1 Then
                     str &= " AND "
