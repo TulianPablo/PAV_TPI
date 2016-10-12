@@ -1,5 +1,4 @@
 ﻿Public Class frm_InicioSesion
-
     Enum estado
         login
         signin
@@ -218,4 +217,25 @@
 
     End Function
 
+
+    'PARA MODIFICAR EL COLOR DE LOS BOTONES CUANDO ESTAN DESHABILITADOS
+    Private Sub btn_iniciarSesion_EnabledChanged(sender As Object, e As EventArgs) Handles btn_iniciarSesion.EnabledChanged
+        If (btn_iniciarSesion.Enabled = False) Then
+            btn_iniciarSesion.BackColor = Colores.GetGris
+            btn_iniciarSesion.ForeColor = Colores.GetGris
+        Else
+            btn_iniciarSesion.BackColor = Color.White
+            btn_iniciarSesion.ForeColor = Colores.GetVerdeAgua
+        End If
+    End Sub
+
+    Private Sub btn_registrarse_EnabledChanged(sender As Object, e As EventArgs) Handles btn_registrarse.EnabledChanged
+        If (btn_registrarse.Enabled = False) Then
+            btn_registrarse.BackColor = Colores.GetGris
+            btn_registrarse.ForeColor = Colores.GetGris
+        Else
+            btn_registrarse.BackColor = Color.White
+            btn_registrarse.ForeColor = Colores.GetVerdeAgua
+        End If
+    End Sub
 End Class
