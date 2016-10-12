@@ -34,7 +34,6 @@
         cbo_perfil.Enabled = Not flag
         cbo_perfil.SelectedIndex = -1
 
-
         If (flag) Then
             'blanqueo campos signin
             txt_SignIn_usuario.Text = ""
@@ -83,12 +82,10 @@
 
     Private Sub txt_LogIn_usuario_GotFocus(sender As Object, e As EventArgs) Handles txt_LogIn_usuario.GotFocus
         enable_login(True)
-
         accion = estado.login
     End Sub
 
     Private Sub btn_iniciarSesion_Click(sender As Object, e As EventArgs) Handles btn_iniciarSesion.Click
-
         Dim perfil_log As String
         Dim userLog As Usuario
         'verificacion de campos
@@ -106,7 +103,6 @@
             habilitar_deshabilitarPorPerfil(perfil_log)
             frm_principal.Show()
             Me.Visible = False
-
         Else
             lbl_LogIn_mensaje.Text = "El usuario ingresado no existe o la clave no es válida."
             lbl_LogIn_mensaje.Visible = True
@@ -114,7 +110,6 @@
     End Sub
 
     Private Function validar_existencia(usuario As String, contraseña As String) As Usuario
-
         Dim oUser As Usuario = Nothing
         Dim oTable As DataTable
 
@@ -128,9 +123,7 @@
             oUser.usuario = oTable.Rows(0).Item("usuario").ToString
             oUser.password = oTable.Rows(0).Item("password").ToString
             oUser.id_perfil = oTable.Rows(0).Item("id_perfil").ToString
-
         End If
-
         Return oUser
     End Function
 
@@ -139,15 +132,13 @@
         consulta &= "WHERE usuario = '" + Usuario + "' "
 
         If (BDHelper.getDBHelper.ConsultaSQL(consulta).Rows.Count = 1) Then
-
             Return False
         End If
         Return True
     End Function
 
     Private Sub btn_registrarse_Click(sender As Object, e As EventArgs) Handles btn_registrarse.Click
-       
-        If (validar_campos()) Then  
+        If (validar_campos()) Then
             If (verificar_existencia(txt_SignIn_usuario.Text)) Then
                 If (registrar_usuario() = termino.aprobado) Then
                     lbl_SignIn_mensaje.Text = "El usuario se registró con éxito."
@@ -156,13 +147,11 @@
             Else
                 lbl_SignIn_mensaje.Text = "El usuario " + txt_SignIn_usuario.Text + " ya está registrado."
                 lbl_SignIn_mensaje.Visible = True
-
             End If
         Else
             lbl_SignIn_mensaje.Text = "Debe ingresar TODOS los datos ."
             lbl_SignIn_mensaje.Visible = True
         End If
-
     End Sub
 
     Private Sub txt_SignIn_usuario_GotFocus(sender As Object, e As EventArgs) Handles txt_SignIn_usuario.GotFocus
@@ -176,12 +165,10 @@
         combo.ValueMember = pk
         combo.DisplayMember = descripcion
         combo.SelectedIndex = -1
-
     End Sub
 
     Private Function validar_campos() As Boolean
         If (txt_SignIn_usuario.Text = "" Or txt_SignIn_contraseña.Text = "" Or txt_nombre.Text = "" Or txt_apellido.Text = "" Or date_fechaNac.Text = "" Or txt_mail.Text = "" Or cbo_perfil.SelectedIndex = -1) Then
-
             Return False
         Else
             Return True
@@ -191,19 +178,16 @@
     Private Sub habilitar_deshabilitarPorPerfil(ByVal perfil As String)
         With frm_principal
             If (perfil = "Encargado") Then
-
                 .btn_afiliados.Enabled = False
                 .btn_informes.Enabled = False
                 .btn_pagos.Enabled = False
                 .btn_cuotas.Enabled = False
                 .btn_tiposAfiliados.Enabled = False
                 .btn_centrosMedicos.Enabled = False
-
             Else
                 .btn_atenciones.Enabled = False
                 .btn_practicas.Enabled = False
                 .btn_especialidades.Enabled = False
-
             End If
         End With
     End Sub
@@ -214,28 +198,15 @@
         consulta = "SELECT nombre FROM Perfil WHERE id_perfil =" + id_perfil.ToString
         otable = BDHelper.getDBHelper.ConsultaSQL(consulta)
         Return otable.Rows(0).Item("nombre").ToString
-
     End Function
-
 
     'PARA MODIFICAR EL COLOR DE LOS BOTONES CUANDO ESTAN DESHABILITADOS
     Private Sub btn_iniciarSesion_EnabledChanged(sender As Object, e As EventArgs) Handles btn_iniciarSesion.EnabledChanged
-        If (btn_iniciarSesion.Enabled = False) Then
-            btn_iniciarSesion.BackColor = Colores.GetGris
-            btn_iniciarSesion.ForeColor = Colores.GetGris
-        Else
-            btn_iniciarSesion.BackColor = Color.White
-            btn_iniciarSesion.ForeColor = Colores.GetVerdeAgua
-        End If
+        Colores.ChangeColor(btn_iniciarSesion)
     End Sub
 
     Private Sub btn_registrarse_EnabledChanged(sender As Object, e As EventArgs) Handles btn_registrarse.EnabledChanged
-        If (btn_registrarse.Enabled = False) Then
-            btn_registrarse.BackColor = Colores.GetGris
-            btn_registrarse.ForeColor = Colores.GetGris
-        Else
-            btn_registrarse.BackColor = Color.White
-            btn_registrarse.ForeColor = Colores.GetVerdeAgua
-        End If
+        Colores.ChangeColor(btn_registrarse)
     End Sub
+
 End Class
