@@ -22,8 +22,8 @@ Partial Class frm_Especialidades
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btn_editar = New System.Windows.Forms.Button()
         Me.btn_nuevo = New System.Windows.Forms.Button()
         Me.btn_quitar = New System.Windows.Forms.Button()
@@ -35,18 +35,19 @@ Partial Class frm_Especialidades
         Me.col_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_especialidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.txt_especialidad = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.dgv_resultados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btn_editar
         '
         Me.btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_editar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_editar.Location = New System.Drawing.Point(0, 0)
+        Me.btn_editar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_editar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_editar.Location = New System.Drawing.Point(113, 324)
         Me.btn_editar.Name = "btn_editar"
-        Me.btn_editar.Size = New System.Drawing.Size(35, 35)
-        Me.btn_editar.TabIndex = 3
+        Me.btn_editar.Size = New System.Drawing.Size(80, 32)
+        Me.btn_editar.TabIndex = 4
+        Me.btn_editar.Text = "Editar"
         Me.btn_editar.UseVisualStyleBackColor = True
         '
         'btn_nuevo
@@ -57,7 +58,7 @@ Partial Class frm_Especialidades
         Me.btn_nuevo.Location = New System.Drawing.Point(27, 324)
         Me.btn_nuevo.Name = "btn_nuevo"
         Me.btn_nuevo.Size = New System.Drawing.Size(80, 32)
-        Me.btn_nuevo.TabIndex = 2
+        Me.btn_nuevo.TabIndex = 3
         Me.btn_nuevo.Text = "Nueva"
         Me.btn_nuevo.UseVisualStyleBackColor = True
         '
@@ -69,7 +70,7 @@ Partial Class frm_Especialidades
         Me.btn_quitar.Location = New System.Drawing.Point(199, 324)
         Me.btn_quitar.Name = "btn_quitar"
         Me.btn_quitar.Size = New System.Drawing.Size(80, 32)
-        Me.btn_quitar.TabIndex = 1
+        Me.btn_quitar.TabIndex = 5
         Me.btn_quitar.Text = "Eliminar"
         Me.btn_quitar.UseVisualStyleBackColor = True
         '
@@ -81,7 +82,7 @@ Partial Class frm_Especialidades
         Me.btn_buscar.Location = New System.Drawing.Point(408, 50)
         Me.btn_buscar.Name = "btn_buscar"
         Me.btn_buscar.Size = New System.Drawing.Size(80, 32)
-        Me.btn_buscar.TabIndex = 0
+        Me.btn_buscar.TabIndex = 2
         Me.btn_buscar.Text = "Buscar"
         Me.btn_buscar.UseVisualStyleBackColor = True
         '
@@ -91,9 +92,9 @@ Partial Class frm_Especialidades
         Me.lbl_id.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_id.Location = New System.Drawing.Point(117, 32)
         Me.lbl_id.Name = "lbl_id"
-        Me.lbl_id.Size = New System.Drawing.Size(26, 17)
-        Me.lbl_id.TabIndex = 4
-        Me.lbl_id.Text = "Id: "
+        Me.lbl_id.Size = New System.Drawing.Size(22, 17)
+        Me.lbl_id.TabIndex = 7
+        Me.lbl_id.Text = "Id."
         '
         'lbl_especialidad
         '
@@ -101,9 +102,9 @@ Partial Class frm_Especialidades
         Me.lbl_especialidad.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_especialidad.Location = New System.Drawing.Point(55, 58)
         Me.lbl_especialidad.Name = "lbl_especialidad"
-        Me.lbl_especialidad.Size = New System.Drawing.Size(88, 17)
-        Me.lbl_especialidad.TabIndex = 5
-        Me.lbl_especialidad.Text = "Especialidad: "
+        Me.lbl_especialidad.Size = New System.Drawing.Size(81, 17)
+        Me.lbl_especialidad.TabIndex = 8
+        Me.lbl_especialidad.Text = "Especialidad"
         '
         'txt_id
         '
@@ -111,32 +112,32 @@ Partial Class frm_Especialidades
         Me.txt_id.Location = New System.Drawing.Point(149, 24)
         Me.txt_id.Name = "txt_id"
         Me.txt_id.Size = New System.Drawing.Size(248, 25)
-        Me.txt_id.TabIndex = 6
+        Me.txt_id.TabIndex = 0
         '
         'dgv_resultados
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_resultados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_resultados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.dgv_resultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_resultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id, Me.col_especialidad})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_resultados.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_resultados.DefaultCellStyle = DataGridViewCellStyle4
         Me.dgv_resultados.Location = New System.Drawing.Point(27, 103)
         Me.dgv_resultados.Name = "dgv_resultados"
         Me.dgv_resultados.Size = New System.Drawing.Size(493, 215)
-        Me.dgv_resultados.TabIndex = 8
+        Me.dgv_resultados.TabIndex = 6
         '
         'col_id
         '
@@ -155,19 +156,7 @@ Partial Class frm_Especialidades
         Me.txt_especialidad.Location = New System.Drawing.Point(149, 55)
         Me.txt_especialidad.Name = "txt_especialidad"
         Me.txt_especialidad.Size = New System.Drawing.Size(248, 25)
-        Me.txt_especialidad.TabIndex = 7
-        '
-        'Button1
-        '
-        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Button1.Location = New System.Drawing.Point(113, 324)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(80, 32)
-        Me.Button1.TabIndex = 9
-        Me.Button1.Text = "Editar"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.txt_especialidad.TabIndex = 1
         '
         'frm_Especialidades
         '
@@ -175,7 +164,6 @@ Partial Class frm_Especialidades
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(550, 382)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.dgv_resultados)
         Me.Controls.Add(Me.txt_especialidad)
         Me.Controls.Add(Me.txt_id)
@@ -204,5 +192,4 @@ Partial Class frm_Especialidades
     Friend WithEvents txt_especialidad As System.Windows.Forms.TextBox
     Friend WithEvents col_id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_especialidad As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

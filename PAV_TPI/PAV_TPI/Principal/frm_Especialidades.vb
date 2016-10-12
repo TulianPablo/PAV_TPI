@@ -105,7 +105,22 @@
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
 
+
+    'PARA MODIFICAR EL COLOR DE LOS BOTONES CUANDO ESTAN DESHABILITADOS
+    Private Sub btn_nuevo_EnabledChanged(sender As Object, e As EventArgs) Handles btn_nuevo.EnabledChanged
+        Colores.ChangeColor(btn_nuevo)
+    End Sub
+
+    Private Sub btn_editar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_editar.EnabledChanged
+        Colores.ChangeColor(btn_editar)
+    End Sub
+
+    Private Sub btn_quitar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_quitar.EnabledChanged
+        Colores.ChangeColor(btn_quitar)
+    End Sub
+
+    Private Sub btn_buscar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_buscar.EnabledChanged
+        Colores.ChangeColor(btn_buscar)
     End Sub
 End Class
