@@ -162,7 +162,7 @@ Partial Class frm_nuevoProfesional
         Me.lbl_telefono.AutoSize = True
         Me.lbl_telefono.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_telefono.ForeColor = System.Drawing.Color.Black
-        Me.lbl_telefono.Location = New System.Drawing.Point(458, 129)
+        Me.lbl_telefono.Location = New System.Drawing.Point(454, 129)
         Me.lbl_telefono.Name = "lbl_telefono"
         Me.lbl_telefono.Size = New System.Drawing.Size(58, 17)
         Me.lbl_telefono.TabIndex = 13
@@ -173,7 +173,7 @@ Partial Class frm_nuevoProfesional
         Me.lbl_nroDoc.AutoSize = True
         Me.lbl_nroDoc.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_nroDoc.ForeColor = System.Drawing.Color.Black
-        Me.lbl_nroDoc.Location = New System.Drawing.Point(414, 67)
+        Me.lbl_nroDoc.Location = New System.Drawing.Point(407, 67)
         Me.lbl_nroDoc.Name = "lbl_nroDoc"
         Me.lbl_nroDoc.Size = New System.Drawing.Size(105, 17)
         Me.lbl_nroDoc.TabIndex = 11
@@ -184,7 +184,7 @@ Partial Class frm_nuevoProfesional
         Me.lbl_tipoDoc.AutoSize = True
         Me.lbl_tipoDoc.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_tipoDoc.ForeColor = System.Drawing.Color.Black
-        Me.lbl_tipoDoc.Location = New System.Drawing.Point(414, 38)
+        Me.lbl_tipoDoc.Location = New System.Drawing.Point(407, 36)
         Me.lbl_tipoDoc.Name = "lbl_tipoDoc"
         Me.lbl_tipoDoc.Size = New System.Drawing.Size(105, 17)
         Me.lbl_tipoDoc.TabIndex = 10

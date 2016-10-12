@@ -22,6 +22,7 @@ Partial Class frm_Profesionales
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_Profesionales))
         Me.lbl_profesionales_mensaje = New System.Windows.Forms.Label()
         Me.btn_buscar = New System.Windows.Forms.Button()
         Me.btn_editar = New System.Windows.Forms.Button()
@@ -315,19 +316,18 @@ Partial Class frm_Profesionales
         '
         Me.matricula.HeaderText = "Matrícula"
         Me.matricula.Name = "matricula"
-        Me.matricula.Width = 90
         '
         'col_nombre
         '
         Me.col_nombre.HeaderText = "Nombre"
         Me.col_nombre.Name = "col_nombre"
-        Me.col_nombre.Width = 160
+        Me.col_nombre.Width = 220
         '
         'col_apellido
         '
         Me.col_apellido.HeaderText = "Apellido"
         Me.col_apellido.Name = "col_apellido"
-        Me.col_apellido.Width = 160
+        Me.col_apellido.Width = 220
         '
         'col_tipoDoc
         '
@@ -406,6 +406,7 @@ Partial Class frm_Profesionales
         Me.Controls.Add(Me.dtp_fechaDesde)
         Me.Controls.Add(Me.dgv_resultados)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.MaximizeBox = False
         Me.Name = "frm_Profesionales"
