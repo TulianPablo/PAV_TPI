@@ -37,22 +37,22 @@ Partial Class frm_CentroMedico
         Me.cmb_barrio = New System.Windows.Forms.ComboBox()
         Me.lbl_telefono = New System.Windows.Forms.Label()
         Me.txt_telefono = New System.Windows.Forms.TextBox()
-        Me.Label5 = New System.Windows.Forms.Label()
         Me.txt_mail = New System.Windows.Forms.TextBox()
+        Me.btn_buscar = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.col_fechaBaja = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_mail = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_barrio = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_nroCalle = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_Calle = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_denominacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_nroCentro = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.dvg_centrosMedicos = New System.Windows.Forms.DataGridView()
+        Me.btn_agregar = New System.Windows.Forms.Button()
+        Me.btn_borrar = New System.Windows.Forms.Button()
         Me.btn_editar = New System.Windows.Forms.Button()
         Me.btn_new = New System.Windows.Forms.Button()
-        Me.btn_borrar = New System.Windows.Forms.Button()
-        Me.btn_agregar = New System.Windows.Forms.Button()
-        Me.btn_buscar = New System.Windows.Forms.Button()
-        Me.col_nroCentro = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_denominacion = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_Calle = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_nroCalle = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_barrio = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_mail = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_fechaBaja = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dvg_centrosMedicos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -153,7 +153,7 @@ Partial Class frm_CentroMedico
         Me.lbl_telefono.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_telefono.Location = New System.Drawing.Point(132, 162)
         Me.lbl_telefono.Name = "lbl_telefono"
-        Me.lbl_telefono.Size = New System.Drawing.Size(58, 17)
+        Me.lbl_telefono.Size = New System.Drawing.Size(59, 17)
         Me.lbl_telefono.TabIndex = 10
         Me.lbl_telefono.Text = "Teléfono"
         '
@@ -165,6 +165,24 @@ Partial Class frm_CentroMedico
         Me.txt_telefono.Size = New System.Drawing.Size(200, 25)
         Me.txt_telefono.TabIndex = 11
         '
+        'txt_mail
+        '
+        Me.txt_mail.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_mail.Location = New System.Drawing.Point(201, 190)
+        Me.txt_mail.Name = "txt_mail"
+        Me.txt_mail.Size = New System.Drawing.Size(365, 25)
+        Me.txt_mail.TabIndex = 13
+        '
+        'btn_buscar
+        '
+        Me.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_buscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.btn_buscar.Location = New System.Drawing.Point(347, 20)
+        Me.btn_buscar.Name = "btn_buscar"
+        Me.btn_buscar.Size = New System.Drawing.Size(30, 30)
+        Me.btn_buscar.TabIndex = 1
+        Me.btn_buscar.UseVisualStyleBackColor = True
+        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -175,13 +193,53 @@ Partial Class frm_CentroMedico
         Me.Label5.TabIndex = 12
         Me.Label5.Text = "Mail"
         '
-        'txt_mail
+        'col_fechaBaja
         '
-        Me.txt_mail.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_mail.Location = New System.Drawing.Point(201, 190)
-        Me.txt_mail.Name = "txt_mail"
-        Me.txt_mail.Size = New System.Drawing.Size(365, 25)
-        Me.txt_mail.TabIndex = 13
+        Me.col_fechaBaja.HeaderText = "Fecha de Baja"
+        Me.col_fechaBaja.Name = "col_fechaBaja"
+        Me.col_fechaBaja.Width = 150
+        '
+        'col_mail
+        '
+        Me.col_mail.HeaderText = "Mail"
+        Me.col_mail.Name = "col_mail"
+        Me.col_mail.Visible = False
+        Me.col_mail.Width = 150
+        '
+        'col_telefono
+        '
+        Me.col_telefono.HeaderText = "Teléfono"
+        Me.col_telefono.Name = "col_telefono"
+        '
+        'col_barrio
+        '
+        Me.col_barrio.HeaderText = "Barrio"
+        Me.col_barrio.Name = "col_barrio"
+        Me.col_barrio.Visible = False
+        '
+        'col_nroCalle
+        '
+        Me.col_nroCalle.HeaderText = "Nro. Calle"
+        Me.col_nroCalle.Name = "col_nroCalle"
+        Me.col_nroCalle.Visible = False
+        '
+        'col_Calle
+        '
+        Me.col_Calle.HeaderText = "Domicilio"
+        Me.col_Calle.Name = "col_Calle"
+        Me.col_Calle.Width = 150
+        '
+        'col_denominacion
+        '
+        Me.col_denominacion.HeaderText = "Denominación"
+        Me.col_denominacion.Name = "col_denominacion"
+        Me.col_denominacion.Width = 200
+        '
+        'col_nroCentro
+        '
+        Me.col_nroCentro.HeaderText = "Nro. Centro"
+        Me.col_nroCentro.Name = "col_nroCentro"
+        Me.col_nroCentro.Width = 110
         '
         'dvg_centrosMedicos
         '
@@ -208,6 +266,32 @@ Partial Class frm_CentroMedico
         Me.dvg_centrosMedicos.Size = New System.Drawing.Size(755, 156)
         Me.dvg_centrosMedicos.TabIndex = 14
         '
+        'btn_agregar
+        '
+        Me.btn_agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_agregar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_agregar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_agregar.Location = New System.Drawing.Point(29, 408)
+        Me.btn_agregar.Name = "btn_agregar"
+        Me.btn_agregar.Size = New System.Drawing.Size(80, 32)
+        Me.btn_agregar.TabIndex = 15
+        Me.btn_agregar.Text = "Nuevo"
+        Me.btn_agregar.UseVisualStyleBackColor = True
+        '
+        'btn_borrar
+        '
+        Me.btn_borrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.btn_borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_borrar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_borrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_borrar.Location = New System.Drawing.Point(201, 408)
+        Me.btn_borrar.Name = "btn_borrar"
+        Me.btn_borrar.Size = New System.Drawing.Size(80, 32)
+        Me.btn_borrar.TabIndex = 17
+        Me.btn_borrar.Text = "Eliminar"
+        Me.btn_borrar.UseVisualStyleBackColor = True
+        '
         'btn_editar
         '
         Me.btn_editar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
@@ -233,90 +317,6 @@ Partial Class frm_CentroMedico
         Me.btn_new.TabIndex = 0
         Me.btn_new.Text = "Buscar"
         Me.btn_new.UseVisualStyleBackColor = True
-        '
-        'btn_borrar
-        '
-        Me.btn_borrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_borrar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_borrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_borrar.Location = New System.Drawing.Point(201, 408)
-        Me.btn_borrar.Name = "btn_borrar"
-        Me.btn_borrar.Size = New System.Drawing.Size(80, 32)
-        Me.btn_borrar.TabIndex = 17
-        Me.btn_borrar.Text = "Eliminar"
-        Me.btn_borrar.UseVisualStyleBackColor = True
-        '
-        'btn_agregar
-        '
-        Me.btn_agregar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.btn_agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_agregar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_agregar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_agregar.Location = New System.Drawing.Point(29, 408)
-        Me.btn_agregar.Name = "btn_agregar"
-        Me.btn_agregar.Size = New System.Drawing.Size(80, 32)
-        Me.btn_agregar.TabIndex = 15
-        Me.btn_agregar.Text = "Nuevo"
-        Me.btn_agregar.UseVisualStyleBackColor = True
-        '
-        'btn_buscar
-        '
-        Me.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_buscar.ForeColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.btn_buscar.Location = New System.Drawing.Point(347, 20)
-        Me.btn_buscar.Name = "btn_buscar"
-        Me.btn_buscar.Size = New System.Drawing.Size(30, 30)
-        Me.btn_buscar.TabIndex = 1
-        Me.btn_buscar.UseVisualStyleBackColor = True
-        '
-        'col_nroCentro
-        '
-        Me.col_nroCentro.HeaderText = "Nro. Centro"
-        Me.col_nroCentro.Name = "col_nroCentro"
-        Me.col_nroCentro.Width = 110
-        '
-        'col_denominacion
-        '
-        Me.col_denominacion.HeaderText = "Denominación"
-        Me.col_denominacion.Name = "col_denominacion"
-        Me.col_denominacion.Width = 200
-        '
-        'col_Calle
-        '
-        Me.col_Calle.HeaderText = "Domicilio"
-        Me.col_Calle.Name = "col_Calle"
-        Me.col_Calle.Width = 150
-        '
-        'col_nroCalle
-        '
-        Me.col_nroCalle.HeaderText = "Nro. Calle"
-        Me.col_nroCalle.Name = "col_nroCalle"
-        Me.col_nroCalle.Visible = False
-        '
-        'col_barrio
-        '
-        Me.col_barrio.HeaderText = "Barrio"
-        Me.col_barrio.Name = "col_barrio"
-        Me.col_barrio.Visible = False
-        '
-        'col_telefono
-        '
-        Me.col_telefono.HeaderText = "Teléfono"
-        Me.col_telefono.Name = "col_telefono"
-        '
-        'col_mail
-        '
-        Me.col_mail.HeaderText = "Mail"
-        Me.col_mail.Name = "col_mail"
-        Me.col_mail.Visible = False
-        Me.col_mail.Width = 150
-        '
-        'col_fechaBaja
-        '
-        Me.col_fechaBaja.HeaderText = "Fecha de Baja"
-        Me.col_fechaBaja.Name = "col_fechaBaja"
-        Me.col_fechaBaja.Width = 150
         '
         'frm_CentroMedico
         '
@@ -366,20 +366,20 @@ Partial Class frm_CentroMedico
     Friend WithEvents cmb_barrio As System.Windows.Forms.ComboBox
     Friend WithEvents lbl_telefono As System.Windows.Forms.Label
     Friend WithEvents txt_telefono As System.Windows.Forms.TextBox
+    Friend WithEvents txt_mail As System.Windows.Forms.TextBox
     Friend WithEvents btn_buscar As System.Windows.Forms.Button
     Friend WithEvents Label5 As System.Windows.Forms.Label
-    Friend WithEvents txt_mail As System.Windows.Forms.TextBox
+    Friend WithEvents col_fechaBaja As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_mail As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_telefono As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_barrio As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_nroCalle As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_Calle As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_denominacion As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_nroCentro As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents dvg_centrosMedicos As System.Windows.Forms.DataGridView
     Friend WithEvents btn_agregar As System.Windows.Forms.Button
     Friend WithEvents btn_borrar As System.Windows.Forms.Button
-    Friend WithEvents btn_new As System.Windows.Forms.Button
     Friend WithEvents btn_editar As System.Windows.Forms.Button
-    Friend WithEvents col_nroCentro As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_denominacion As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_Calle As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_nroCalle As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_barrio As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_telefono As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_mail As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_fechaBaja As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents btn_new As System.Windows.Forms.Button
 End Class
