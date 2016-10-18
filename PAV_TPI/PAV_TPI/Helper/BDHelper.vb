@@ -8,8 +8,9 @@ Public Class BDHelper
     ' Permite ejecutar comandos sql y retornar resultados a la capa de datos.
     ' Implementa el patrón SINGLETON, que garantiza tener solo una instancia de esta clase.
 
-    Private string_conexion As String = "Data Source=AGUSTINA-PC;Integrated Security=True;Initial Catalog=DB_ObraSocial"
+    Private string_conexion As String = "Data Source=maquis;Initial Catalog=pav_tp;User ID=avisuales1;Password=avisuales1"
     'Private string_conexion As String = ConfigurationManager.ConnectionStrings("DB_ObraSocial").ConfigurationString
+
     Private Shared instance As BDHelper 'Unica instancia de la clase
 
     Public Shared Function getDBHelper() As BDHelper
@@ -173,6 +174,27 @@ Public Class BDHelper
 
     Shared Function GetPracticas() As DataTable
         Dim strSQL As String = "Select id_practica, nombre from Practica"
+        Return BDHelper.getDBHelper.ConsultaSQL(strSQL)
+    End Function
+
+    Public Shared Function insertar(ByVal nro_atencion As String, ByVal fecha As String, ByVal nro_centro As String, ByVal tipo_doc As Integer, ByVal nro_doc As String, matricula As String, especialidad As Integer, detalles As List(Of DetalleAtencionMedica))
+        Dim query As String = "INSERT INTO AtencionMedica VALUES( '" + fecha
+        query += "', " + nro_atencion
+        query += ", " + tipo_doc.ToString
+        query += "," + nro_doc
+        query += ", " + especialidad.ToString
+        query += ", " + nro_centro
+        query += ", " + matricula + ");"
+
+        For Each detalle As DetalleAtencionMedica In detalles
+            query += "INSERT INTO DetalleAtencionMedica VALUES(" + fecha + "," + nro_atencion + "," + detalle.id_practica + "," + detalle.porc_descuento + "," + detalle.precio_practica + ");"
+        Next
+
+        Return BDHelper.getDBHelper.EjecutarSQL(query) > 0
+    End Function
+
+    Public Shared Function GetPracticasxEspecialidad(ByVal especialidad As Integer) As DataTable
+        Dim strSQL As String = "SELECT id_practica, nombre FROM Practica WHERE id_especialidad = " + (especialidad + 1).ToString
         Return BDHelper.getDBHelper.ConsultaSQL(strSQL)
     End Function
 
