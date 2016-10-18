@@ -1,6 +1,6 @@
 ﻿Public Class frm_AtencionMedica
     Dim atenciones As List(Of DetalleAtencionMedica)
-    Private Sub AtencionMedica_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private Sub frm_AtencionMedica_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txt_fecha.Text = DateTime.Now.ToString("dd/MM/yyyy")
         CargarCombo(cbo_tipoDoc, BDHelper.GetTipoDoc, "id_tipoDoc", "nombre")
         CargarCombo(cbo_especialidad, BDHelper.GetEspecialidades, "id_especialidad", "nombre")
