@@ -12,7 +12,7 @@
         combo.SelectedIndex = -1
 
     End Sub
-   
+
     Private Sub btn_consultar_Click(sender As Object, e As EventArgs) Handles btn_consultar.Click
         dgv_atenciones.Columns(11).Visible = False
         If Not String.IsNullOrEmpty(txt_nroAtencion.Text) Or Not String.IsNullOrEmpty(txt.Text) Or Not String.IsNullOrEmpty(txt_nroDoc.Text) Or
