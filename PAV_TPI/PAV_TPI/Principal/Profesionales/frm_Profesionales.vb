@@ -30,7 +30,7 @@
     End Sub
 
     Public Sub cargar_grilla_CD()
-        Dim str As String = "SELECT * FROM Profesional p JOIN TipoDoc td ON (td.id_tipoDoc = p.id_tipoDoc) "
+        Dim str As String = "SELECT p.* FROM Profesional p JOIN TipoDoc td ON (td.id_tipoDoc = p.id_tipoDoc) WHERE "
         Dim c As Integer = 0
 
         If Not String.IsNullOrEmpty(txt_nombre.Text) Then
@@ -64,29 +64,28 @@
 
         If chk_fechaBaja.Checked = True Then
             If c = 1 Then
-                str &= " AND "
+                str &= " OR "
             End If
             str &= "p.fecha_baja != NULL"
             c = 1
             dgv_resultados.Columns(11).Visible = True
         End If
 
-        'If Not String.IsNullOrEmpty(dtp_fechaDesde.Text) Or Not String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
-        '    If Not String.IsNullOrEmpty(dtp_fechaDesde.Text) And Not String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
-        '        If c = 1 Then
-        '            str &= " AND "
-        '        End If
-        '        dtp_fechaDesde.Value.Day.ToString()
-        '        str &= "p.fecha_alta BETWEEN CAST('" & dtp_fechaDesde.Text & "' AS DATE) AND CAST('" & dtp_fechaHasta.Text & "' AS DATE)"
-        '        c = 1
-        '    End If
-        'End If
+        If Not String.IsNullOrEmpty(dtp_fechaDesde.Text) Or Not String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
+            If Not String.IsNullOrEmpty(dtp_fechaDesde.Text) And Not String.IsNullOrEmpty(dtp_fechaHasta.Text) Then
+                If c = 1 Then
+                    str &= " AND "
+                End If
+                dtp_fechaDesde.Value.Day.ToString()
+                str &= "p.fecha_alta BETWEEN CAST('" & dtp_fechaDesde.Text & "' AS DATE) AND CAST('" & dtp_fechaHasta.Text & "' AS DATE)"
+                c = 1
+            End If
+        End If
 
         For Each row As DataRow In BDHelper.getDBHelper.ConsultaSQL(str).Rows
             dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString, row.Item(2).ToString, row.Item(3).ToString,
                                                   row.Item(4).ToString, row.Item(5).ToString, row.Item(6).ToString, row.Item(7).ToString,
-                                                  row.Item(8).ToString, row.Item(9).ToString, row.Item(10).ToString, row.Item(11).ToString,
-                                                  row.Item(12).ToString, row.Item(13).ToString})
+                                                  row.Item(8).ToString, row.Item(9).ToString, row.Item(11).ToString, row.Item(10).ToString})
         Next
         'Valida si existen resultados o no
         If dgv_resultados.Rows.Count = 0 Then
@@ -99,8 +98,7 @@
         For Each row As DataRow In BDHelper.getDBHelper.ConsultaSQL("SELECT * FROM Profesional").Rows
             dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString, row.Item(2).ToString, row.Item(3).ToString,
                                                   row.Item(4).ToString, row.Item(5).ToString, row.Item(6).ToString, row.Item(7).ToString,
-                                                  row.Item(8).ToString, row.Item(9).ToString, row.Item(10).ToString, row.Item(11).ToString,
-                                                  row.Item(12).ToString, row.Item(13).ToString})
+                                                  row.Item(8).ToString, row.Item(9).ToString, row.Item(11).ToString, row.Item(10).ToString})
         Next
         If dgv_resultados.Rows.Count = 0 Then
             lbl_profesionales_mensaje.Text = "No se encontraron resultados."

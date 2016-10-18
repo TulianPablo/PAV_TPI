@@ -377,12 +377,15 @@ Partial Class frm_Profesionales
         '
         Me.col_fechaAlta.HeaderText = "Fecha Alta"
         Me.col_fechaAlta.Name = "col_fechaAlta"
+        Me.col_fechaAlta.ReadOnly = True
         Me.col_fechaAlta.Width = 150
         '
         'col_fechaBaja
         '
         Me.col_fechaBaja.HeaderText = "Fecha Baja"
         Me.col_fechaBaja.Name = "col_fechaBaja"
+        Me.col_fechaBaja.ReadOnly = True
+        Me.col_fechaBaja.Visible = False
         Me.col_fechaBaja.Width = 150
         '
         'frm_Profesionales
