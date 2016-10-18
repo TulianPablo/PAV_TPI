@@ -1,5 +1,4 @@
 ﻿Public Class frm_nuevoProfesional
-
     Private Sub frm_nuevoProfesional_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         txt_fechaAlta.Text = Date.Today.ToString
         txt_fechaAlta.Enabled = False
@@ -86,6 +85,4 @@
             Me.Close()
         End If
     End Sub
-
-
 End Class

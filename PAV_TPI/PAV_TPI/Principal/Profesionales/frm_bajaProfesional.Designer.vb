@@ -2,7 +2,7 @@
 Partial Class frm_bajaProfesional
     Inherits System.Windows.Forms.Form
 
-    'Form reemplaza a Dispose para limpiar la lista de componentes.
+    'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()> _
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
@@ -14,17 +14,17 @@ Partial Class frm_bajaProfesional
         End Try
     End Sub
 
-    'Requerido por el Diseñador de Windows Forms
+    'Required by the Windows Form Designer
     Private components As System.ComponentModel.IContainer
 
-    'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
-    'Se puede modificar usando el Diseñador de Windows Forms.  
-    'No lo modifique con el editor de código.
+    'NOTE: The following procedure is required by the Windows Form Designer
+    'It can be modified using the Windows Form Designer.  
+    'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_bajaProfesional))
-        Me.btn_cancelar = New System.Windows.Forms.Button()
-        Me.btn_aceptar = New System.Windows.Forms.Button()
+        Me.txt_fechaBaja = New System.Windows.Forms.MaskedTextBox()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.txt_nroCalle = New System.Windows.Forms.MaskedTextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -49,36 +49,44 @@ Partial Class frm_bajaProfesional
         Me.Label10 = New System.Windows.Forms.Label()
         Me.txt_fechaAlta = New System.Windows.Forms.MaskedTextBox()
         Me.Label11 = New System.Windows.Forms.Label()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.txt_fechaBaja = New System.Windows.Forms.MaskedTextBox()
-        Me.Label13 = New System.Windows.Forms.Label()
+        Me.btn_cancelar = New System.Windows.Forms.Button()
+        Me.btn_aceptar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.box_datosPersonales.SuspendLayout()
         Me.SuspendLayout()
         '
-        'btn_cancelar
+        'txt_fechaBaja
         '
-        Me.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_cancelar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_cancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_cancelar.Location = New System.Drawing.Point(446, 481)
-        Me.btn_cancelar.Name = "btn_cancelar"
-        Me.btn_cancelar.Size = New System.Drawing.Size(96, 29)
-        Me.btn_cancelar.TabIndex = 41
-        Me.btn_cancelar.Text = "Cancelar"
-        Me.btn_cancelar.UseVisualStyleBackColor = True
+        Me.txt_fechaBaja.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_fechaBaja.Location = New System.Drawing.Point(603, 451)
+        Me.txt_fechaBaja.Mask = "00/00/0000"
+        Me.txt_fechaBaja.Name = "txt_fechaBaja"
+        Me.txt_fechaBaja.Size = New System.Drawing.Size(100, 25)
+        Me.txt_fechaBaja.TabIndex = 58
+        Me.txt_fechaBaja.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.txt_fechaBaja.ValidatingType = GetType(Date)
         '
-        'btn_aceptar
+        'Label13
         '
-        Me.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.btn_aceptar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_aceptar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_aceptar.Location = New System.Drawing.Point(332, 481)
-        Me.btn_aceptar.Name = "btn_aceptar"
-        Me.btn_aceptar.Size = New System.Drawing.Size(96, 29)
-        Me.btn_aceptar.TabIndex = 40
-        Me.btn_aceptar.Text = "Aceptar"
-        Me.btn_aceptar.UseVisualStyleBackColor = True
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.Label13.Location = New System.Drawing.Point(509, 454)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(88, 17)
+        Me.Label13.TabIndex = 59
+        Me.Label13.Text = "Fecha de Baja"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Label12.Location = New System.Drawing.Point(79, 48)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(218, 32)
+        Me.Label12.TabIndex = 57
+        Me.Label12.Text = "Baja de Profesional"
         '
         'GroupBox1
         '
@@ -91,10 +99,10 @@ Partial Class frm_bajaProfesional
         Me.GroupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.GroupBox1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.Teal
-        Me.GroupBox1.Location = New System.Drawing.Point(74, 285)
+        Me.GroupBox1.Location = New System.Drawing.Point(129, 310)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(736, 111)
-        Me.GroupBox1.TabIndex = 45
+        Me.GroupBox1.TabIndex = 54
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Domicilio"
         '
@@ -176,10 +184,10 @@ Partial Class frm_bajaProfesional
         Me.box_datosPersonales.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.box_datosPersonales.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.box_datosPersonales.ForeColor = System.Drawing.Color.Teal
-        Me.box_datosPersonales.Location = New System.Drawing.Point(74, 80)
+        Me.box_datosPersonales.Location = New System.Drawing.Point(129, 105)
         Me.box_datosPersonales.Name = "box_datosPersonales"
         Me.box_datosPersonales.Size = New System.Drawing.Size(736, 182)
-        Me.box_datosPersonales.TabIndex = 44
+        Me.box_datosPersonales.TabIndex = 53
         Me.box_datosPersonales.TabStop = False
         Me.box_datosPersonales.Text = "Datos personales"
         '
@@ -330,11 +338,11 @@ Partial Class frm_bajaProfesional
         'txt_fechaAlta
         '
         Me.txt_fechaAlta.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_fechaAlta.Location = New System.Drawing.Point(318, 426)
+        Me.txt_fechaAlta.Location = New System.Drawing.Point(373, 451)
         Me.txt_fechaAlta.Mask = "00/00/0000"
         Me.txt_fechaAlta.Name = "txt_fechaAlta"
         Me.txt_fechaAlta.Size = New System.Drawing.Size(100, 25)
-        Me.txt_fechaAlta.TabIndex = 46
+        Me.txt_fechaAlta.TabIndex = 55
         Me.txt_fechaAlta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         Me.txt_fechaAlta.ValidatingType = GetType(Date)
         '
@@ -343,51 +351,41 @@ Partial Class frm_bajaProfesional
         Me.Label11.AutoSize = True
         Me.Label11.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label11.Location = New System.Drawing.Point(226, 429)
+        Me.Label11.Location = New System.Drawing.Point(281, 454)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(86, 17)
-        Me.Label11.TabIndex = 47
+        Me.Label11.TabIndex = 56
         Me.Label11.Text = "Fecha de Alta"
         '
-        'Label12
+        'btn_cancelar
         '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 18.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.Label12.Location = New System.Drawing.Point(24, 23)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(218, 32)
-        Me.Label12.TabIndex = 48
-        Me.Label12.Text = "Baja de Profesional"
+        Me.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_cancelar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_cancelar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_cancelar.Location = New System.Drawing.Point(501, 506)
+        Me.btn_cancelar.Name = "btn_cancelar"
+        Me.btn_cancelar.Size = New System.Drawing.Size(96, 29)
+        Me.btn_cancelar.TabIndex = 52
+        Me.btn_cancelar.Text = "Cancelar"
+        Me.btn_cancelar.UseVisualStyleBackColor = True
         '
-        'txt_fechaBaja
+        'btn_aceptar
         '
-        Me.txt_fechaBaja.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_fechaBaja.Location = New System.Drawing.Point(548, 426)
-        Me.txt_fechaBaja.Mask = "00/00/0000"
-        Me.txt_fechaBaja.Name = "txt_fechaBaja"
-        Me.txt_fechaBaja.Size = New System.Drawing.Size(100, 25)
-        Me.txt_fechaBaja.TabIndex = 49
-        Me.txt_fechaBaja.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        Me.txt_fechaBaja.ValidatingType = GetType(Date)
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.Label13.Location = New System.Drawing.Point(454, 429)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(88, 17)
-        Me.Label13.TabIndex = 50
-        Me.Label13.Text = "Fecha de Baja"
+        Me.btn_aceptar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_aceptar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_aceptar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_aceptar.Location = New System.Drawing.Point(387, 506)
+        Me.btn_aceptar.Name = "btn_aceptar"
+        Me.btn_aceptar.Size = New System.Drawing.Size(96, 29)
+        Me.btn_aceptar.TabIndex = 51
+        Me.btn_aceptar.Text = "Aceptar"
+        Me.btn_aceptar.UseVisualStyleBackColor = True
         '
         'frm_bajaProfesional
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 17.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
-        Me.ClientSize = New System.Drawing.Size(881, 537)
+        Me.ClientSize = New System.Drawing.Size(945, 582)
         Me.Controls.Add(Me.txt_fechaBaja)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label12)
@@ -397,13 +395,8 @@ Partial Class frm_bajaProfesional
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.btn_cancelar)
         Me.Controls.Add(Me.btn_aceptar)
-        Me.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ForeColor = System.Drawing.SystemColors.ButtonShadow
-        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Name = "frm_bajaProfesional"
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Baja de Profesional"
+        Me.Text = "frm_bajaProfesional"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.box_datosPersonales.ResumeLayout(False)
@@ -412,8 +405,9 @@ Partial Class frm_bajaProfesional
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents btn_cancelar As System.Windows.Forms.Button
-    Friend WithEvents btn_aceptar As System.Windows.Forms.Button
+    Friend WithEvents txt_fechaBaja As System.Windows.Forms.MaskedTextBox
+    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
     Friend WithEvents txt_nroCalle As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
@@ -438,7 +432,6 @@ Partial Class frm_bajaProfesional
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents txt_fechaAlta As System.Windows.Forms.MaskedTextBox
     Friend WithEvents Label11 As System.Windows.Forms.Label
-    Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents txt_fechaBaja As System.Windows.Forms.MaskedTextBox
-    Friend WithEvents Label13 As System.Windows.Forms.Label
+    Friend WithEvents btn_cancelar As System.Windows.Forms.Button
+    Friend WithEvents btn_aceptar As System.Windows.Forms.Button
 End Class
