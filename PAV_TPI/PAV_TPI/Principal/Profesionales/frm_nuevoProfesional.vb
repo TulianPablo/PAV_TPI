@@ -22,7 +22,7 @@
         If MessageBox.Show("¿Desea registrar el nuevo profesional?", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) = Windows.Forms.DialogResult.OK Then
             If validar_camposCompletos() Then
                 Dim str As String = "INSERT [dbo].[Profesional] "
-                str &= "([matricula],[apellido],[nombre],[id_tipoDoc],[nro_doc],[fecha_nac],[calle],[nro],[id_barrio],[telefono],[fecha_baja]) "
+                str &= "([matricula],[apellido],[nombre],[id_tipoDoc],[nro_doc],[fecha_nac],[calle],[nro],[id_barrio],[telefono],[fecha_baja],[fecha_alta]) "
                 str &= "VALUES('" & txt_matricula.Text & "',"
                 str &= "'" & txt_apellido.Text & "',"
                 str &= "'" & txt_nombre.Text & "',"
@@ -33,8 +33,8 @@
                 str &= txt_nroCalle.Text & ","
                 str &= cbo_barrio.SelectedValue & ","
                 str &= txt_telefono.Text & ","
-                'str &= "'" & mtb_fechaAlta.Text & "',"
-                str &= "NULL)"
+                str &= "NULL,"
+                str &= txt_fechaAlta.Text & ")"
                 BDHelper.getDBHelper.EjecutarSQL(str)
                 Me.Close()
             Else
@@ -85,4 +85,5 @@
             Me.Close()
         End If
     End Sub
+
 End Class
