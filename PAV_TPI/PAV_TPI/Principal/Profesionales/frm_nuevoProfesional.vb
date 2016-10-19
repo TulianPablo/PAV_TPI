@@ -34,7 +34,7 @@
                 str &= cbo_barrio.SelectedValue & ","
                 str &= txt_telefono.Text & ","
                 str &= "NULL,"
-                str &= txt_fechaAlta.Text & ")"
+                str &= "'" & txt_fechaAlta.Text & "')"
                 BDHelper.getDBHelper.EjecutarSQL(str)
                 Me.Close()
             Else
