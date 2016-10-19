@@ -335,7 +335,7 @@ Partial Class frm_editarProfesional
         '
         Me.txt_telefono.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txt_telefono.Location = New System.Drawing.Point(522, 126)
-        Me.txt_telefono.Mask = "(999)000-000-000"
+        Me.txt_telefono.Mask = "999999999"
         Me.txt_telefono.Name = "txt_telefono"
         Me.txt_telefono.Size = New System.Drawing.Size(182, 25)
         Me.txt_telefono.TabIndex = 6

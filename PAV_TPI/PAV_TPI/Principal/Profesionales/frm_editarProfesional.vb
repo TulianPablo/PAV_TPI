@@ -27,17 +27,20 @@
         CargarCombo(cbo_tipoDoc, BDHelper.GetTipoDoc(), "id_tipoDoc", "nombre")
         CargarCombo(cbo_barrio, BDHelper.GetBarrios(), "id_barrio", "nombre")
 
-        txt_nombre.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(0).Value
-        txt_apellido.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(1).Value
-        cbo_tipoDoc.SelectedValue = form_Profesional.dgv_resultados.CurrentRow.Cells(2).Value
-        txt_nroDoc.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(3).Value
-        dtp_fechaNac.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(4).Value
-        txt_calle.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(5).Value
-        txt_nroCalle.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(6).Value
-        cbo_barrio.SelectedValue = form_Profesional.dgv_resultados.CurrentRow.Cells(7).Value
-        txt_telefono.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(8).Value
-        'txt_fechaAlta.Text = formConsulta.dgv_resultados.CurrentRow.Cells(9).Value
+        txt_matricula.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(0).Value
+        txt_nombre.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(1).Value
+        txt_apellido.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(2).Value
+        cbo_tipoDoc.SelectedValue = form_Profesional.dgv_resultados.CurrentRow.Cells(3).Value
+        txt_nroDoc.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(4).Value
+        dtp_fechaNac.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(5).Value
+        txt_calle.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(6).Value
+        txt_nroCalle.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(7).Value
+        cbo_barrio.SelectedValue = form_Profesional.dgv_resultados.CurrentRow.Cells(8).Value
+        txt_telefono.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(9).Value
+        txt_fechaAlta.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(10).Value
+        txt_fechaBaja.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(11).Value
         txt_fechaAlta.Enabled = False
+        txt_fechaBaja.Enabled = False
 
         cbo_tipoDoc.Enabled = False
         txt_nroDoc.Enabled = False
