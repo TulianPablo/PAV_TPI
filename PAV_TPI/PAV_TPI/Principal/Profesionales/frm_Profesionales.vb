@@ -26,6 +26,7 @@
 
     Private Sub btn_editar_Click(sender As Object, e As EventArgs) Handles btn_editar.Click
         form_editarProfesional = New frm_editarProfesional
+        form_editarProfesional.form_Profesional = Me
         form_editarProfesional.Show()
     End Sub
 
@@ -138,6 +139,7 @@
 
     Private Sub btn_borrar_Click(sender As Object, e As EventArgs) Handles btn_borrar.Click
         form_bajaProfesional = New frm_bajaProfesional
+        form_bajaProfesional.form_Profesional = Me
         form_bajaProfesional.Show()
     End Sub
 
@@ -157,5 +159,14 @@
 
     Private Sub btn_buscar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_buscar.EnabledChanged
         Colores.ChangeColor(btn_buscar)
+    End Sub
+
+    Private Sub dgv_resultados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_resultados.CellContentClick
+        If String.IsNullOrEmpty(dgv_resultados.CurrentRow.Cells(11).Value) Then
+            btn_editar.Enabled = True
+            btn_borrar.Enabled = True
+        Else
+            btn_borrar.Enabled = True
+        End If
     End Sub
 End Class
