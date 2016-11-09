@@ -10,8 +10,8 @@ Public Class BDHelper
 
 
     'Private string_conexion As String = "Data Source=maquis;Initial Catalog=pav_tp;User ID=avisuales1;Password=avisuales1"
-    'Private string_conexion As String = "Data Source=.\SQLEXPRESS;Initial Catalog=TPI;Integrated Security=True"
-    Private string_conexion As String = "Data Source= EQUIPO-PC\SQLEXPRESS;Initial Catalog=TPI;Integrated Security=True"
+    Private string_conexion As String = "Data Source=.\SQLEXPRESS;Initial Catalog=TPI;Integrated Security=True"
+    'Private string_conexion As String = "Data Source= EQUIPO-PC\SQLEXPRESS;Initial Catalog=TPI;Integrated Security=True"
 
 
     Private Shared instance As BDHelper 'Unica instancia de la clase
