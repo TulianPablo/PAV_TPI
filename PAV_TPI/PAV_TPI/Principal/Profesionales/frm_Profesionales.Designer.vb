@@ -46,8 +46,8 @@ Partial Class frm_Profesionales
         Me.dtp_fechaDesde = New System.Windows.Forms.DateTimePicker()
         Me.dgv_resultados = New System.Windows.Forms.DataGridView()
         Me.matricula = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_apellido = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_nombre = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_tipoDoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_nroDoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_fechaNac = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -305,7 +305,7 @@ Partial Class frm_Profesionales
         'dgv_resultados
         '
         Me.dgv_resultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_resultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.matricula, Me.col_nombre, Me.col_apellido, Me.col_tipoDoc, Me.col_nroDoc, Me.col_fechaNac, Me.col_calle, Me.col_nroCalle, Me.col_barrio, Me.col_telefono, Me.col_fechaAlta, Me.col_fechaBaja})
+        Me.dgv_resultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.matricula, Me.col_apellido, Me.col_nombre, Me.col_tipoDoc, Me.col_nroDoc, Me.col_fechaNac, Me.col_calle, Me.col_nroCalle, Me.col_barrio, Me.col_telefono, Me.col_fechaAlta, Me.col_fechaBaja})
         Me.dgv_resultados.Location = New System.Drawing.Point(31, 261)
         Me.dgv_resultados.Name = "dgv_resultados"
         Me.dgv_resultados.Size = New System.Drawing.Size(1054, 275)
@@ -316,17 +316,17 @@ Partial Class frm_Profesionales
         Me.matricula.HeaderText = "Matrícula"
         Me.matricula.Name = "matricula"
         '
-        'col_nombre
-        '
-        Me.col_nombre.HeaderText = "Nombre"
-        Me.col_nombre.Name = "col_nombre"
-        Me.col_nombre.Width = 220
-        '
         'col_apellido
         '
         Me.col_apellido.HeaderText = "Apellido"
         Me.col_apellido.Name = "col_apellido"
         Me.col_apellido.Width = 220
+        '
+        'col_nombre
+        '
+        Me.col_nombre.HeaderText = "Nombre"
+        Me.col_nombre.Name = "col_nombre"
+        Me.col_nombre.Width = 220
         '
         'col_tipoDoc
         '
@@ -439,8 +439,8 @@ Partial Class frm_Profesionales
     Friend WithEvents dtp_fechaDesde As System.Windows.Forms.DateTimePicker
     Friend WithEvents dgv_resultados As System.Windows.Forms.DataGridView
     Friend WithEvents matricula As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents col_nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_apellido As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_tipoDoc As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_nroDoc As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_fechaNac As System.Windows.Forms.DataGridViewTextBoxColumn

@@ -4,6 +4,7 @@
     Friend row_selected As DataGridViewRow
     Dim consulta As String
 
+
     Public Sub frm_especialidades_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         txt_id.Enabled = True
         txt_especialidad.Enabled = True
@@ -25,6 +26,9 @@
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
 
         dgv_resultados.Rows.Clear()
+        btn_quitar.Enabled = False
+        btn_editar.Enabled = False
+
         If String.IsNullOrEmpty(txt_especialidad.Text) And String.IsNullOrEmpty(txt_id.Text) Then
             consulta = "SELECT * FROM Especialidad"
         Else
@@ -32,7 +36,7 @@
 
         End If
         For Each row As DataRow In bd.ConsultaSQL(consulta).Rows
-            dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString})
+            dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString, row.Item(2).ToString})
         Next
 
     End Sub
@@ -43,13 +47,14 @@
 
         If Not String.IsNullOrEmpty(txt_especialidad.Text) And String.IsNullOrEmpty(txt_id.Text) Then
             txt_id.Enabled = False
-            consulta_editar = "INSERT Especialidad VALUES('" & txt_especialidad.Text & "')"
+            consulta_editar = "INSERT Especialidad VALUES('" & txt_especialidad.Text & "',NULL)"
             bd.EjecutarSQL(consulta_editar)
             dgv_resultados.Rows.Clear()
             For Each row As DataRow In bd.ConsultaSQL("SELECT * FROM Especialidad").Rows
-                dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString})
+                dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString, row.Item(2).ToString})
             Next
         Else
+            txt_id.Clear()
             txt_id.Enabled = False
             MsgBox("Debe ingresar nombre de especialidad solamente", MsgBoxStyle.OkOnly, "Aviso")
             Exit Sub
@@ -59,22 +64,24 @@
 
     Private Sub btn_quitar_Click(sender As Object, e As EventArgs) Handles btn_quitar.Click
         If MessageBox.Show("¿Desea borrar la especialidad?", "Importante", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
-            Dim consulta_editar As String
-            consulta_editar = "DELETE Especialidad WHERE id_especialidad = " & dgv_resultados.CurrentRow.Cells(0).Value()
-            consulta_editar &= " AND nombre = '" & dgv_resultados.CurrentRow.Cells(1).Value() & "'"
-            bd.EjecutarSQL(consulta_editar)
+            Dim consulta_baja As String
+            consulta_baja = "UPDATE Especialidad SET fecha_baja = GETDATE() WHERE id_especialidad = " & dgv_resultados.CurrentRow.Cells(0).Value()
+            bd.EjecutarSQL(consulta_baja)
             dgv_resultados.Rows.Clear()
             For Each row As DataRow In bd.ConsultaSQL("SELECT * FROM Especialidad").Rows
-                dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString})
+                dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString, row.Item(2).ToString})
             Next
         End If
 
     End Sub
 
     Private Sub dgv_bugs_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dgv_resultados.CellClick
-        btn_quitar.Enabled = True
-        btn_editar.Enabled = True
-        row_selected = dgv_resultados.CurrentRow
+        If String.IsNullOrEmpty(dgv_resultados.CurrentRow.Cells(2).Value) Then
+            btn_quitar.Enabled = True
+            btn_editar.Enabled = True
+            row_selected = dgv_resultados.CurrentRow
+        End If
+        
     End Sub
 
     Private Sub btn_editar_Click(sender As Object, e As EventArgs) Handles btn_editar.Click
@@ -93,7 +100,7 @@
             bd.EjecutarSQL(consulta_editar)
             dgv_resultados.Rows.Clear()
             For Each row As DataRow In bd.ConsultaSQL("SELECT * FROM Especialidad").Rows
-                dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString})
+                dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString, row.Item(2).ToString})
             Next
         End If
 
@@ -104,7 +111,6 @@
             Me.Close()
         End If
     End Sub
-
 
 
     ''PARA MODIFICAR EL COLOR DE LOS BOTONES CUANDO ESTAN DESHABILITADOS

@@ -12,8 +12,9 @@
             str &= "[calle] = '" + txt_calle.Text + "', "
             str &= "[nro] = " + txt_nroCalle.Text + ", "
             str &= "[id_barrio] = " + cbo_barrio.SelectedValue.ToString() + ", "
-            str &= "[telefono] = " + txt_telefono.Text + ", "
-            str &= "WHERE nro_doc = " + txt_nroDoc.Text + " AND id_tipoDoc = " + cbo_tipoDoc.SelectedValue.ToString()
+            str &= "[telefono] = " + txt_telefono.Text
+            str &= " WHERE nro_doc = " + txt_nroDoc.Text + " AND id_tipoDoc = " + cbo_tipoDoc.SelectedValue.ToString
+
             BDHelper.getDBHelper.EjecutarSQL(str)
             Me.Close()
         End If
@@ -38,9 +39,7 @@
         cbo_barrio.SelectedValue = form_Profesional.dgv_resultados.CurrentRow.Cells(8).Value
         txt_telefono.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(9).Value
         txt_fechaAlta.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(10).Value
-        txt_fechaBaja.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(11).Value
         txt_fechaAlta.Enabled = False
-        txt_fechaBaja.Enabled = False
 
         cbo_tipoDoc.Enabled = False
         txt_nroDoc.Enabled = False

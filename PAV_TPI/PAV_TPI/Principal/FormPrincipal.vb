@@ -4,7 +4,7 @@
     Public form_TipoAfiliado As frm_TipoAfiliado
     Public form_Practicas As frm_Practicas
     Public form_Afiliados As frm_Afiliados
-    Public form_Atenciones As Atenciones_Medicas
+    Public form_Atenciones As frm_ConsultarAtenciones
     Public form_Profesionales As frm_Profesionales
 
     Private Sub btn_especialidades_Click(sender As Object, e As EventArgs) Handles btn_especialidades.Click
@@ -50,7 +50,7 @@
     End Sub
 
     Private Sub btn_atenciones_Click(sender As Object, e As EventArgs) Handles btn_atenciones.Click
-        form_Atenciones = New Atenciones_Medicas
+        form_Atenciones = New frm_ConsultarAtenciones
         form_Atenciones.Show()
     End Sub
 
@@ -60,7 +60,7 @@
     End Sub
 
 
-    PARA MODIFICAR EL COLOR DE LOS BOTONES CUANDO ESTAN DESHABILITADOS
+    'PARA MODIFICAR EL COLOR DE LOS BOTONES CUANDO ESTAN DESHABILITADOS
     Private Sub btn_especialidades_EnabledChanged(sender As Object, e As EventArgs) Handles btn_especialidades.EnabledChanged
         Colores.ChangeColor(btn_especialidades)
     End Sub
@@ -91,6 +91,9 @@
 
     Private Sub btn_informes_Click(sender As Object, e As EventArgs) Handles btn_informes.Click
         Colores.ChangeColor(btn_informes)
+        frm_MenuReportes.ShowDialog()
+
+
     End Sub
 
     Private Sub btn_atenciones_EnabledChanged(sender As Object, e As EventArgs) Handles btn_atenciones.EnabledChanged

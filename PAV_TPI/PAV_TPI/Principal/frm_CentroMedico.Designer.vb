@@ -53,6 +53,7 @@ Partial Class frm_CentroMedico
         Me.btn_borrar = New System.Windows.Forms.Button()
         Me.btn_editar = New System.Windows.Forms.Button()
         Me.btn_new = New System.Windows.Forms.Button()
+        Me.btn_consultar = New System.Windows.Forms.Button()
         CType(Me.dvg_centrosMedicos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -272,11 +273,11 @@ Partial Class frm_CentroMedico
         Me.btn_agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_agregar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_agregar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_agregar.Location = New System.Drawing.Point(29, 408)
+        Me.btn_agregar.Location = New System.Drawing.Point(115, 419)
         Me.btn_agregar.Name = "btn_agregar"
         Me.btn_agregar.Size = New System.Drawing.Size(80, 32)
         Me.btn_agregar.TabIndex = 15
-        Me.btn_agregar.Text = "Nuevo"
+        Me.btn_agregar.Text = "Agregar"
         Me.btn_agregar.UseVisualStyleBackColor = True
         '
         'btn_borrar
@@ -285,7 +286,7 @@ Partial Class frm_CentroMedico
         Me.btn_borrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_borrar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_borrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_borrar.Location = New System.Drawing.Point(201, 408)
+        Me.btn_borrar.Location = New System.Drawing.Point(287, 419)
         Me.btn_borrar.Name = "btn_borrar"
         Me.btn_borrar.Size = New System.Drawing.Size(80, 32)
         Me.btn_borrar.TabIndex = 17
@@ -298,7 +299,7 @@ Partial Class frm_CentroMedico
         Me.btn_editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_editar.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_editar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_editar.Location = New System.Drawing.Point(115, 408)
+        Me.btn_editar.Location = New System.Drawing.Point(201, 419)
         Me.btn_editar.Name = "btn_editar"
         Me.btn_editar.Size = New System.Drawing.Size(80, 32)
         Me.btn_editar.TabIndex = 16
@@ -311,12 +312,24 @@ Partial Class frm_CentroMedico
         Me.btn_new.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_new.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_new.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_new.Location = New System.Drawing.Point(593, 185)
+        Me.btn_new.Location = New System.Drawing.Point(29, 419)
         Me.btn_new.Name = "btn_new"
         Me.btn_new.Size = New System.Drawing.Size(80, 32)
         Me.btn_new.TabIndex = 0
-        Me.btn_new.Text = "Buscar"
+        Me.btn_new.Text = "Nuevo"
         Me.btn_new.UseVisualStyleBackColor = True
+        '
+        'btn_consultar
+        '
+        Me.btn_consultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_consultar.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.btn_consultar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.btn_consultar.Location = New System.Drawing.Point(591, 193)
+        Me.btn_consultar.Name = "btn_consultar"
+        Me.btn_consultar.Size = New System.Drawing.Size(80, 32)
+        Me.btn_consultar.TabIndex = 18
+        Me.btn_consultar.Text = "Buscar"
+        Me.btn_consultar.UseVisualStyleBackColor = True
         '
         'frm_CentroMedico
         '
@@ -325,6 +338,7 @@ Partial Class frm_CentroMedico
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(815, 463)
+        Me.Controls.Add(Me.btn_consultar)
         Me.Controls.Add(Me.btn_editar)
         Me.Controls.Add(Me.btn_new)
         Me.Controls.Add(Me.btn_borrar)
@@ -382,4 +396,5 @@ Partial Class frm_CentroMedico
     Friend WithEvents btn_borrar As System.Windows.Forms.Button
     Friend WithEvents btn_editar As System.Windows.Forms.Button
     Friend WithEvents btn_new As System.Windows.Forms.Button
+    Friend WithEvents btn_consultar As System.Windows.Forms.Button
 End Class

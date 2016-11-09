@@ -23,6 +23,7 @@ Partial Class frm_Afiliados
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.gb_titulo = New System.Windows.Forms.GroupBox()
+        Me.lbl_afiliados_mensaje = New System.Windows.Forms.Label()
         Me.btn_buscar = New System.Windows.Forms.Button()
         Me.btn_editar = New System.Windows.Forms.Button()
         Me.btn_borrar = New System.Windows.Forms.Button()
@@ -55,7 +56,6 @@ Partial Class frm_Afiliados
         Me.col_tipoAfiliado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_fechaAlta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_fechaBaja = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.lbl_afiliados_mensaje = New System.Windows.Forms.Label()
         Me.gb_titulo.SuspendLayout()
         CType(Me.dgv_resultados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -86,9 +86,20 @@ Partial Class frm_Afiliados
         Me.gb_titulo.Location = New System.Drawing.Point(12, 12)
         Me.gb_titulo.Name = "gb_titulo"
         Me.gb_titulo.Size = New System.Drawing.Size(781, 508)
-        Me.gb_titulo.TabIndex = 2
+        Me.gb_titulo.TabIndex = 0
         Me.gb_titulo.TabStop = False
         Me.gb_titulo.Text = "Consultar Afiliados"
+        '
+        'lbl_afiliados_mensaje
+        '
+        Me.lbl_afiliados_mensaje.AutoSize = True
+        Me.lbl_afiliados_mensaje.Font = New System.Drawing.Font("Segoe UI", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_afiliados_mensaje.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.lbl_afiliados_mensaje.Location = New System.Drawing.Point(8, 107)
+        Me.lbl_afiliados_mensaje.Name = "lbl_afiliados_mensaje"
+        Me.lbl_afiliados_mensaje.Size = New System.Drawing.Size(139, 17)
+        Me.lbl_afiliados_mensaje.TabIndex = 20
+        Me.lbl_afiliados_mensaje.Text = "lbl_afiliados_mensaje"
         '
         'btn_buscar
         '
@@ -99,7 +110,7 @@ Partial Class frm_Afiliados
         Me.btn_buscar.Location = New System.Drawing.Point(689, 92)
         Me.btn_buscar.Name = "btn_buscar"
         Me.btn_buscar.Size = New System.Drawing.Size(80, 32)
-        Me.btn_buscar.TabIndex = 27
+        Me.btn_buscar.TabIndex = 15
         Me.btn_buscar.Text = "Buscar"
         Me.btn_buscar.UseVisualStyleBackColor = True
         '
@@ -112,7 +123,7 @@ Partial Class frm_Afiliados
         Me.btn_editar.Location = New System.Drawing.Point(96, 460)
         Me.btn_editar.Name = "btn_editar"
         Me.btn_editar.Size = New System.Drawing.Size(80, 32)
-        Me.btn_editar.TabIndex = 25
+        Me.btn_editar.TabIndex = 17
         Me.btn_editar.Text = "Editar"
         Me.btn_editar.UseVisualStyleBackColor = True
         '
@@ -125,7 +136,7 @@ Partial Class frm_Afiliados
         Me.btn_borrar.Location = New System.Drawing.Point(182, 460)
         Me.btn_borrar.Name = "btn_borrar"
         Me.btn_borrar.Size = New System.Drawing.Size(80, 32)
-        Me.btn_borrar.TabIndex = 26
+        Me.btn_borrar.TabIndex = 18
         Me.btn_borrar.Text = "Eliminar"
         Me.btn_borrar.UseVisualStyleBackColor = True
         '
@@ -138,7 +149,7 @@ Partial Class frm_Afiliados
         Me.btn_agregar.Location = New System.Drawing.Point(10, 460)
         Me.btn_agregar.Name = "btn_agregar"
         Me.btn_agregar.Size = New System.Drawing.Size(80, 32)
-        Me.btn_agregar.TabIndex = 24
+        Me.btn_agregar.TabIndex = 16
         Me.btn_agregar.Text = "Nuevo"
         Me.btn_agregar.UseVisualStyleBackColor = True
         '
@@ -148,7 +159,7 @@ Partial Class frm_Afiliados
         Me.cbo_tipoAfiliado.Location = New System.Drawing.Point(70, 78)
         Me.cbo_tipoAfiliado.Name = "cbo_tipoAfiliado"
         Me.cbo_tipoAfiliado.Size = New System.Drawing.Size(177, 21)
-        Me.cbo_tipoAfiliado.TabIndex = 18
+        Me.cbo_tipoAfiliado.TabIndex = 5
         '
         'chk_fechaBaja
         '
@@ -156,7 +167,7 @@ Partial Class frm_Afiliados
         Me.chk_fechaBaja.Location = New System.Drawing.Point(270, 82)
         Me.chk_fechaBaja.Name = "chk_fechaBaja"
         Me.chk_fechaBaja.Size = New System.Drawing.Size(124, 17)
-        Me.chk_fechaBaja.TabIndex = 17
+        Me.chk_fechaBaja.TabIndex = 10
         Me.chk_fechaBaja.Text = "Incluir dados de baja"
         Me.chk_fechaBaja.UseVisualStyleBackColor = True
         '
@@ -166,7 +177,7 @@ Partial Class frm_Afiliados
         Me.lbl_fechaHasta.Location = New System.Drawing.Point(503, 56)
         Me.lbl_fechaHasta.Name = "lbl_fechaHasta"
         Me.lbl_fechaHasta.Size = New System.Drawing.Size(68, 13)
-        Me.lbl_fechaHasta.TabIndex = 16
+        Me.lbl_fechaHasta.TabIndex = 13
         Me.lbl_fechaHasta.Text = "Fecha Hasta"
         '
         'dtp_fechaHasta
@@ -175,7 +186,7 @@ Partial Class frm_Afiliados
         Me.dtp_fechaHasta.Location = New System.Drawing.Point(574, 53)
         Me.dtp_fechaHasta.Name = "dtp_fechaHasta"
         Me.dtp_fechaHasta.Size = New System.Drawing.Size(195, 20)
-        Me.dtp_fechaHasta.TabIndex = 15
+        Me.dtp_fechaHasta.TabIndex = 14
         '
         'lbl_fechaAlta
         '
@@ -183,7 +194,7 @@ Partial Class frm_Afiliados
         Me.lbl_fechaAlta.Location = New System.Drawing.Point(500, 27)
         Me.lbl_fechaAlta.Name = "lbl_fechaAlta"
         Me.lbl_fechaAlta.Size = New System.Drawing.Size(71, 13)
-        Me.lbl_fechaAlta.TabIndex = 14
+        Me.lbl_fechaAlta.TabIndex = 11
         Me.lbl_fechaAlta.Text = "Fecha Desde"
         '
         'dtp_fechaDesde
@@ -192,7 +203,7 @@ Partial Class frm_Afiliados
         Me.dtp_fechaDesde.Location = New System.Drawing.Point(574, 24)
         Me.dtp_fechaDesde.Name = "dtp_fechaDesde"
         Me.dtp_fechaDesde.Size = New System.Drawing.Size(195, 20)
-        Me.dtp_fechaDesde.TabIndex = 13
+        Me.dtp_fechaDesde.TabIndex = 12
         '
         'cbo_tipoDoc
         '
@@ -200,7 +211,7 @@ Partial Class frm_Afiliados
         Me.cbo_tipoDoc.Location = New System.Drawing.Point(70, 51)
         Me.cbo_tipoDoc.Name = "cbo_tipoDoc"
         Me.cbo_tipoDoc.Size = New System.Drawing.Size(177, 21)
-        Me.cbo_tipoDoc.TabIndex = 12
+        Me.cbo_tipoDoc.TabIndex = 3
         '
         'lbl_tipoDoc
         '
@@ -208,7 +219,7 @@ Partial Class frm_Afiliados
         Me.lbl_tipoDoc.Location = New System.Drawing.Point(20, 53)
         Me.lbl_tipoDoc.Name = "lbl_tipoDoc"
         Me.lbl_tipoDoc.Size = New System.Drawing.Size(51, 13)
-        Me.lbl_tipoDoc.TabIndex = 11
+        Me.lbl_tipoDoc.TabIndex = 2
         Me.lbl_tipoDoc.Text = "Tipo Doc"
         '
         'lbl_nroDocAfiliado
@@ -217,7 +228,7 @@ Partial Class frm_Afiliados
         Me.lbl_nroDocAfiliado.Location = New System.Drawing.Point(267, 56)
         Me.lbl_nroDocAfiliado.Name = "lbl_nroDocAfiliado"
         Me.lbl_nroDocAfiliado.Size = New System.Drawing.Size(47, 13)
-        Me.lbl_nroDocAfiliado.TabIndex = 9
+        Me.lbl_nroDocAfiliado.TabIndex = 8
         Me.lbl_nroDocAfiliado.Text = "Nro Doc"
         '
         'txt_nroDoc
@@ -226,7 +237,7 @@ Partial Class frm_Afiliados
         Me.txt_nroDoc.MaxLength = 8
         Me.txt_nroDoc.Name = "txt_nroDoc"
         Me.txt_nroDoc.Size = New System.Drawing.Size(177, 20)
-        Me.txt_nroDoc.TabIndex = 8
+        Me.txt_nroDoc.TabIndex = 9
         '
         'lbl_tipoAfiliado
         '
@@ -234,7 +245,7 @@ Partial Class frm_Afiliados
         Me.lbl_tipoAfiliado.Location = New System.Drawing.Point(4, 82)
         Me.lbl_tipoAfiliado.Name = "lbl_tipoAfiliado"
         Me.lbl_tipoAfiliado.Size = New System.Drawing.Size(65, 13)
-        Me.lbl_tipoAfiliado.TabIndex = 7
+        Me.lbl_tipoAfiliado.TabIndex = 4
         Me.lbl_tipoAfiliado.Text = "Tipo Afiliado"
         '
         'lbl_apeAfiliado
@@ -243,7 +254,7 @@ Partial Class frm_Afiliados
         Me.lbl_apeAfiliado.Location = New System.Drawing.Point(267, 30)
         Me.lbl_apeAfiliado.Name = "lbl_apeAfiliado"
         Me.lbl_apeAfiliado.Size = New System.Drawing.Size(44, 13)
-        Me.lbl_apeAfiliado.TabIndex = 5
+        Me.lbl_apeAfiliado.TabIndex = 6
         Me.lbl_apeAfiliado.Text = "Apellido"
         '
         'txt_apellido
@@ -252,7 +263,7 @@ Partial Class frm_Afiliados
         Me.txt_apellido.MaxLength = 50
         Me.txt_apellido.Name = "txt_apellido"
         Me.txt_apellido.Size = New System.Drawing.Size(177, 20)
-        Me.txt_apellido.TabIndex = 4
+        Me.txt_apellido.TabIndex = 7
         '
         'lbl_nomAfiliado
         '
@@ -260,7 +271,7 @@ Partial Class frm_Afiliados
         Me.lbl_nomAfiliado.Location = New System.Drawing.Point(20, 27)
         Me.lbl_nomAfiliado.Name = "lbl_nomAfiliado"
         Me.lbl_nomAfiliado.Size = New System.Drawing.Size(44, 13)
-        Me.lbl_nomAfiliado.TabIndex = 3
+        Me.lbl_nomAfiliado.TabIndex = 0
         Me.lbl_nomAfiliado.Text = "Nombre"
         '
         'txt_nombre
@@ -269,7 +280,7 @@ Partial Class frm_Afiliados
         Me.txt_nombre.MaxLength = 50
         Me.txt_nombre.Name = "txt_nombre"
         Me.txt_nombre.Size = New System.Drawing.Size(177, 20)
-        Me.txt_nombre.TabIndex = 2
+        Me.txt_nombre.TabIndex = 1
         '
         'dgv_resultados
         '
@@ -278,7 +289,7 @@ Partial Class frm_Afiliados
         Me.dgv_resultados.Location = New System.Drawing.Point(11, 139)
         Me.dgv_resultados.Name = "dgv_resultados"
         Me.dgv_resultados.Size = New System.Drawing.Size(758, 312)
-        Me.dgv_resultados.TabIndex = 1
+        Me.dgv_resultados.TabIndex = 19
         '
         'col_nombre
         '
@@ -344,17 +355,6 @@ Partial Class frm_Afiliados
         '
         Me.col_fechaBaja.HeaderText = "Fecha Baja"
         Me.col_fechaBaja.Name = "col_fechaBaja"
-        '
-        'lbl_afiliados_mensaje
-        '
-        Me.lbl_afiliados_mensaje.AutoSize = True
-        Me.lbl_afiliados_mensaje.Font = New System.Drawing.Font("Segoe UI", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_afiliados_mensaje.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.lbl_afiliados_mensaje.Location = New System.Drawing.Point(8, 107)
-        Me.lbl_afiliados_mensaje.Name = "lbl_afiliados_mensaje"
-        Me.lbl_afiliados_mensaje.Size = New System.Drawing.Size(139, 17)
-        Me.lbl_afiliados_mensaje.TabIndex = 28
-        Me.lbl_afiliados_mensaje.Text = "lbl_afiliados_mensaje"
         '
         'frm_Afiliados
         '

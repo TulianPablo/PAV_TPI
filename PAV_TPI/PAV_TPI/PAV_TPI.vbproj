@@ -61,10 +61,14 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
@@ -86,12 +90,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clases\CentroMedico.vb" />
+    <Compile Include="Clases\Colores.vb" />
+    <Compile Include="Clases\DetalleAtencionMedica.vb" />
     <Compile Include="Clases\Usuario.vb" />
-    <Compile Include="PAV_TPIDataSet.Designer.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PAV_TPIDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Principal\Afiliados\frm_Afiliados.Designer.vb">
       <DependentUpon>frm_Afiliados.vb</DependentUpon>
     </Compile>
@@ -116,10 +117,16 @@
     <Compile Include="Principal\Afiliados\frm_nuevoAfiliado.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Principal\frm_AtencionesMedicas.Designer.vb">
-      <DependentUpon>frm_AtencionesMedicas.vb</DependentUpon>
+    <Compile Include="Principal\Atenciones Medicas\frm_AtencionMedica.Designer.vb">
+      <DependentUpon>frm_AtencionMedica.vb</DependentUpon>
     </Compile>
-    <Compile Include="Principal\frm_AtencionesMedicas.vb">
+    <Compile Include="Principal\Atenciones Medicas\frm_AtencionMedica.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\Atenciones Medicas\frm_ConsultarAtenciones.Designer.vb">
+      <DependentUpon>frm_ConsultarAtenciones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\Atenciones Medicas\frm_ConsultarAtenciones.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Principal\frm_CentroMedico.Designer.vb">
@@ -163,10 +170,22 @@
     <Compile Include="Principal\frm_InicioSesion.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Principal\frm_MenuReportes.Designer.vb">
+      <DependentUpon>frm_MenuReportes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\frm_MenuReportes.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Principal\frm_Practicas.Designer.vb">
       <DependentUpon>frm_Practicas.vb</DependentUpon>
     </Compile>
     <Compile Include="Principal\frm_Practicas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\frm_ReporteAtenciones_CtroMedico.Designer.vb">
+      <DependentUpon>frm_ReporteAtenciones_CtroMedico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\frm_ReporteAtenciones_CtroMedico.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Principal\frm_TipoAfiliado.Designer.vb">
@@ -174,6 +193,44 @@
     </Compile>
     <Compile Include="Principal\frm_TipoAfiliado.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\frm_ListadoAtencionesPorCentroMedico.Designer.vb">
+      <DependentUpon>frm_ListadoAtencionesPorCentroMedico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\frm_ListadoAtencionesPorCentroMedico.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\Profesionales\frm_bajaProfesional.Designer.vb">
+      <DependentUpon>frm_bajaProfesional.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\Profesionales\frm_bajaProfesional.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\Profesionales\frm_editarProfesional.Designer.vb">
+      <DependentUpon>frm_editarProfesional.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\Profesionales\frm_editarProfesional.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\Profesionales\frm_nuevoProfesional.Designer.vb">
+      <DependentUpon>frm_nuevoProfesional.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\Profesionales\frm_nuevoProfesional.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Principal\Profesionales\frm_Profesionales.Designer.vb">
+      <DependentUpon>frm_Profesionales.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\Profesionales\frm_Profesionales.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Datos\DsReporte.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DsReporte.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Datos\DsReporte.vb">
+      <DependentUpon>DsReporte.xsd</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -189,8 +246,11 @@
     <EmbeddedResource Include="Principal\Afiliados\frm_nuevoAfiliado.resx">
       <DependentUpon>frm_nuevoAfiliado.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Principal\frm_AtencionesMedicas.resx">
-      <DependentUpon>frm_AtencionesMedicas.vb</DependentUpon>
+    <EmbeddedResource Include="Principal\Atenciones Medicas\frm_AtencionMedica.resx">
+      <DependentUpon>frm_AtencionMedica.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\Atenciones Medicas\frm_ConsultarAtenciones.resx">
+      <DependentUpon>frm_ConsultarAtenciones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\frm_CentroMedico.resx">
       <DependentUpon>frm_CentroMedico.vb</DependentUpon>
@@ -210,12 +270,35 @@
     <EmbeddedResource Include="Principal\frm_InicioSesion.resx">
       <DependentUpon>frm_InicioSesion.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Principal\frm_ListadoAtencionesPorCentroMedico.resx">
+      <DependentUpon>frm_ListadoAtencionesPorCentroMedico.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\frm_MenuReportes.resx">
+      <DependentUpon>frm_MenuReportes.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal\frm_Practicas.resx">
       <DependentUpon>frm_Practicas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\frm_ReporteAtenciones_CtroMedico.resx">
+      <DependentUpon>frm_ReporteAtenciones_CtroMedico.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\frm_TipoAfiliado.resx">
       <DependentUpon>frm_TipoAfiliado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Principal\Profesionales\frm_bajaProfesional.resx">
+      <DependentUpon>frm_bajaProfesional.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\Profesionales\frm_editarProfesional.resx">
+      <DependentUpon>frm_editarProfesional.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\Profesionales\frm_nuevoProfesional.resx">
+      <DependentUpon>frm_nuevoProfesional.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\Profesionales\frm_Profesionales.resx">
+      <DependentUpon>frm_Profesionales.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Diseño\ListadoAtencionesCentroMedico.rdlc" />
+    <EmbeddedResource Include="Reportes\Diseño\ReporteAtencionesPorCentroMedico.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="My Project\Application.myapp">
@@ -230,18 +313,16 @@
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="PAV_TPIDataSet.xsc">
-      <DependentUpon>PAV_TPIDataSet.xsd</DependentUpon>
+    <None Include="Reportes\Datos\DsReporte.xsc">
+      <DependentUpon>DsReporte.xsd</DependentUpon>
     </None>
-    <None Include="PAV_TPIDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PAV_TPIDataSet.Designer.vb</LastGenOutput>
+    <None Include="Reportes\Datos\DsReporte.xsd">
       <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsReporte.Designer.vb</LastGenOutput>
     </None>
-    <None Include="PAV_TPIDataSet.xss">
-      <DependentUpon>PAV_TPIDataSet.xsd</DependentUpon>
+    <None Include="Reportes\Datos\DsReporte.xss">
+      <DependentUpon>DsReporte.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

@@ -22,8 +22,8 @@ Partial Class frm_Especialidades
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.btn_editar = New System.Windows.Forms.Button()
         Me.btn_nuevo = New System.Windows.Forms.Button()
         Me.btn_quitar = New System.Windows.Forms.Button()
@@ -32,9 +32,10 @@ Partial Class frm_Especialidades
         Me.lbl_especialidad = New System.Windows.Forms.Label()
         Me.txt_id = New System.Windows.Forms.TextBox()
         Me.dgv_resultados = New System.Windows.Forms.DataGridView()
+        Me.txt_especialidad = New System.Windows.Forms.TextBox()
         Me.col_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_especialidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.txt_especialidad = New System.Windows.Forms.TextBox()
+        Me.col_fechaBaja = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.dgv_resultados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -116,39 +117,28 @@ Partial Class frm_Especialidades
         '
         'dgv_resultados
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgv_resultados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgv_resultados.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dgv_resultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_resultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id, Me.col_especialidad})
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgv_resultados.DefaultCellStyle = DataGridViewCellStyle4
+        Me.dgv_resultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_id, Me.col_especialidad, Me.col_fechaBaja})
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgv_resultados.DefaultCellStyle = DataGridViewCellStyle2
         Me.dgv_resultados.Location = New System.Drawing.Point(27, 103)
         Me.dgv_resultados.Name = "dgv_resultados"
         Me.dgv_resultados.Size = New System.Drawing.Size(493, 215)
         Me.dgv_resultados.TabIndex = 6
-        '
-        'col_id
-        '
-        Me.col_id.HeaderText = "Id"
-        Me.col_id.Name = "col_id"
-        '
-        'col_especialidad
-        '
-        Me.col_especialidad.HeaderText = "Especialidad"
-        Me.col_especialidad.Name = "col_especialidad"
-        Me.col_especialidad.Width = 350
         '
         'txt_especialidad
         '
@@ -157,6 +147,24 @@ Partial Class frm_Especialidades
         Me.txt_especialidad.Name = "txt_especialidad"
         Me.txt_especialidad.Size = New System.Drawing.Size(248, 25)
         Me.txt_especialidad.TabIndex = 1
+        '
+        'col_id
+        '
+        Me.col_id.HeaderText = "Id"
+        Me.col_id.Name = "col_id"
+        Me.col_id.ReadOnly = True
+        '
+        'col_especialidad
+        '
+        Me.col_especialidad.HeaderText = "Especialidad"
+        Me.col_especialidad.Name = "col_especialidad"
+        Me.col_especialidad.Width = 350
+        '
+        'col_fechaBaja
+        '
+        Me.col_fechaBaja.HeaderText = "Fecha Baja"
+        Me.col_fechaBaja.Name = "col_fechaBaja"
+        Me.col_fechaBaja.ReadOnly = True
         '
         'frm_Especialidades
         '
@@ -192,4 +200,5 @@ Partial Class frm_Especialidades
     Friend WithEvents txt_especialidad As System.Windows.Forms.TextBox
     Friend WithEvents col_id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_especialidad As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_fechaBaja As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

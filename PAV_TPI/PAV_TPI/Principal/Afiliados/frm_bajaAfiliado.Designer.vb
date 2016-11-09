@@ -105,7 +105,7 @@ Partial Class frm_bajaAfiliado
         Me.btn_cancelar.Location = New System.Drawing.Point(355, 374)
         Me.btn_cancelar.Name = "btn_cancelar"
         Me.btn_cancelar.Size = New System.Drawing.Size(96, 29)
-        Me.btn_cancelar.TabIndex = 27
+        Me.btn_cancelar.TabIndex = 1
         Me.btn_cancelar.Text = "Cancelar"
         Me.btn_cancelar.UseVisualStyleBackColor = True
         '
@@ -117,7 +117,7 @@ Partial Class frm_bajaAfiliado
         Me.btn_aceptar.Location = New System.Drawing.Point(243, 374)
         Me.btn_aceptar.Name = "btn_aceptar"
         Me.btn_aceptar.Size = New System.Drawing.Size(96, 29)
-        Me.btn_aceptar.TabIndex = 26
+        Me.btn_aceptar.TabIndex = 0
         Me.btn_aceptar.Text = "Aceptar"
         Me.btn_aceptar.UseVisualStyleBackColor = True
         '

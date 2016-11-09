@@ -33,40 +33,6 @@
 
     End Sub
 
-    Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
-        dvg_centrosMedicos.Rows.Clear()
-        Dim table As New Data.DataTable
-
-        Try
-            If String.IsNullOrEmpty(txt_numero.Text) Then
-                cargaGrilla()
-            Else
-
-                Dim busqueda As String = "SELECT * FROM CentroMedico WHERE nro_centroMedico = " & txt_numero.Text
-
-                table = BDHelper.getDBHelper.ConsultaSQL(busqueda)
-                If (table.Rows.Count = 1) Then
-
-                    dvg_centrosMedicos.Rows.Add(table.Rows(0)("nro_centroMedico"), _
-                                                table.Rows(0)("denominacion"), _
-                                                table.Rows(0)("calle"), _
-                                                table.Rows(0)("numero"), _
-                                                table.Rows(0)("id_barrio"), _
-                                                table.Rows(0)("telefono"), _
-                                                table.Rows(0)("mail"), _
-                                                table.Rows(0)("fecha_baja"))
-
-                Else
-                    MsgBox("El Centro Médico no existe.", vbOKOnly + vbCritical, "Aviso")
-                End If
-
-
-            End If
-
-        Catch ex As Exception
-            Throw ex
-        End Try
-    End Sub
 
     Private Sub btn_agregar_Click(sender As Object, e As EventArgs) Handles btn_agregar.Click
 
@@ -121,9 +87,11 @@
 
 
     Private Sub btn_quitar_Click(sender As Object, e As EventArgs) Handles btn_borrar.Click
+        Dim fecha_baja = CType(DateTime.Now.ToString("dd/MM/yyyy"), System.DateTime)
+
         If MessageBox.Show("¿Desea borrar el centro médico?", "Importante", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
             Dim consulta_delete As String
-            consulta_delete = "UPDATE centroMedico SET fecha_baja = " & "GETDATE()" & " WHERE nro_CentroMedico = " & dvg_centrosMedicos.CurrentRow.Cells(0).Value()
+            consulta_delete = "UPDATE centroMedico SET fecha_baja = '" & fecha_baja & "' WHERE nro_CentroMedico = " & dvg_centrosMedicos.CurrentRow.Cells(0).Value()
 
             BDHelper.getDBHelper.EjecutarSQL(consulta_delete)
             dvg_centrosMedicos.Rows.Clear()
@@ -268,20 +236,62 @@
     End Sub
 
 
-    ''PARA MODIFICAR EL COLOR DE LOS BOTONES CUANDO ESTAN DESHABILITADOS
-    'Private Sub btn_agregar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_agregar.EnabledChanged
-    '    Colores.ChangeColor(btn_agregar)
-    'End Sub
+    'PARA MODIFICAR EL COLOR DE LOS BOTONES CUANDO ESTAN DESHABILITADOS
+    Private Sub btn_agregar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_agregar.EnabledChanged
+        Colores.ChangeColor(btn_agregar)
+    End Sub
 
-    'Private Sub btn_editar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_editar.EnabledChanged
-    '    Colores.ChangeColor(btn_editar)
-    'End Sub
+    Private Sub btn_editar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_editar.EnabledChanged
+        Colores.ChangeColor(btn_editar)
+    End Sub
 
-    'Private Sub btn_borrar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_borrar.EnabledChanged
-    '    Colores.ChangeColor(btn_borrar)
-    'End Sub
+    Private Sub btn_borrar_EnabledChanged(sender As Object, e As EventArgs) Handles btn_borrar.EnabledChanged
+        Colores.ChangeColor(btn_borrar)
+    End Sub
 
-    'Private Sub btn_new_EnabledChanged(sender As Object, e As EventArgs) Handles btn_new.EnabledChanged
-    '    Colores.ChangeColor(btn_new)
-    'End Sub
+    Private Sub btn_new_EnabledChanged(sender As Object, e As EventArgs) Handles btn_new.EnabledChanged
+        Colores.ChangeColor(btn_new)
+    End Sub
+
+    Private Sub btn_consultar_Click(sender As Object, e As EventArgs) Handles btn_consultar.Click
+        dvg_centrosMedicos.Rows.Clear()
+        Dim table As New Data.DataTable
+
+        Try
+            If String.IsNullOrEmpty(txt_numero.Text) Then
+                cargaGrilla()
+            Else
+
+                Dim busqueda As String = "SELECT * FROM CentroMedico WHERE nro_centroMedico = " & txt_numero.Text
+
+                'table = BDHelper.getDBHelper.ConsultaSQL(busqueda)
+                'If (table.Rows.Count = 1) Then
+
+                '    dvg_centrosMedicos.Rows.Add(table.Rows(0)("nro_centroMedico"), _
+                '                                table.Rows(0)("denominacion"), _
+                '                                table.Rows(0)("calle"), _
+                '                                table.Rows(0)("numero"), _
+                '                                table.Rows(0)("id_barrio"), _
+                '                                table.Rows(0)("telefono"), _
+                '                                table.Rows(0)("mail"), _
+                '                                table.Rows(0)("fecha_baja"))
+
+                'Else
+                '    MsgBox("El Centro Médico no existe.", vbOKOnly + vbCritical, "Aviso")
+                'End If
+
+                For Each row As DataRow In BDHelper.getDBHelper.ConsultaSQL(busqueda).Rows
+                    With row
+                        dvg_centrosMedicos.Rows.Add(.Item(0).ToString, .Item(1).ToString, .Item(2).ToString, .Item(3).ToString, .Item(4).ToString, .Item(5).ToString, .Item(6).ToString, .Item(7).ToString)
+                    End With
+
+                Next
+
+
+            End If
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
 End Class

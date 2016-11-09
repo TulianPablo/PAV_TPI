@@ -125,6 +125,7 @@
     End Function
 
     Private Sub btn_buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
+        dgv_resultados.Rows.Clear()
         dgv_resultados.Columns(11).Visible = False
         If Not String.IsNullOrEmpty(txt_nombre.Text) Or Not String.IsNullOrEmpty(txt_apellido.Text) Or Not String.IsNullOrEmpty(txt_nroDoc.Text) Or
             chk_fechaBaja.Checked = True Then
@@ -162,11 +163,7 @@
     End Sub
 
     Private Sub dgv_resultados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_resultados.CellContentClick
-        If String.IsNullOrEmpty(dgv_resultados.CurrentRow.Cells(11).Value) Then
-            btn_editar.Enabled = True
-            btn_borrar.Enabled = True
-        Else
-            btn_borrar.Enabled = True
-        End If
+        btn_borrar.Enabled = True
+        btn_editar.Enabled = True
     End Sub
 End Class
