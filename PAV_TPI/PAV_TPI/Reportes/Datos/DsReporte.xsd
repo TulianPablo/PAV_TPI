@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DsReporte" targetNamespace="http://tempuri.org/DsReporte.xsd" xmlns:mstns="http://tempuri.org/DsReporte.xsd" xmlns="http://tempuri.org/DsReporte.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DsReporte" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DsReporte" msprop:Generator_UserDSName="DsReporte">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="DTReporteAtenciones" msprop:Generator_TableClassName="DTReporteAtencionesDataTable" msprop:Generator_TableVarName="tableDTReporteAtenciones" msprop:Generator_RowChangedName="DTReporteAtencionesRowChanged" msprop:Generator_TablePropName="DTReporteAtenciones" msprop:Generator_RowDeletingName="DTReporteAtencionesRowDeleting" msprop:Generator_RowChangingName="DTReporteAtencionesRowChanging" msprop:Generator_RowEvHandlerName="DTReporteAtencionesRowChangeEventHandler" msprop:Generator_RowDeletedName="DTReporteAtencionesRowDeleted" msprop:Generator_RowClassName="DTReporteAtencionesRow" msprop:Generator_UserTableName="DTReporteAtenciones" msprop:Generator_RowEvArgName="DTReporteAtencionesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ctroMedico" msprop:Generator_ColumnVarNameInTable="columnctroMedico" msprop:Generator_ColumnPropNameInRow="ctroMedico" msprop:Generator_ColumnPropNameInTable="ctroMedicoColumn" msprop:Generator_UserColumnName="ctroMedico" type="xs:string" minOccurs="0" />
+              <xs:element name="especialidad" msprop:Generator_ColumnVarNameInTable="columnespecialidad" msprop:Generator_ColumnPropNameInRow="especialidad" msprop:Generator_ColumnPropNameInTable="especialidadColumn" msprop:Generator_UserColumnName="especialidad" type="xs:string" minOccurs="0" />
+              <xs:element name="cant" msprop:Generator_ColumnVarNameInTable="columncant" msprop:Generator_ColumnPropNameInRow="cant" msprop:Generator_ColumnPropNameInTable="cantColumn" msprop:Generator_UserColumnName="cant" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="DTListadoPorCentroMedico" msprop:Generator_TableClassName="DTListadoPorCentroMedicoDataTable" msprop:Generator_TableVarName="tableDTListadoPorCentroMedico" msprop:Generator_TablePropName="DTListadoPorCentroMedico" msprop:Generator_RowDeletingName="DTListadoPorCentroMedicoRowDeleting" msprop:Generator_RowChangingName="DTListadoPorCentroMedicoRowChanging" msprop:Generator_RowEvHandlerName="DTListadoPorCentroMedicoRowChangeEventHandler" msprop:Generator_RowDeletedName="DTListadoPorCentroMedicoRowDeleted" msprop:Generator_UserTableName="DTListadoPorCentroMedico" msprop:Generator_RowChangedName="DTListadoPorCentroMedicoRowChanged" msprop:Generator_RowEvArgName="DTListadoPorCentroMedicoRowChangeEvent" msprop:Generator_RowClassName="DTListadoPorCentroMedicoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="fecha" msprop:Generator_ColumnVarNameInTable="columnfecha" msprop:Generator_ColumnPropNameInRow="fecha" msprop:Generator_ColumnPropNameInTable="fechaColumn" msprop:Generator_UserColumnName="fecha" type="xs:string" minOccurs="0" />
+              <xs:element name="afiliado" msprop:Generator_ColumnVarNameInTable="columnafiliado" msprop:Generator_ColumnPropNameInRow="afiliado" msprop:Generator_ColumnPropNameInTable="afiliadoColumn" msprop:Generator_UserColumnName="afiliado" type="xs:string" minOccurs="0" />
+              <xs:element name="profesional" msprop:Generator_ColumnVarNameInTable="columnprofesional" msprop:Generator_ColumnPropNameInRow="profesional" msprop:Generator_ColumnPropNameInTable="profesionalColumn" msprop:Generator_UserColumnName="profesional" type="xs:string" minOccurs="0" />
+              <xs:element name="especialidad" msprop:Generator_ColumnVarNameInTable="columnespecialidad" msprop:Generator_ColumnPropNameInRow="especialidad" msprop:Generator_ColumnPropNameInTable="especialidadColumn" msprop:Generator_UserColumnName="especialidad" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
