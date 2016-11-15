@@ -9,9 +9,9 @@ Public Class BDHelper
     ' Implementa el patrón SINGLETON, que garantiza tener solo una instancia de esta clase.
 
 
-    'Private string_conexion As String = "Data Source=maquis;Initial Catalog=pav_tp;User ID=avisuales1;Password=avisuales1"
-    Private string_conexion As String = "Data Source=.\SQLEXPRESS;Initial Catalog=TPI;Integrated Security=True"
-    'Private string_conexion As String = "Data Source= EQUIPO-PC\SQLEXPRESS;Initial Catalog=TPI;Integrated Security=True"
+    'Private string_conexion As String = "Data Source=maquis;Initial Catalog=TPI_ObraSocial;User ID=avisuales1;Password=avisuales1"
+    'Private string_conexion As String = "Data Source=.\SQLEXPRESS;Initial Catalog=TPI;Integrated Security=True"
+    Private string_conexion As String = "Data Source= EQUIPO-PC\SQLEXPRESS;Initial Catalog=TPI;Integrated Security=True"
 
 
     Private Shared instance As BDHelper 'Unica instancia de la clase
@@ -301,9 +301,9 @@ Public Class BDHelper
             conexion.Open()
             cmd.Connection = conexion
             cmd.CommandType = CommandType.Text
-            cmd.CommandText = "SELECT c.denominacion, e.nombre, COUNT(am.nro_centroMedico) " & _
+            cmd.CommandText = "SELECT c.denominacion as ctroMedico, e.nombre as especialidad, COUNT(am.nro_atencion) as cantidad " & _
             "FROM AtencionMedica am, CentroMedico c, Especialidad e " & _
-            "WHERE(am.nro_centroMedico = c.nro_centroMedico And am.id_especialidad = e.id_especialidad) " & _
+            "WHERE(am.nro_centroMedico = c.nro_centroMedico AND am.id_especialidad = e.id_especialidad) " & _
             "AND (am.fecha_atencion >='" + Convert.ToDateTime(fecDesde).ToString("dd/MM/yyyy") + "' " & _
             "AND am.fecha_atencion <='" + Convert.ToDateTime(fecHasta).ToString("dd/MM/yyyy") + "') " & _
             "GROUP BY c.denominacion, e.nombre "
@@ -328,12 +328,12 @@ Public Class BDHelper
             conexion.Open()
             cmd.Connection = conexion
             cmd.CommandType = CommandType.Text
-            cmd.CommandText = "SELECT am.fecha_atencion,a.apellido + ', ' + a.nombre as afiliado, p.apellido + ', ' + p.nombre as profesional, e.nombre " & _
+            cmd.CommandText = "SELECT am.fecha_atencion as fecha,a.apellido + ', ' + a.nombre as afiliado, p.apellido + ', ' + p.nombre as profesional, e.nombre as especialidad " & _
             "FROM AtencionMedica am JOIN Afiliado a ON (am.id_tipoDocAfiliado=a.id_tipoDoc AND am.nro_docAfiliado=a.nro_doc) " & _
             "JOIN Profesional p ON (am.matricula=p.matricula) " & _
             "JOIN Especialidad e ON (am.id_especialidad=e.id_especialidad) " & _
-            "JOIN CentroMedico c ON(am.nro_centroMedico = c.nro_centroMedico)" & _
-            "WHERE c.denominacion = '" & pctro_medico & "'"
+            "JOIN CentroMedico c ON(am.nro_centroMedico = c.nro_centroMedico) " & _
+            "WHERE c.denominacion like '" & pctro_medico & "'"
 
             tabla.Load(cmd.ExecuteReader)
         Catch ex As Exception
