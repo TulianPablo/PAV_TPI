@@ -24,15 +24,25 @@ Partial Class frm_ListadoAtencionesPorCentroMedico
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim ReportDataSource1 As Microsoft.Reporting.WinForms.ReportDataSource = New Microsoft.Reporting.WinForms.ReportDataSource()
+        Me.DTListadoPorCentroMedicoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.DsReporte = New PAV_TPI.DsReporte()
         Me.btn_actualizar = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.rpt_listadoAtencionesPorCentro = New Microsoft.Reporting.WinForms.ReportViewer()
-        Me.DsReporte = New PAV_TPI.DsReporte()
-        Me.DTListadoPorCentroMedicoBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        CType(Me.DsReporte, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.cbo_ctrosMedico = New System.Windows.Forms.ComboBox()
         CType(Me.DTListadoPorCentroMedicoBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DsReporte, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'DTListadoPorCentroMedicoBindingSource
+        '
+        Me.DTListadoPorCentroMedicoBindingSource.DataMember = "DTListadoPorCentroMedico"
+        Me.DTListadoPorCentroMedicoBindingSource.DataSource = Me.DsReporte
+        '
+        'DsReporte
+        '
+        Me.DsReporte.DataSetName = "DsReporte"
+        Me.DsReporte.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'btn_actualizar
         '
@@ -52,13 +62,6 @@ Partial Class frm_ListadoAtencionesPorCentroMedico
         Me.Label1.TabIndex = 5
         Me.Label1.Text = "Centro Médico"
         '
-        'TextBox1
-        '
-        Me.TextBox1.Location = New System.Drawing.Point(103, 25)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(137, 20)
-        Me.TextBox1.TabIndex = 4
-        '
         'rpt_listadoAtencionesPorCentro
         '
         ReportDataSource1.Name = "DataSet1"
@@ -70,37 +73,35 @@ Partial Class frm_ListadoAtencionesPorCentroMedico
         Me.rpt_listadoAtencionesPorCentro.Size = New System.Drawing.Size(633, 312)
         Me.rpt_listadoAtencionesPorCentro.TabIndex = 7
         '
-        'DsReporte
+        'cbo_ctrosMedico
         '
-        Me.DsReporte.DataSetName = "DsReporte"
-        Me.DsReporte.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'DTListadoPorCentroMedicoBindingSource
-        '
-        Me.DTListadoPorCentroMedicoBindingSource.DataMember = "DTListadoPorCentroMedico"
-        Me.DTListadoPorCentroMedicoBindingSource.DataSource = Me.DsReporte
+        Me.cbo_ctrosMedico.FormattingEnabled = True
+        Me.cbo_ctrosMedico.Location = New System.Drawing.Point(96, 23)
+        Me.cbo_ctrosMedico.Name = "cbo_ctrosMedico"
+        Me.cbo_ctrosMedico.Size = New System.Drawing.Size(144, 21)
+        Me.cbo_ctrosMedico.TabIndex = 9
         '
         'frm_ListadoAtencionesPorCentroMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(657, 386)
+        Me.Controls.Add(Me.cbo_ctrosMedico)
         Me.Controls.Add(Me.rpt_listadoAtencionesPorCentro)
         Me.Controls.Add(Me.btn_actualizar)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
         Me.Name = "frm_ListadoAtencionesPorCentroMedico"
         Me.Text = "Listado de Atenciones por Centro Medico"
-        CType(Me.DsReporte, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DTListadoPorCentroMedicoBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DsReporte, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents btn_actualizar As System.Windows.Forms.Button
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents rpt_listadoAtencionesPorCentro As Microsoft.Reporting.WinForms.ReportViewer
     Friend WithEvents DTListadoPorCentroMedicoBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents DsReporte As PAV_TPI.DsReporte
+    Friend WithEvents cbo_ctrosMedico As System.Windows.Forms.ComboBox
 End Class

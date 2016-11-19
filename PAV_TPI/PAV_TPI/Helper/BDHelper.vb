@@ -10,8 +10,8 @@ Public Class BDHelper
 
 
     'Private string_conexion As String = "Data Source=maquis;Initial Catalog=TPI_ObraSocial;User ID=avisuales1;Password=avisuales1"
-    'Private string_conexion As String = "Data Source=.\SQLEXPRESS;Initial Catalog=TPI;Integrated Security=True"
-    Private string_conexion As String = "Data Source= EQUIPO-PC\SQLEXPRESS;Initial Catalog=TPI;Integrated Security=True"
+    Private string_conexion As String = "Data Source=.\SQLEXPRESS;Initial Catalog=TPI;Integrated Security=True"
+    'Private string_conexion As String = "Data Source= EQUIPO-PC\SQLEXPRESS;Initial Catalog=TPI;Integrated Security=True"
 
 
     Private Shared instance As BDHelper 'Unica instancia de la clase
@@ -304,8 +304,8 @@ Public Class BDHelper
             cmd.CommandText = "SELECT c.denominacion as ctroMedico, e.nombre as especialidad, COUNT(am.nro_atencion) as cantidad " & _
             "FROM AtencionMedica am, CentroMedico c, Especialidad e " & _
             "WHERE(am.nro_centroMedico = c.nro_centroMedico AND am.id_especialidad = e.id_especialidad) " & _
-            "AND (am.fecha_atencion >='" + Convert.ToDateTime(fecDesde).ToString("dd/MM/yyyy") + "' " & _
-            "AND am.fecha_atencion <='" + Convert.ToDateTime(fecHasta).ToString("dd/MM/yyyy") + "') " & _
+            "AND (am.fecha_atencion >='" + Convert.ToDateTime(fecDesde).ToString("dd/MM/yyyy") + "') " & _
+            "AND (am.fecha_atencion <='" + Convert.ToDateTime(fecHasta).ToString("dd/MM/yyyy") + "') " & _
             "GROUP BY c.denominacion, e.nombre "
 
             tabla.Load(cmd.ExecuteReader)
@@ -344,6 +344,35 @@ Public Class BDHelper
         End Try
 
         Return tabla
+    End Function
+
+    Shared Function GetCentrosMedico() As Object
+        Dim strSQL As String = "Select nro_centroMedico, denominacion from CentroMedico"
+        Return BDHelper.getDBHelper.ConsultaSQL(strSQL)
+    End Function
+
+    Function generar_estaditica(centro_medico As Integer) As Object
+        Dim conexion As New SqlConnection
+        Dim cmd As New SqlCommand
+        Dim tabla As New DataTable
+        Try
+            conexion.ConnectionString = string_conexion
+            conexion.Open()
+            cmd.Connection = conexion
+            cmd.CommandType = CommandType.Text
+            cmd.CommandText = "SELECT e.nombre as 'especialidad', COUNT(am.id_especialidad) as 'cantidad' FROM AtencionMedica am JOIN Especialidad e ON(e.id_especialidad = am.id_especialidad) " & _
+                "WHERE am.nro_CentroMedico = " & centro_medico & " " & _
+                "GROUP BY e.nombre"
+            tabla.Load(cmd.ExecuteReader)
+        Catch ex As Exception
+            Throw ex
+        Finally
+            conexion.Close()
+            conexion.Dispose()
+        End Try
+
+        Return tabla
+
     End Function
 
 End Class

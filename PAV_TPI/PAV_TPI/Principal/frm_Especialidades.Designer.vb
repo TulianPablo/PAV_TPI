@@ -32,10 +32,11 @@ Partial Class frm_Especialidades
         Me.lbl_especialidad = New System.Windows.Forms.Label()
         Me.txt_id = New System.Windows.Forms.TextBox()
         Me.dgv_resultados = New System.Windows.Forms.DataGridView()
-        Me.txt_especialidad = New System.Windows.Forms.TextBox()
         Me.col_id = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_especialidad = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_fechaBaja = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.txt_especialidad = New System.Windows.Forms.TextBox()
+        Me.lbl_SignIn_mensaje = New System.Windows.Forms.Label()
         CType(Me.dgv_resultados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -140,14 +141,6 @@ Partial Class frm_Especialidades
         Me.dgv_resultados.Size = New System.Drawing.Size(493, 215)
         Me.dgv_resultados.TabIndex = 6
         '
-        'txt_especialidad
-        '
-        Me.txt_especialidad.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txt_especialidad.Location = New System.Drawing.Point(149, 55)
-        Me.txt_especialidad.Name = "txt_especialidad"
-        Me.txt_especialidad.Size = New System.Drawing.Size(248, 25)
-        Me.txt_especialidad.TabIndex = 1
-        '
         'col_id
         '
         Me.col_id.HeaderText = "Id"
@@ -166,12 +159,32 @@ Partial Class frm_Especialidades
         Me.col_fechaBaja.Name = "col_fechaBaja"
         Me.col_fechaBaja.ReadOnly = True
         '
+        'txt_especialidad
+        '
+        Me.txt_especialidad.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txt_especialidad.Location = New System.Drawing.Point(149, 55)
+        Me.txt_especialidad.Name = "txt_especialidad"
+        Me.txt_especialidad.Size = New System.Drawing.Size(248, 25)
+        Me.txt_especialidad.TabIndex = 1
+        '
+        'lbl_SignIn_mensaje
+        '
+        Me.lbl_SignIn_mensaje.AutoSize = True
+        Me.lbl_SignIn_mensaje.Font = New System.Drawing.Font("Segoe UI", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_SignIn_mensaje.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.lbl_SignIn_mensaje.Location = New System.Drawing.Point(298, 332)
+        Me.lbl_SignIn_mensaje.Name = "lbl_SignIn_mensaje"
+        Me.lbl_SignIn_mensaje.Size = New System.Drawing.Size(124, 17)
+        Me.lbl_SignIn_mensaje.TabIndex = 23
+        Me.lbl_SignIn_mensaje.Text = "lbl_SignIn_mensaje"
+        '
         'frm_Especialidades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.ClientSize = New System.Drawing.Size(550, 382)
+        Me.Controls.Add(Me.lbl_SignIn_mensaje)
         Me.Controls.Add(Me.dgv_resultados)
         Me.Controls.Add(Me.txt_especialidad)
         Me.Controls.Add(Me.txt_id)
@@ -201,4 +214,5 @@ Partial Class frm_Especialidades
     Friend WithEvents col_id As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_especialidad As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_fechaBaja As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents lbl_SignIn_mensaje As System.Windows.Forms.Label
 End Class

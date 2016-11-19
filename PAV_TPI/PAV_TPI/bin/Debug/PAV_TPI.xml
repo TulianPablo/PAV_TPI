@@ -27,6 +27,10 @@ Represents the strongly named DataTable class.
 	<summary>
 Represents the strongly named DataTable class.
 </summary>
+</member><member name="T:PAV_TPI.DsReporte.DTReporteEstadisticoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
 </member><member name="T:PAV_TPI.DsReporte.DTReporteAtencionesRow">
 	<summary>
 Represents strongly named DataRow class.
@@ -35,11 +39,19 @@ Represents strongly named DataRow class.
 	<summary>
 Represents strongly named DataRow class.
 </summary>
+</member><member name="T:PAV_TPI.DsReporte.DTReporteEstadisticoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
 </member><member name="T:PAV_TPI.DsReporte.DTReporteAtencionesRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>
 </member><member name="T:PAV_TPI.DsReporte.DTListadoPorCentroMedicoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:PAV_TPI.DsReporte.DTReporteEstadisticoRowChangeEvent">
 	<summary>
 Row event argument class
 </summary>

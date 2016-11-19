@@ -54,6 +54,7 @@ Partial Class frm_CentroMedico
         Me.btn_editar = New System.Windows.Forms.Button()
         Me.btn_new = New System.Windows.Forms.Button()
         Me.btn_consultar = New System.Windows.Forms.Button()
+        Me.lbl_ctroMedico_mensaje = New System.Windows.Forms.Label()
         CType(Me.dvg_centrosMedicos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -154,7 +155,7 @@ Partial Class frm_CentroMedico
         Me.lbl_telefono.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_telefono.Location = New System.Drawing.Point(132, 162)
         Me.lbl_telefono.Name = "lbl_telefono"
-        Me.lbl_telefono.Size = New System.Drawing.Size(59, 17)
+        Me.lbl_telefono.Size = New System.Drawing.Size(58, 17)
         Me.lbl_telefono.TabIndex = 10
         Me.lbl_telefono.Text = "Teléfono"
         '
@@ -331,6 +332,18 @@ Partial Class frm_CentroMedico
         Me.btn_consultar.Text = "Buscar"
         Me.btn_consultar.UseVisualStyleBackColor = True
         '
+        'lbl_ctroMedico_mensaje
+        '
+        Me.lbl_ctroMedico_mensaje.AutoSize = True
+        Me.lbl_ctroMedico_mensaje.Font = New System.Drawing.Font("Segoe UI", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_ctroMedico_mensaje.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.lbl_ctroMedico_mensaje.Location = New System.Drawing.Point(386, 427)
+        Me.lbl_ctroMedico_mensaje.Name = "lbl_ctroMedico_mensaje"
+        Me.lbl_ctroMedico_mensaje.Size = New System.Drawing.Size(151, 17)
+        Me.lbl_ctroMedico_mensaje.TabIndex = 23
+        Me.lbl_ctroMedico_mensaje.Text = "lbl_ctroMedico_mensaje"
+        Me.lbl_ctroMedico_mensaje.Visible = False
+        '
         'frm_CentroMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -338,6 +351,7 @@ Partial Class frm_CentroMedico
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(815, 463)
+        Me.Controls.Add(Me.lbl_ctroMedico_mensaje)
         Me.Controls.Add(Me.btn_consultar)
         Me.Controls.Add(Me.btn_editar)
         Me.Controls.Add(Me.btn_new)
@@ -397,4 +411,5 @@ Partial Class frm_CentroMedico
     Friend WithEvents btn_editar As System.Windows.Forms.Button
     Friend WithEvents btn_new As System.Windows.Forms.Button
     Friend WithEvents btn_consultar As System.Windows.Forms.Button
+    Friend WithEvents lbl_ctroMedico_mensaje As System.Windows.Forms.Label
 End Class

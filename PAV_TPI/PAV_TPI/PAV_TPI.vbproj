@@ -200,6 +200,12 @@
     <Compile Include="Principal\frm_ListadoAtencionesPorCentroMedico.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Principal\frm_ListadoEstadístico.Designer.vb">
+      <DependentUpon>frm_ListadoEstadístico.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\frm_ListadoEstadístico.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Principal\Profesionales\frm_bajaProfesional.Designer.vb">
       <DependentUpon>frm_bajaProfesional.vb</DependentUpon>
     </Compile>
@@ -285,6 +291,9 @@
     <EmbeddedResource Include="Principal\frm_TipoAfiliado.resx">
       <DependentUpon>frm_TipoAfiliado.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Principal\frm_ListadoEstadístico.resx">
+      <DependentUpon>frm_ListadoEstadístico.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Principal\Profesionales\frm_bajaProfesional.resx">
       <DependentUpon>frm_bajaProfesional.vb</DependentUpon>
     </EmbeddedResource>
@@ -298,6 +307,7 @@
       <DependentUpon>frm_Profesionales.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Diseño\ListadoAtencionesCentroMedico.rdlc" />
+    <EmbeddedResource Include="Reportes\Diseño\ReporteEstadistico.rdlc" />
     <EmbeddedResource Include="Reportes\Diseño\ReporteAtencionesPorCentroMedico.rdlc" />
   </ItemGroup>
   <ItemGroup>

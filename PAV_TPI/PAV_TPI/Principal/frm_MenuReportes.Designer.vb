@@ -24,6 +24,7 @@ Partial Class frm_MenuReportes
     Private Sub InitializeComponent()
         Me.btn_reporteAtencionesCtro = New System.Windows.Forms.Button()
         Me.btn_listadoAtencionesCtroMedico = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btn_reporteAtencionesCtro
@@ -44,11 +45,21 @@ Partial Class frm_MenuReportes
         Me.btn_listadoAtencionesCtroMedico.Text = "Listado de atenciones por centro medico"
         Me.btn_listadoAtencionesCtroMedico.UseVisualStyleBackColor = True
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(24, 116)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(237, 28)
+        Me.Button1.TabIndex = 2
+        Me.Button1.Text = "Reporte Estadistico Atenciones"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'frm_MenuReportes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(284, 156)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btn_listadoAtencionesCtroMedico)
         Me.Controls.Add(Me.btn_reporteAtencionesCtro)
         Me.Name = "frm_MenuReportes"
@@ -59,4 +70,5 @@ Partial Class frm_MenuReportes
     End Sub
     Friend WithEvents btn_reporteAtencionesCtro As System.Windows.Forms.Button
     Friend WithEvents btn_listadoAtencionesCtroMedico As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
