@@ -1,0 +1,64 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+PAV_TPI
+</name>
+</assembly>
+<members>
+<member name="P:PAV_TPI.My.Resources.Resources.ResourceManager">
+	<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member><member name="P:PAV_TPI.My.Resources.Resources.Culture">
+	<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member><member name="T:PAV_TPI.My.Resources.Resources">
+	<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member><member name="T:PAV_TPI.DsReporte.DTReporteAtencionesDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:PAV_TPI.DsReporte.DTListadoPorCentroMedicoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:PAV_TPI.DsReporte.DTReporteEstadisticoDataTable">
+	<summary>
+Represents the strongly named DataTable class.
+</summary>
+</member><member name="T:PAV_TPI.DsReporte.DTReporteAtencionesRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:PAV_TPI.DsReporte.DTListadoPorCentroMedicoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:PAV_TPI.DsReporte.DTReporteEstadisticoRow">
+	<summary>
+Represents strongly named DataRow class.
+</summary>
+</member><member name="T:PAV_TPI.DsReporte.DTReporteAtencionesRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:PAV_TPI.DsReporte.DTListadoPorCentroMedicoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:PAV_TPI.DsReporte.DTReporteEstadisticoRowChangeEvent">
+	<summary>
+Row event argument class
+</summary>
+</member><member name="T:PAV_TPI.DsReporte">
+	<summary>
+Represents a strongly typed in-memory cache of data.
+</summary>
+</member>
+</members>
+</doc>
