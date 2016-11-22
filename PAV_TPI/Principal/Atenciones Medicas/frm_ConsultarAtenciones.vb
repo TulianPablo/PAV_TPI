@@ -1,9 +1,9 @@
 ﻿Public Class frm_ConsultarAtenciones
 
-    Public form_atenciones As frm_AtencionMedica
+
+    Public form_atencion As frm_consultarDetalleAtencion
 
     Private Sub frm_ConsultarAtenciones_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        form_atenciones = New frm_AtencionMedica
         CargarCombo(cbo_tipodoc, BDHelper.GetTipoDoc(), "id_tipoDoc", "nombre")
         CargarCombo(cbo_especialidad, BDHelper.GetEspecialidades(), "id_especialidad", "nombre")
         lbl_mensajeAtenciones.Visible = False
@@ -22,10 +22,10 @@
 
 
     Private Sub btn_consultar_Click(sender As Object, e As EventArgs) Handles btn_consultar.Click
+        dgv_atenciones.Rows.Clear()
         If Not String.IsNullOrEmpty(txt_nroAtencion.Text) Or Not String.IsNullOrEmpty(txt_matricula.Text) Or Not String.IsNullOrEmpty(txt_nroDoc.Text) Or cbo_tipodoc.SelectedIndex <> -1 Or cbo_especialidad.SelectedIndex <> -1 Then
 
             If validar_campos() Then
-                dgv_atenciones.Rows.Clear()
                 cargar_grilla_CD()
             End If
         Else
@@ -144,7 +144,6 @@
         End If
         str &= "GROUP BY am.fecha_atencion, am.nro_atencion, a.apellido + ', ' + a.nombre , c.denominacion, p.apellido + ', ' + p.nombre, e.nombre , c.nro_centroMedico "
 
-        dgv_atenciones.Rows.Clear()
         For Each row As DataRow In BDHelper.getDBHelper.ConsultaSQL(Str).Rows
             dgv_atenciones.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString, row.Item(2).ToString, row.Item(3).ToString,
                                                   row.Item(4).ToString, row.Item(5).ToString, row.Item(6).ToString, row.Item(7).ToString})
@@ -160,15 +159,15 @@
     Private Sub dgv_atenciones_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgv_atenciones.CellDoubleClick
 
 
-        form_atenciones = New frm_AtencionMedica
-        form_atenciones.habilitar = False
-        frm_AtencionMedica.Show()
-
+        form_atencion = New frm_consultarDetalleAtencion
 
         Dim sql As String
         Dim table As DataTable
-        Dim subtotal As String
-
+        Dim subtotal As Integer
+        form_atencion.Show()
+        Dim t_subtotal As Integer = 0
+        Dim t_descuento As Integer = 0
+        Dim t_total As Integer = 0
 
         sql = "SELECT am.*, dam.id_practica,dam.porc_descuento, dam.precio, a.apellido + ' , ' +  a.nombre as afiliado, c.denominacion, p.apellido + ', ' + p.nombre as profesional, c.denominacion , pr.nombre "
         sql &= "FROM AtencionMedica am JOIN DetalleAtencionMedica dam ON (am.nro_atencion=dam.nro_atencion AND am.nro_centroMedico=dam.nro_centroMedico)"
@@ -180,34 +179,74 @@
         sql &= "WHERE am.nro_atencion = " & dgv_atenciones.CurrentRow.Cells("col_nroAtencion").Value & " AND " & " am.nro_centroMedico = " & dgv_atenciones.CurrentRow.Cells("col_nroCentroMedico").Value
         table = BDHelper.getDBHelper.ConsultaSQL(sql)
 
-        With frm_AtencionMedica
+
+        With form_atencion
             .txt_nro_atencion.Text = table.Rows(0)("nro_atencion")
             .dtp_fecha.Text = table.Rows(0)("fecha_atencion")
-            .txt_nroCentro.Text = table.Rows(0)("nro_centroMedico")
-            .txt_centroMedico.Text = table.Rows(0)("denominacion")
+            .cbo_ctroMedico.SelectedValue = table.Rows(0)("nro_centroMedico")
             .cbo_tipoDoc.SelectedValue = table.Rows(0)("id_tipoDocAfiliado")
             .txt_nroDoc.Text = table.Rows(0)("nro_docAfiliado")
             .txt_apellidoNombre.Text = table.Rows(0)("afiliado")
-            .txt_matricula.Text = table.Rows(0)("matricula")
-            .txt_profesional.Text = table.Rows(0)("profesional")
+            .cbo_profesional.SelectedValue = table.Rows(0)("matricula")
             .cbo_especialidad.SelectedValue = table.Rows(0)("id_especialidad")
 
             For Each row As Data.DataRow In table.Rows
                 subtotal = (Integer.Parse(row.Item("precio")) - (Integer.Parse(row.Item("precio")) * Integer.Parse(row.Item("porc_descuento"))) / 100)
                 .dgv_practicas.Rows.Add(New String() {row.Item("id_practica"), row.Item("fecha_atencion"), row.Item("nro_atencion"), row.Item("nombre"), row.Item("precio"), row.Item("porc_descuento"), subtotal})
+            Next
+            For c = 0 To .dgv_practicas.RowCount - 1
+                t_subtotal = t_subtotal + Convert.ToDouble(.dgv_practicas.Rows(c).Cells("col_subtotal").Value)
+                t_total = t_total + Convert.ToDouble(.dgv_practicas.Rows(c).Cells("col_precio").Value)
+                t_descuento = t_descuento + (Convert.ToDouble(.dgv_practicas.Rows(c).Cells("col_precio").Value) * Convert.ToDouble(.dgv_practicas.Rows(c).Cells("col_porcentaje").Value)) / 100
 
             Next
-
+            .txt_totales.Text = t_total
+            .txt_descTotales.Text = t_descuento
+            .txt_subTotales.Text = t_subtotal
         End With
+
+        deshabilitar_Campos(False)
+
 
     End Sub
 
     Private Sub btn_registrar_Click(sender As Object, e As EventArgs) Handles btn_registrar.Click
 
-        form_atenciones = New frm_AtencionMedica
-        form_atenciones.habilitar = True
         frm_AtencionMedica.Show()
     End Sub
+
+    Private Sub deshabilitar_Campos(p1 As Boolean)
+
+        With form_atencion
+            For Each ctrl As Control In .Controls
+                If TypeOf ctrl Is ComboBox Then
+                    Dim cbo As ComboBox = ctrl
+                    cbo.Enabled = p1
+                ElseIf TypeOf ctrl Is TextBox Then
+                    Dim txt As TextBox = ctrl
+                    txt.Enabled = p1
+                ElseIf TypeOf ctrl Is DateTimePicker Then
+                    Dim dtp As DateTimePicker = ctrl
+                    dtp.Enabled = p1
+                ElseIf TypeOf ctrl Is GroupBox Then
+                    Dim gp As GroupBox = ctrl
+                    For Each ctr As Control In ctrl.Controls
+                        If TypeOf ctr Is TextBox Then
+                            Dim txt As TextBox = ctr
+                            txt.Enabled = p1
+                        ElseIf TypeOf ctr Is ComboBox Then
+                            Dim cbo As ComboBox = ctr
+                            cbo.Enabled = p1
+                        ElseIf TypeOf ctr Is MaskedTextBox Then
+                            Dim msk As MaskedTextBox = ctr
+                            msk.Enabled = p1
+                        End If
+                    Next  
+                End If
+            Next
+        End With
+    End Sub
+
 
 
 End Class

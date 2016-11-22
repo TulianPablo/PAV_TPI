@@ -129,6 +129,12 @@
     <Compile Include="Principal\Atenciones Medicas\frm_ConsultarAtenciones.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Principal\Atenciones Medicas\frm_consultarDetalleAtencion.Designer.vb">
+      <DependentUpon>frm_consultarDetalleAtencion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Principal\Atenciones Medicas\frm_consultarDetalleAtencion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Principal\frm_CentroMedico.Designer.vb">
       <DependentUpon>frm_CentroMedico.vb</DependentUpon>
     </Compile>
@@ -257,6 +263,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\Atenciones Medicas\frm_ConsultarAtenciones.resx">
       <DependentUpon>frm_ConsultarAtenciones.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Principal\Atenciones Medicas\frm_consultarDetalleAtencion.resx">
+      <DependentUpon>frm_consultarDetalleAtencion.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Principal\frm_CentroMedico.resx">
       <DependentUpon>frm_CentroMedico.vb</DependentUpon>

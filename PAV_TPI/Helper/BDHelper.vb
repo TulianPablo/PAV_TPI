@@ -9,9 +9,9 @@ Public Class BDHelper
     ' Implementa el patrón SINGLETON, que garantiza tener solo una instancia de esta clase.
 
 
-    Private string_conexion As String = "Data Source=maquis;Initial Catalog=TPI_ObraSocial;User ID=avisuales1;Password=avisuales1"
+    'Private string_conexion As String = "Data Source=maquis;Initial Catalog=TPI_ObraSocial;User ID=avisuales1;Password=avisuales1"
     'Private string_conexion As String = "Data Source=.\SQLEXPRESS;Initial Catalog=TPI;Integrated Security=True"
-    'Private string_conexion As String = "Data Source= EQUIPO-PC\SQLEXPRESS;Initial Catalog=TPI;Integrated Security=True"
+    Private string_conexion As String = "Data Source= EQUIPO-PC\SQLEXPRESS;Initial Catalog=PAV_TPI;Integrated Security=True"
 
 
     Private Shared instance As BDHelper 'Unica instancia de la clase
@@ -373,6 +373,11 @@ Public Class BDHelper
 
         Return tabla
 
+    End Function
+
+    Shared Function GetProfesionales() As DataTable
+        Dim strSQL As String = "SELECT matricula , apellido + ' ,' + nombre AS nombre_completo FROM Profesional"
+        Return BDHelper.getDBHelper.ConsultaSQL(strSQL)
     End Function
 
 End Class

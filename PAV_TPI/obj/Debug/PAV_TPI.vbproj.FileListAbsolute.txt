@@ -296,3 +296,36 @@ F:\tp\PAV_TPI\PAV_TPI\bin\Debug\PAV_TPI.exe.config
 F:\tp\PAV_TPI\PAV_TPI\obj\Debug\PAV_TPI.exe
 F:\tp\PAV_TPI\PAV_TPI\obj\Debug\PAV_TPI.xml
 F:\tp\PAV_TPI\PAV_TPI\obj\Debug\PAV_TPI.pdb
+D:\Pablo\PAV I\Repositorio\PAV_TPI\bin\Debug\PAV_TPI.exe.config
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.exe
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.xml
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.pdb
+D:\Pablo\PAV I\Repositorio\PAV_TPI\bin\Debug\PAV_TPI.exe
+D:\Pablo\PAV I\Repositorio\PAV_TPI\bin\Debug\PAV_TPI.pdb
+D:\Pablo\PAV I\Repositorio\PAV_TPI\bin\Debug\PAV_TPI.xml
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.vbprojResolveAssemblyReference.cache
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_Afiliados.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_bajaAfiliado.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_editarAfiliados.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_nuevoAfiliado.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_AtencionMedica.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_ConsultarAtenciones.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_CentroMedico.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_Especialidades.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_principal.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.Resources.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_InicioSesion.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_ListadoAtencionesPorCentroMedico.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_MenuReportes.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_Practicas.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_ReporteAtenciones_CtroMedico.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_TipoAfiliado.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_ListadoEstadístico.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_bajaProfesional.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_editarProfesional.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_nuevoProfesional.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_Profesionales.resources
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.vbproj.GenerateResource.Cache
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\RdlCompile.cache
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\RdlCompile.compiled
+D:\Pablo\PAV I\Repositorio\PAV_TPI\obj\Debug\PAV_TPI.frm_consultarDetalleAtencion.resources

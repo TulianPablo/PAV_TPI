@@ -55,15 +55,15 @@ Partial Class frm_ConsultarAtenciones
         '
         'txt_matricula
         '
-        Me.txt_matricula.Location = New System.Drawing.Point(139, 76)
+        Me.txt_matricula.Location = New System.Drawing.Point(116, 62)
         Me.txt_matricula.Name = "txt_matricula"
         Me.txt_matricula.Size = New System.Drawing.Size(97, 23)
-        Me.txt_matricula.TabIndex = 33
+        Me.txt_matricula.TabIndex = 1
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(112, 86)
+        Me.Label5.Location = New System.Drawing.Point(112, 74)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(0, 15)
         Me.Label5.TabIndex = 32
@@ -71,30 +71,30 @@ Partial Class frm_ConsultarAtenciones
         'cbo_especialidad
         '
         Me.cbo_especialidad.FormattingEnabled = True
-        Me.cbo_especialidad.Location = New System.Drawing.Point(139, 121)
+        Me.cbo_especialidad.Location = New System.Drawing.Point(116, 91)
         Me.cbo_especialidad.Name = "cbo_especialidad"
         Me.cbo_especialidad.Size = New System.Drawing.Size(180, 23)
-        Me.cbo_especialidad.TabIndex = 31
+        Me.cbo_especialidad.TabIndex = 2
         '
         'btn_consultar
         '
         Me.btn_consultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_consultar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_consultar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_consultar.Location = New System.Drawing.Point(713, 150)
+        Me.btn_consultar.Location = New System.Drawing.Point(740, 113)
         Me.btn_consultar.Name = "btn_consultar"
-        Me.btn_consultar.Size = New System.Drawing.Size(105, 37)
-        Me.btn_consultar.TabIndex = 30
-        Me.btn_consultar.Text = "BUSCAR"
+        Me.btn_consultar.Size = New System.Drawing.Size(80, 32)
+        Me.btn_consultar.TabIndex = 7
+        Me.btn_consultar.Text = "Buscar"
         Me.btn_consultar.UseVisualStyleBackColor = True
         '
         'dtp_fechaHasta
         '
         Me.dtp_fechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.dtp_fechaHasta.Location = New System.Drawing.Point(639, 81)
+        Me.dtp_fechaHasta.Location = New System.Drawing.Point(639, 69)
         Me.dtp_fechaHasta.Name = "dtp_fechaHasta"
         Me.dtp_fechaHasta.Size = New System.Drawing.Size(181, 23)
-        Me.dtp_fechaHasta.TabIndex = 29
+        Me.dtp_fechaHasta.TabIndex = 6
         '
         'dtp_fechaDesde
         '
@@ -102,13 +102,13 @@ Partial Class frm_ConsultarAtenciones
         Me.dtp_fechaDesde.Location = New System.Drawing.Point(639, 32)
         Me.dtp_fechaDesde.Name = "dtp_fechaDesde"
         Me.dtp_fechaDesde.Size = New System.Drawing.Size(181, 23)
-        Me.dtp_fechaDesde.TabIndex = 28
+        Me.dtp_fechaDesde.TabIndex = 5
         '
         'dgv_atenciones
         '
         Me.dgv_atenciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgv_atenciones.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_fecha, Me.col_nroAtencion, Me.col_afiliado, Me.col_CentroMedico, Me.col_Profesional, Me.col_especialidad, Me.col_nroCentroMedico, Me.col_total})
-        Me.dgv_atenciones.Location = New System.Drawing.Point(24, 207)
+        Me.dgv_atenciones.Location = New System.Drawing.Point(24, 161)
         Me.dgv_atenciones.Name = "dgv_atenciones"
         Me.dgv_atenciones.Size = New System.Drawing.Size(796, 205)
         Me.dgv_atenciones.TabIndex = 27
@@ -161,75 +161,82 @@ Partial Class frm_ConsultarAtenciones
         Me.cbo_tipodoc.Location = New System.Drawing.Point(393, 32)
         Me.cbo_tipodoc.Name = "cbo_tipodoc"
         Me.cbo_tipodoc.Size = New System.Drawing.Size(118, 23)
-        Me.cbo_tipodoc.TabIndex = 25
+        Me.cbo_tipodoc.TabIndex = 3
         '
         'lbl_fechaHasta
         '
         Me.lbl_fechaHasta.AutoSize = True
-        Me.lbl_fechaHasta.Location = New System.Drawing.Point(540, 81)
+        Me.lbl_fechaHasta.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.lbl_fechaHasta.Location = New System.Drawing.Point(540, 69)
         Me.lbl_fechaHasta.Name = "lbl_fechaHasta"
-        Me.lbl_fechaHasta.Size = New System.Drawing.Size(71, 15)
+        Me.lbl_fechaHasta.Size = New System.Drawing.Size(78, 17)
         Me.lbl_fechaHasta.TabIndex = 24
         Me.lbl_fechaHasta.Text = "Fecha Hasta"
         '
         'lbl_fechaDesde
         '
         Me.lbl_fechaDesde.AutoSize = True
+        Me.lbl_fechaDesde.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.lbl_fechaDesde.Location = New System.Drawing.Point(537, 32)
         Me.lbl_fechaDesde.Name = "lbl_fechaDesde"
-        Me.lbl_fechaDesde.Size = New System.Drawing.Size(73, 15)
+        Me.lbl_fechaDesde.Size = New System.Drawing.Size(82, 17)
         Me.lbl_fechaDesde.TabIndex = 23
         Me.lbl_fechaDesde.Text = "Fecha Desde"
         '
         'txt_nroAtencion
         '
-        Me.txt_nroAtencion.Location = New System.Drawing.Point(139, 36)
+        Me.txt_nroAtencion.Location = New System.Drawing.Point(116, 36)
         Me.txt_nroAtencion.Name = "txt_nroAtencion"
         Me.txt_nroAtencion.Size = New System.Drawing.Size(97, 23)
-        Me.txt_nroAtencion.TabIndex = 22
+        Me.txt_nroAtencion.TabIndex = 0
         '
         'lbl_nroDoc
         '
         Me.lbl_nroDoc.AutoSize = True
-        Me.lbl_nroDoc.Location = New System.Drawing.Point(281, 75)
+        Me.lbl_nroDoc.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.lbl_nroDoc.Location = New System.Drawing.Point(281, 68)
         Me.lbl_nroDoc.Name = "lbl_nroDoc"
-        Me.lbl_nroDoc.Size = New System.Drawing.Size(93, 15)
+        Me.lbl_nroDoc.Size = New System.Drawing.Size(102, 17)
         Me.lbl_nroDoc.TabIndex = 21
         Me.lbl_nroDoc.Text = "Nro Documento"
         '
         'cmb_tipodoc
         '
         Me.cmb_tipodoc.AutoSize = True
+        Me.cmb_tipodoc.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.cmb_tipodoc.Location = New System.Drawing.Point(281, 36)
         Me.cmb_tipodoc.Name = "cmb_tipodoc"
-        Me.cmb_tipodoc.Size = New System.Drawing.Size(97, 15)
+        Me.cmb_tipodoc.Size = New System.Drawing.Size(105, 17)
         Me.cmb_tipodoc.TabIndex = 20
         Me.cmb_tipodoc.Text = "Tipo Documento"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(29, 129)
+        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.Label4.Location = New System.Drawing.Point(29, 99)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(72, 15)
+        Me.Label4.Size = New System.Drawing.Size(81, 17)
         Me.Label4.TabIndex = 18
         Me.Label4.Text = "Especialidad"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(29, 87)
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 9.75!)
+        Me.Label2.Location = New System.Drawing.Point(29, 65)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(60, 15)
+        Me.Label2.Size = New System.Drawing.Size(66, 17)
         Me.Label2.TabIndex = 17
         Me.Label2.Text = "Matrícula "
         '
         'lbl_nroAtencion
         '
         Me.lbl_nroAtencion.AutoSize = True
+        Me.lbl_nroAtencion.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.lbl_nroAtencion.Location = New System.Drawing.Point(29, 38)
         Me.lbl_nroAtencion.Name = "lbl_nroAtencion"
-        Me.lbl_nroAtencion.Size = New System.Drawing.Size(81, 15)
+        Me.lbl_nroAtencion.Size = New System.Drawing.Size(88, 17)
         Me.lbl_nroAtencion.TabIndex = 19
         Me.lbl_nroAtencion.Text = "Nro. Atención"
         '
@@ -246,7 +253,7 @@ Partial Class frm_ConsultarAtenciones
         Me.lbl_mensajeAtenciones.AutoSize = True
         Me.lbl_mensajeAtenciones.Font = New System.Drawing.Font("Segoe UI", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle))
         Me.lbl_mensajeAtenciones.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.lbl_mensajeAtenciones.Location = New System.Drawing.Point(34, 168)
+        Me.lbl_mensajeAtenciones.Location = New System.Drawing.Point(29, 128)
         Me.lbl_mensajeAtenciones.Name = "lbl_mensajeAtenciones"
         Me.lbl_mensajeAtenciones.Size = New System.Drawing.Size(147, 17)
         Me.lbl_mensajeAtenciones.TabIndex = 34
@@ -254,29 +261,29 @@ Partial Class frm_ConsultarAtenciones
         '
         'txt_nroDoc
         '
-        Me.txt_nroDoc.Location = New System.Drawing.Point(393, 71)
+        Me.txt_nroDoc.Location = New System.Drawing.Point(393, 64)
         Me.txt_nroDoc.Mask = "99999999"
         Me.txt_nroDoc.Name = "txt_nroDoc"
         Me.txt_nroDoc.Size = New System.Drawing.Size(118, 23)
-        Me.txt_nroDoc.TabIndex = 35
+        Me.txt_nroDoc.TabIndex = 4
         '
         'btn_registrar
         '
         Me.btn_registrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.btn_registrar.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_registrar.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        Me.btn_registrar.Location = New System.Drawing.Point(24, 425)
+        Me.btn_registrar.Location = New System.Drawing.Point(684, 389)
         Me.btn_registrar.Name = "btn_registrar"
-        Me.btn_registrar.Size = New System.Drawing.Size(105, 37)
-        Me.btn_registrar.TabIndex = 36
-        Me.btn_registrar.Text = "REGISTRAR"
+        Me.btn_registrar.Size = New System.Drawing.Size(136, 32)
+        Me.btn_registrar.TabIndex = 8
+        Me.btn_registrar.Text = "Nueva Atención"
         Me.btn_registrar.UseVisualStyleBackColor = True
         '
         'frm_ConsultarAtenciones
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(848, 477)
+        Me.ClientSize = New System.Drawing.Size(848, 433)
         Me.Controls.Add(Me.btn_registrar)
         Me.Controls.Add(Me.txt_nroDoc)
         Me.Controls.Add(Me.lbl_mensajeAtenciones)
@@ -299,7 +306,7 @@ Partial Class frm_ConsultarAtenciones
         Me.Controls.Add(Me.Label1)
         Me.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "frm_ConsultarAtenciones"
-        Me.Text = "frm_ConsultarAtenciones"
+        Me.Text = "Consultar Atenciones"
         CType(Me.dgv_atenciones, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
