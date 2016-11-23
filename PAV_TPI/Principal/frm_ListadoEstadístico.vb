@@ -9,9 +9,9 @@ Public Class frm_ListadoEstadístico
     End Sub
 
     Private Sub btn_actualizar_Click(sender As Object, e As EventArgs) Handles btn_actualizar.Click
-        rpt_estadistico.LocalReport.SetParameters({New ReportParameter("pcentroMedico", cbo_ctrosMedico.SelectedValue.ToString)})
+        rpt_estadistico.LocalReport.SetParameters({New ReportParameter("pcentroMedico", cbo_ctrosMedico.Text)})
         rpt_estadistico.LocalReport.DataSources.Clear()
-        rpt_estadistico.LocalReport.DataSources.Add(New ReportDataSource("DataSet1", BDHelper.getDBHelper.generar_estaditica(cbo_ctrosMedico.SelectedValue.ToString)))
+        rpt_estadistico.LocalReport.DataSources.Add(New ReportDataSource("DataSet1", BDHelper.getDBHelper.generar_estaditica(cbo_ctrosMedico.Text)))
         rpt_estadistico.RefreshReport()
     End Sub
 

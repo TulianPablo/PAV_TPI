@@ -22,7 +22,7 @@
                 <Style />
               </TextRun>
               <TextRun>
-                <Value>=Microsoft.VisualBasic.Interaction.IIf(Microsoft.VisualBasic.Information.IsNothing(Parameters!pCentroMedico.Value) Or Parameters!pCentroMedico.Value = "", "TODOS", Parameters!pCentroMedico.Value)</Value>
+                <Value>=Microsoft.VisualBasic.Interaction.IIf(Microsoft.VisualBasic.Information.IsNothing(Parameters!pCentroMedico.value) Or Parameters!pCentroMedico.Value = "", "TODOS", Parameters!pCentroMedico.Value)</Value>
                 <Style />
               </TextRun>
             </TextRuns>
@@ -414,11 +414,11 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Listado de Atenciones por Centro Medico</Value>
+                  <Value>Listado de Atenciones por Centro Médico</Value>
                   <Style>
                     <FontFamily>SEGOE UI</FontFamily>
                     <FontSize>12pt</FontSize>
-                    <FontWeight>Light</FontWeight>
+                    <FontWeight>Medium</FontWeight>
                     <Color>White</Color>
                   </Style>
                 </TextRun>

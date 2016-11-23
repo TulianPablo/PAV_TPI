@@ -97,16 +97,16 @@ Partial Class frm_ReporteAtenciones_CtroMedico
         ReportDataSource1.Value = Me.DTReporteAtencionesBindingSource
         Me.rpt_atencionesCtroMedico.LocalReport.DataSources.Add(ReportDataSource1)
         Me.rpt_atencionesCtroMedico.LocalReport.ReportEmbeddedResource = "PAV_TPI.ReporteAtencionesPorCentroMedico.rdlc"
-        Me.rpt_atencionesCtroMedico.Location = New System.Drawing.Point(31, 63)
+        Me.rpt_atencionesCtroMedico.Location = New System.Drawing.Point(12, 63)
         Me.rpt_atencionesCtroMedico.Name = "rpt_atencionesCtroMedico"
-        Me.rpt_atencionesCtroMedico.Size = New System.Drawing.Size(496, 305)
+        Me.rpt_atencionesCtroMedico.Size = New System.Drawing.Size(772, 369)
         Me.rpt_atencionesCtroMedico.TabIndex = 11
         '
         'frm_ReporteAtenciones_CtroMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(552, 393)
+        Me.ClientSize = New System.Drawing.Size(796, 444)
         Me.Controls.Add(Me.rpt_atencionesCtroMedico)
         Me.Controls.Add(Me.btn_generar)
         Me.Controls.Add(Me.txt_fecHasta)

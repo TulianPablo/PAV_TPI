@@ -70,7 +70,7 @@ Partial Class frm_ListadoAtencionesPorCentroMedico
         Me.rpt_listadoAtencionesPorCentro.LocalReport.ReportEmbeddedResource = "PAV_TPI.ListadoAtencionesCentroMedico.rdlc"
         Me.rpt_listadoAtencionesPorCentro.Location = New System.Drawing.Point(12, 62)
         Me.rpt_listadoAtencionesPorCentro.Name = "rpt_listadoAtencionesPorCentro"
-        Me.rpt_listadoAtencionesPorCentro.Size = New System.Drawing.Size(633, 312)
+        Me.rpt_listadoAtencionesPorCentro.Size = New System.Drawing.Size(732, 362)
         Me.rpt_listadoAtencionesPorCentro.TabIndex = 7
         '
         'cbo_ctrosMedico
@@ -85,7 +85,7 @@ Partial Class frm_ListadoAtencionesPorCentroMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(657, 386)
+        Me.ClientSize = New System.Drawing.Size(756, 436)
         Me.Controls.Add(Me.cbo_ctrosMedico)
         Me.Controls.Add(Me.rpt_listadoAtencionesPorCentro)
         Me.Controls.Add(Me.btn_actualizar)

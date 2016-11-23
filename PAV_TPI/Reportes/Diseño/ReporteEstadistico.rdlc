@@ -179,7 +179,7 @@
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
         <Top>9.14122cm</Top>
-        <Left>2.56708cm</Left>
+        <Left>4.16432cm</Left>
         <Height>1.2cm</Height>
         <Width>9.63021cm</Width>
         <Style>
@@ -195,25 +195,30 @@
           <Paragraph>
             <TextRuns>
               <TextRun>
-                <Value>Cantidad de atenciones por Centros Medicos </Value>
+                <Value>Cantidad de atenciones por Centros Médicos </Value>
                 <Style>
-                  <FontWeight>Bold</FontWeight>
+                  <FontFamily>Segoe UI</FontFamily>
+                  <FontSize>12pt</FontSize>
+                  <FontWeight>Medium</FontWeight>
+                  <Color>White</Color>
                 </Style>
               </TextRun>
             </TextRuns>
-            <Style />
+            <Style>
+              <TextAlign>Center</TextAlign>
+            </Style>
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox9</rd:DefaultName>
         <Top>0.2774cm</Top>
-        <Left>0.39749cm</Left>
-        <Height>0.6cm</Height>
-        <Width>17.21021cm</Width>
+        <Height>0.74248cm</Height>
+        <Width>17.97751cm</Width>
         <ZIndex>1</ZIndex>
         <Style>
           <Border>
             <Style>Solid</Style>
           </Border>
+          <BackgroundColor>Tomato</BackgroundColor>
           <PaddingLeft>2pt</PaddingLeft>
           <PaddingRight>2pt</PaddingRight>
           <PaddingTop>2pt</PaddingTop>
@@ -468,17 +473,6 @@
             <ColumnSeparatorColor>Black</ColumnSeparatorColor>
           </ChartLegend>
         </ChartLegends>
-        <ChartTitles>
-          <ChartTitle Name="Default">
-            <Caption>Título del gráfico</Caption>
-            <Style>
-              <BackgroundGradientType>None</BackgroundGradientType>
-              <FontWeight>Bold</FontWeight>
-              <TextAlign>General</TextAlign>
-              <VerticalAlign>Top</VerticalAlign>
-            </Style>
-          </ChartTitle>
-        </ChartTitles>
         <Palette>BrightPastel</Palette>
         <ChartBorderSkin>
           <Style>
@@ -496,9 +490,9 @@
           </Style>
         </ChartNoDataMessage>
         <DataSetName>DataSet1</DataSetName>
-        <Top>1.26682cm</Top>
+        <Top>2.19286cm</Top>
         <Left>0.39749cm</Left>
-        <Height>7.24896cm</Height>
+        <Height>6.32292cm</Height>
         <Width>17.21021cm</Width>
         <ZIndex>2</ZIndex>
         <Style>
@@ -510,6 +504,77 @@
           <BackgroundGradientType>None</BackgroundGradientType>
         </Style>
       </Chart>
+      <Textbox Name="Textbox2">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>Centro Médico: </Value>
+                <Style>
+                  <FontWeight>Medium</FontWeight>
+                </Style>
+              </TextRun>
+              <TextRun>
+                <Value>=Microsoft.VisualBasic.Interaction.IIf(Microsoft.VisualBasic.Information.IsNothing(Parameters!pcentroMedico.Value) Or Parameters!pcentroMedico.Value = "", "TODOS", Parameters!pcentroMedico.Value)</Value>
+                <Style>
+                  <FontWeight>Medium</FontWeight>
+                </Style>
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox2</rd:DefaultName>
+        <Top>1.41647cm</Top>
+        <Left>4.70641cm</Left>
+        <Height>0.6cm</Height>
+        <Width>8.74417cm</Width>
+        <ZIndex>3</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <BottomBorder>
+            <Style>Solid</Style>
+          </BottomBorder>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
+      <Textbox Name="Textbox4">
+        <CanGrow>true</CanGrow>
+        <KeepTogether>true</KeepTogether>
+        <Paragraphs>
+          <Paragraph>
+            <TextRuns>
+              <TextRun>
+                <Value>=FormatDateTime(Globals!ExecutionTime, DateFormat.ShortDate)</Value>
+                <Style />
+              </TextRun>
+            </TextRuns>
+            <Style />
+          </Paragraph>
+        </Paragraphs>
+        <rd:DefaultName>Textbox4</rd:DefaultName>
+        <Top>11.32099cm</Top>
+        <Left>0.84728cm</Left>
+        <Height>0.6cm</Height>
+        <Width>2.5cm</Width>
+        <ZIndex>4</ZIndex>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+          <PaddingLeft>2pt</PaddingLeft>
+          <PaddingRight>2pt</PaddingRight>
+          <PaddingTop>2pt</PaddingTop>
+          <PaddingBottom>2pt</PaddingBottom>
+        </Style>
+      </Textbox>
     </ReportItems>
     <Height>4.88541in</Height>
     <Style />

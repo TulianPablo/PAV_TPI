@@ -52,7 +52,7 @@ Partial Class frm_ListadoEstadístico
         Me.rpt_estadistico.LocalReport.ReportEmbeddedResource = "PAV_TPI.ReporteEstadistico.rdlc"
         Me.rpt_estadistico.Location = New System.Drawing.Point(13, 55)
         Me.rpt_estadistico.Name = "rpt_estadistico"
-        Me.rpt_estadistico.Size = New System.Drawing.Size(633, 524)
+        Me.rpt_estadistico.Size = New System.Drawing.Size(674, 524)
         Me.rpt_estadistico.TabIndex = 15
         '
         'btn_actualizar
@@ -85,7 +85,7 @@ Partial Class frm_ListadoEstadístico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(664, 591)
+        Me.ClientSize = New System.Drawing.Size(699, 591)
         Me.Controls.Add(Me.cbo_ctrosMedico)
         Me.Controls.Add(Me.rpt_estadistico)
         Me.Controls.Add(Me.btn_actualizar)

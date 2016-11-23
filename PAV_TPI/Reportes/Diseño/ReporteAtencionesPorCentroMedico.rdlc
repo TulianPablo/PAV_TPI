@@ -161,6 +161,7 @@
                           <Color>LightGrey</Color>
                           <Style>Solid</Style>
                         </Border>
+                        <BackgroundColor>LightGrey</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -194,8 +195,9 @@
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
-                          <Style>Solid</Style>
+                          <Style>Dotted</Style>
                         </Border>
+                        <BackgroundColor>Turquoise</BackgroundColor>
                         <PaddingLeft>2pt</PaddingLeft>
                         <PaddingRight>2pt</PaddingRight>
                         <PaddingTop>2pt</PaddingTop>
@@ -408,6 +410,7 @@
                             <Color>LightGrey</Color>
                             <Style>Solid</Style>
                           </Border>
+                          <BackgroundColor>LightGrey</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -442,8 +445,9 @@
                     <Style>
                       <Border>
                         <Color>LightGrey</Color>
-                        <Style>Solid</Style>
+                        <Style>Dotted</Style>
                       </Border>
+                      <BackgroundColor>Turquoise</BackgroundColor>
                       <PaddingLeft>2pt</PaddingLeft>
                       <PaddingRight>2pt</PaddingRight>
                       <PaddingTop>2pt</PaddingTop>
@@ -475,8 +479,9 @@
                         <Style>
                           <Border>
                             <Color>LightGrey</Color>
-                            <Style>Solid</Style>
+                            <Style>Dotted</Style>
                           </Border>
+                          <BackgroundColor>Turquoise</BackgroundColor>
                           <PaddingLeft>2pt</PaddingLeft>
                           <PaddingRight>2pt</PaddingRight>
                           <PaddingTop>2pt</PaddingTop>
@@ -521,12 +526,12 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Reporte de Atenciones por Centro Medico</Value>
+                  <Value>Reporte de Atenciones por Centro Médico</Value>
                   <Style>
                     <FontStyle>Normal</FontStyle>
                     <FontFamily>Segoe Ui</FontFamily>
                     <FontSize>12pt</FontSize>
-                    <FontWeight>Light</FontWeight>
+                    <FontWeight>Medium</FontWeight>
                     <Color>White</Color>
                   </Style>
                 </TextRun>

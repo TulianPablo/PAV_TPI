@@ -10,9 +10,9 @@ Public Class frm_ListadoAtencionesPorCentroMedico
     End Sub
 
     Private Sub btn_actualizar_Click(sender As Object, e As EventArgs) Handles btn_actualizar.Click
-        rpt_listadoAtencionesPorCentro.LocalReport.SetParameters({New ReportParameter("pCentroMedico", cbo_ctrosMedico.SelectedValue.ToString)})
+        rpt_listadoAtencionesPorCentro.LocalReport.SetParameters({New ReportParameter("pCentroMedico", cbo_ctrosMedico.Text)})
         rpt_listadoAtencionesPorCentro.LocalReport.DataSources.Clear()
-        rpt_listadoAtencionesPorCentro.LocalReport.DataSources.Add(New ReportDataSource("DataSet1", BDHelper.getDBHelper.generarListado_AtencionesCentro(cbo_ctrosMedico.SelectedValue.ToString)))
+        rpt_listadoAtencionesPorCentro.LocalReport.DataSources.Add(New ReportDataSource("DataSet1", BDHelper.getDBHelper.generarListado_AtencionesCentro(cbo_ctrosMedico.Text)))
         rpt_listadoAtencionesPorCentro.RefreshReport()
     End Sub
 

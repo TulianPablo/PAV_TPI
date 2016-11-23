@@ -304,8 +304,8 @@ Public Class BDHelper
             cmd.CommandText = "SELECT c.denominacion as ctroMedico, e.nombre as especialidad, COUNT(am.nro_atencion) as cant " & _
             "FROM AtencionMedica am, CentroMedico c, Especialidad e " & _
             "WHERE(am.nro_centroMedico = c.nro_centroMedico AND am.id_especialidad = e.id_especialidad) " & _
-            "AND (am.fecha_atencion >='" + Convert.ToDateTime(fecDesde).ToString("yyyy-dd-MM") + "') " & _
-            "AND (am.fecha_atencion <='" + Convert.ToDateTime(fecHasta).ToString("yyyy-dd-MM") + "') " & _
+            "AND (am.fecha_atencion >='" + Convert.ToDateTime(fecDesde).ToString("dd-MM-yyyy") + "') " & _
+            "AND (am.fecha_atencion <='" + Convert.ToDateTime(fecHasta).ToString("dd-MM-yyyy") + "') " & _
             "GROUP BY c.denominacion, e.nombre "
 
             tabla.Load(cmd.ExecuteReader)
@@ -351,7 +351,7 @@ Public Class BDHelper
         Return BDHelper.getDBHelper.ConsultaSQL(strSQL)
     End Function
 
-    Function generar_estaditica(centro_medico As Integer) As Object
+    Function generar_estaditica(centro_medico As String) As Object
         Dim conexion As New SqlConnection
         Dim cmd As New SqlCommand
         Dim tabla As New DataTable
@@ -361,7 +361,8 @@ Public Class BDHelper
             cmd.Connection = conexion
             cmd.CommandType = CommandType.Text
             cmd.CommandText = "SELECT e.nombre as 'dato', COUNT(am.id_especialidad) as 'cantidad' FROM AtencionMedica am JOIN Especialidad e ON(e.id_especialidad = am.id_especialidad) " & _
-                "WHERE am.nro_CentroMedico = " & centro_medico & " " & _
+                 "JOIN CentroMedico c ON (am.nro_centroMedico=c.nro_centroMedico)" & _
+                "WHERE c.denominacion like '" & centro_medico & "'" & _
                 "GROUP BY e.nombre"
             tabla.Load(cmd.ExecuteReader)
         Catch ex As Exception
