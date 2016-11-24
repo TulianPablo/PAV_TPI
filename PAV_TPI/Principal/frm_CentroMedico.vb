@@ -19,7 +19,8 @@
     End Sub
 
     Private Sub frm_CentroMedico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        txt_numero.Enabled = True
+
+        dvg_centrosMedicos.Columns(7).Visible = False
         habilitar_desabilitar(False)
         CargarCombo(cmb_barrio, BDHelper.GetBarrios(), "id_barrio", "nombre")
     End Sub
@@ -41,17 +42,17 @@
                 If Me.validar_existencia() = termino.aprobado Then
                     Me.insertar()
                 Else
-                    MessageBox.Show("Ya está cargado un Centro Médico con ese número.", _
-                                    "Importante", MessageBoxButtons.OK, _
-                                    MessageBoxIcon.Error)
+                    lbl_mensajeCtrosMedicos.Text = "Ya esta cargado un centro médico con ese número"
+                    lbl_mensajeCtrosMedicos.Visible = True
                     Exit Sub
                 End If
             Else
                 Me.modificar()
             End If
+            dvg_centrosMedicos.Rows.Clear()
             Me.cargaGrilla()
-            MessageBox.Show("Se grabó exitosamente.", "Importante", _
-                            MessageBoxButtons.OK, MessageBoxIcon.Information)
+            lbl_mensajeCtrosMedicos.Text = "Se grabó con exito el centro médico"
+            lbl_mensajeCtrosMedicos.Visible = True
         End If
     End Sub
 
@@ -101,6 +102,7 @@
     End Sub
 
     Private Sub habilitar_desabilitar(ByVal opc As Boolean)
+        lbl_mensajeCtrosMedicos.Visible = opc
         btn_agregar.Enabled = opc
         txt_denominacion.Enabled = opc
         txt_calle.Enabled = opc
@@ -113,40 +115,47 @@
     End Sub
 
     Private Function validar() As Boolean
-
+        lbl_mensajeCtrosMedicos.Visible = False
         ' Valida los campos requeridos ' 
         If String.IsNullOrEmpty(txt_numero.Text) Then
-            MsgBox("Campo <Nro. Centro> es obligatorio.", vbOKOnly + vbCritical, "Importante")
+            lbl_mensajeCtrosMedicos.Text = "Debe ingresar el Nro. Centro"
+            lbl_mensajeCtrosMedicos.Visible = True
             txt_numero.Focus()
             Return False
         End If
         If String.IsNullOrEmpty(txt_denominacion.Text) Then
-            MsgBox("Campo <Denominacion> es obligatorio.", vbOKOnly + vbCritical, "Importante")
+            lbl_mensajeCtrosMedicos.Text = "Debe ingresar la Denominación"
+            lbl_mensajeCtrosMedicos.Visible = True
             txt_denominacion.Focus()
             Return False
         End If
         If String.IsNullOrEmpty(txt_calle.Text) Then
-            MsgBox("Campo <Calle> es obligatorio. ", vbOKOnly + vbCritical, "Importante")
+            lbl_mensajeCtrosMedicos.Text = "Debe ingresar la Calle"
+            lbl_mensajeCtrosMedicos.Visible = True
             txt_calle.Focus()
             Return False
         End If
         If String.IsNullOrEmpty(txt_nroCalle.Text) Then
-            MsgBox("Campo < Nro. Calle > es obligatorio. ", vbOKOnly + vbCritical, "Importante")
+            lbl_mensajeCtrosMedicos.Text = "Debe ingresar el Nro. de Calle"
+            lbl_mensajeCtrosMedicos.Visible = True
             txt_nroCalle.Focus()
             Return False
         End If
         If String.IsNullOrEmpty(cmb_barrio.SelectedIndex = -1) Then
-            MsgBox("Campo < Barrio > es obligatorio. ", vbOKOnly + vbCritical, "Importante")
+            lbl_mensajeCtrosMedicos.Text = "Debe seleccionar el Barrio"
+            lbl_mensajeCtrosMedicos.Visible = True
             cmb_barrio.Focus()
             Return False
         End If
         If String.IsNullOrEmpty(txt_telefono.Text) Then
-            MsgBox("Campo < Telefono > es obligatorio. ", vbOKOnly + vbCritical, "Importante")
+            lbl_mensajeCtrosMedicos.Text = "Debe ingresar el número de Teléfono"
+            lbl_mensajeCtrosMedicos.Visible = True
             txt_telefono.Focus()
             Return False
         End If
         If String.IsNullOrEmpty(txt_mail.Text) Then
-            MsgBox("Campo < Mail > es obligatorio. ", vbOKOnly + vbCritical, "Importante")
+            lbl_mensajeCtrosMedicos.Text = "Debe ingresar el Mail"
+            lbl_mensajeCtrosMedicos.Visible = True
             txt_mail.Focus()
             Return False
         End If
@@ -205,8 +214,6 @@
         comandStr += " WHERE nro_centroMedico=" + txt_numero.Text
 
         BDHelper.getDBHelper.EjecutarSQL(comandStr)
-        dvg_centrosMedicos.Rows.Clear()
-        cargaGrilla()
 
     End Sub
     Private Sub dvg_centroMedicos_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dvg_centrosMedicos.CellClick
@@ -254,44 +261,60 @@
     End Sub
 
     Private Sub btn_consultar_Click(sender As Object, e As EventArgs) Handles btn_consultar.Click
-        dvg_centrosMedicos.Rows.Clear()
+
         Dim table As New Data.DataTable
+        Dim str As String = "SELECT * FROM CentroMedico WHERE "
+        Dim c As Integer = 0
+        lbl_mensajeCtrosMedicos.Visible = False
+        dvg_centrosMedicos.Rows.Clear()
 
         Try
-            If String.IsNullOrEmpty(txt_numero.Text) Then
-                cargaGrilla()
-            Else
+            If Not String.IsNullOrEmpty(txt_numero.Text) Then
+                str &= "nro_centroMedico = " & txt_numero.Text
+                c = 1
 
-                Dim busqueda As String = "SELECT * FROM CentroMedico WHERE nro_centroMedico = " & txt_numero.Text
+                If chk_fechaBaja.Checked = True Then
+                    If c = 1 Then
+                        str &= " AND "
+                    End If
+                    str &= "fecha_baja is not NULL"
+                    dvg_centrosMedicos.Columns(7).Visible = True
+                Else
+                    dvg_centrosMedicos.Columns(7).Visible = False
+                End If
 
-                'table = BDHelper.getDBHelper.ConsultaSQL(busqueda)
-                'If (table.Rows.Count = 1) Then
-
-                '    dvg_centrosMedicos.Rows.Add(table.Rows(0)("nro_centroMedico"), _
-                '                                table.Rows(0)("denominacion"), _
-                '                                table.Rows(0)("calle"), _
-                '                                table.Rows(0)("numero"), _
-                '                                table.Rows(0)("id_barrio"), _
-                '                                table.Rows(0)("telefono"), _
-                '                                table.Rows(0)("mail"), _
-                '                                table.Rows(0)("fecha_baja"))
-
-                'Else
-                '    MsgBox("El Centro Médico no existe.", vbOKOnly + vbCritical, "Aviso")
-                'End If
-
-                For Each row As DataRow In BDHelper.getDBHelper.ConsultaSQL(busqueda).Rows
+                For Each row As DataRow In BDHelper.getDBHelper.ConsultaSQL(str).Rows
                     With row
                         dvg_centrosMedicos.Rows.Add(.Item(0).ToString, .Item(1).ToString, .Item(2).ToString, .Item(3).ToString, .Item(4).ToString, .Item(5).ToString, .Item(6).ToString, .Item(7).ToString)
                     End With
 
                 Next
+            Else
+                If chk_fechaBaja.Checked = True Then
+                    cargaGrilla()
+                    dvg_centrosMedicos.Columns(7).Visible = True
+                Else
+                    dvg_centrosMedicos.Columns(7).Visible = False
+                    str &= "fecha_baja is NULL"
+                    For Each row As DataRow In BDHelper.getDBHelper.ConsultaSQL(str).Rows
+                        With row
+                            dvg_centrosMedicos.Rows.Add(.Item(0).ToString, .Item(1).ToString, .Item(2).ToString, .Item(3).ToString, .Item(4).ToString, .Item(5).ToString, .Item(6).ToString, .Item(7).ToString)
+                        End With
 
-
+                    Next
+                End If
             End If
-
+            validarResultados()
         Catch ex As Exception
             Throw ex
         End Try
     End Sub
+
+    Private Sub validarResultados()
+        If dvg_centrosMedicos.Rows.Count = 1 Then
+            lbl_mensajeCtrosMedicos.Text = "No se encontraron resultados"
+            lbl_mensajeCtrosMedicos.Visible = True
+        End If
+    End Sub
+
 End Class

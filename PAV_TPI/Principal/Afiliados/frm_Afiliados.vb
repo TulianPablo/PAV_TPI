@@ -53,8 +53,7 @@
         For Each row As DataRow In BDHelper.getDBHelper.ConsultaSQL("SELECT * FROM Afiliado").Rows
             dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString, row.Item(2).ToString, row.Item(3).ToString,
                                                   row.Item(4).ToString, row.Item(5).ToString, row.Item(6).ToString, row.Item(7).ToString,
-                                                  row.Item(8).ToString, row.Item(9).ToString, row.Item(10).ToString, row.Item(11).ToString,
-                                                  row.Item(12).ToString, row.Item(13).ToString})
+                                                  row.Item(8).ToString, row.Item(15).ToString, row.Item(10).ToString, row.Item(11).ToString})
         Next
 
         If dgv_resultados.Rows.Count = 0 Then
@@ -128,8 +127,7 @@
         For Each row As DataRow In BDHelper.getDBHelper.ConsultaSQL(str).Rows
             dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString, row.Item(2).ToString, row.Item(3).ToString,
                                                   row.Item(4).ToString, row.Item(5).ToString, row.Item(6).ToString, row.Item(7).ToString,
-                                                  row.Item(8).ToString, row.Item(9).ToString, row.Item(10).ToString, row.Item(11).ToString,
-                                                  row.Item(12).ToString, row.Item(13).ToString})
+                                                  row.Item(8).ToString, row.Item(15).ToString, row.Item(10).ToString, row.Item(11).ToString})
         Next
         'Valida si existen resultados o no
         If dgv_resultados.Rows.Count = 0 Then

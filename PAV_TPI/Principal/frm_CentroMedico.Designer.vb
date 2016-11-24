@@ -22,8 +22,6 @@ Partial Class frm_CentroMedico
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frm_CentroMedico))
         Me.lbl_nroCentroMedico = New System.Windows.Forms.Label()
         Me.txt_numero = New System.Windows.Forms.TextBox()
@@ -54,6 +52,8 @@ Partial Class frm_CentroMedico
         Me.btn_editar = New System.Windows.Forms.Button()
         Me.btn_new = New System.Windows.Forms.Button()
         Me.btn_consultar = New System.Windows.Forms.Button()
+        Me.lbl_mensajeCtrosMedicos = New System.Windows.Forms.Label()
+        Me.chk_fechaBaja = New System.Windows.Forms.CheckBox()
         CType(Me.dvg_centrosMedicos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -244,24 +244,8 @@ Partial Class frm_CentroMedico
         '
         'dvg_centrosMedicos
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dvg_centrosMedicos.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.dvg_centrosMedicos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dvg_centrosMedicos.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_nroCentro, Me.col_denominacion, Me.col_Calle, Me.col_nroCalle, Me.col_barrio, Me.col_telefono, Me.col_mail, Me.col_fechaBaja})
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dvg_centrosMedicos.DefaultCellStyle = DataGridViewCellStyle2
         Me.dvg_centrosMedicos.Location = New System.Drawing.Point(29, 246)
         Me.dvg_centrosMedicos.Name = "dvg_centrosMedicos"
         Me.dvg_centrosMedicos.Size = New System.Drawing.Size(755, 156)
@@ -331,6 +315,27 @@ Partial Class frm_CentroMedico
         Me.btn_consultar.Text = "Buscar"
         Me.btn_consultar.UseVisualStyleBackColor = True
         '
+        'lbl_mensajeCtrosMedicos
+        '
+        Me.lbl_mensajeCtrosMedicos.AutoSize = True
+        Me.lbl_mensajeCtrosMedicos.Font = New System.Drawing.Font("Segoe UI", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_mensajeCtrosMedicos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        Me.lbl_mensajeCtrosMedicos.Location = New System.Drawing.Point(417, 427)
+        Me.lbl_mensajeCtrosMedicos.Name = "lbl_mensajeCtrosMedicos"
+        Me.lbl_mensajeCtrosMedicos.Size = New System.Drawing.Size(182, 17)
+        Me.lbl_mensajeCtrosMedicos.TabIndex = 19
+        Me.lbl_mensajeCtrosMedicos.Text = "lbl_mensaje_centrosMedicos "
+        '
+        'chk_fechaBaja
+        '
+        Me.chk_fechaBaja.AutoSize = True
+        Me.chk_fechaBaja.Location = New System.Drawing.Point(201, 223)
+        Me.chk_fechaBaja.Name = "chk_fechaBaja"
+        Me.chk_fechaBaja.Size = New System.Drawing.Size(124, 17)
+        Me.chk_fechaBaja.TabIndex = 21
+        Me.chk_fechaBaja.Text = "Incluir dados de baja"
+        Me.chk_fechaBaja.UseVisualStyleBackColor = True
+        '
         'frm_CentroMedico
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -338,6 +343,8 @@ Partial Class frm_CentroMedico
         Me.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
         Me.ClientSize = New System.Drawing.Size(815, 463)
+        Me.Controls.Add(Me.chk_fechaBaja)
+        Me.Controls.Add(Me.lbl_mensajeCtrosMedicos)
         Me.Controls.Add(Me.btn_consultar)
         Me.Controls.Add(Me.btn_editar)
         Me.Controls.Add(Me.btn_new)
@@ -397,4 +404,6 @@ Partial Class frm_CentroMedico
     Friend WithEvents btn_editar As System.Windows.Forms.Button
     Friend WithEvents btn_new As System.Windows.Forms.Button
     Friend WithEvents btn_consultar As System.Windows.Forms.Button
+    Friend WithEvents lbl_mensajeCtrosMedicos As System.Windows.Forms.Label
+    Friend WithEvents chk_fechaBaja As System.Windows.Forms.CheckBox
 End Class
