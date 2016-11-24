@@ -16,6 +16,7 @@
     End Sub
 
     Private Sub btn_editar_Click(sender As Object, e As EventArgs) Handles btn_editar.Click
+
         form_editarAfiliados = New frm_editarAfiliados
         form_editarAfiliados.formConsulta = Me
         form_editarAfiliados.Show()
@@ -31,17 +32,18 @@
             btn_editar.Enabled = True
             btn_borrar.Enabled = True
         Else
-            btn_borrar.Enabled = True
+            btn_editar.Enabled = False
+            btn_borrar.Enabled = False
         End If
 
     End Sub
 
     Private Sub btn_Buscar_Click(sender As Object, e As EventArgs) Handles btn_buscar.Click
         dgv_resultados.Columns(11).Visible = False
+        dgv_resultados.Rows.Clear()
         If Not String.IsNullOrEmpty(txt_nombre.Text) Or Not String.IsNullOrEmpty(txt_apellido.Text) Or Not String.IsNullOrEmpty(txt_nroDoc.Text) Or
-            cbo_tipoDoc.SelectedValue > -1 Or cbo_tipoAfiliado.SelectedValue > -1 Or chk_fechaBaja.Checked = True Then
+            Not cbo_tipoDoc.SelectedIndex = -1 Or Not cbo_tipoAfiliado.SelectedIndex = -1 Then
             If validar_campos() Then
-                dgv_resultados.Rows.Clear()
                 cargar_grilla_CD()
             End If
         Else
@@ -50,12 +52,21 @@
     End Sub
 
     Public Sub cargar_grilla_SD()
-        For Each row As DataRow In BDHelper.getDBHelper.ConsultaSQL("SELECT * FROM Afiliado").Rows
-            dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString, row.Item(2).ToString, row.Item(3).ToString,
-                                                  row.Item(4).ToString, row.Item(5).ToString, row.Item(6).ToString, row.Item(7).ToString,
-                                                  row.Item(8).ToString, row.Item(15).ToString, row.Item(10).ToString, row.Item(11).ToString})
-        Next
+        Dim str As String = "SELECT * FROM Afiliado a JOIN TipoDoc td ON(td.id_tipoDoc=a.id_tipoDoc) JOIN TipoAfiliado ta ON(ta.id_tipoAfiliado = a.id_tipoAfiliado) "
+        str &= "WHERE a.fecha_alta BETWEEN CAST('" & dtp_fechaDesde.Text & "' AS DATE) AND CAST('" & dtp_fechaHasta.Text & "' AS DATE)"
 
+        If chk_fechaBaja.Checked = False Then
+            str &= " AND a.fecha_baja is NULL"
+        Else
+            dgv_resultados.Columns(11).Visible = True
+        End If
+        dgv_resultados.Rows.Clear()
+        For Each row As DataRow In BDHelper.getDBHelper.ConsultaSQL(str).Rows
+            dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString, row.Item(13).ToString, row.Item(3).ToString,
+                                                  row.Item(4).ToString, row.Item(5).ToString, row.Item(6).ToString, row.Item(7).ToString,
+                                                  row.Item(8).ToString, row.Item(15).ToString, row.Item(10).ToString, row.Item(11).ToString, row.Item(2).ToString, row.Item(9).ToString})
+        Next
+       
         If dgv_resultados.Rows.Count = 0 Then
             lbl_afiliados_mensaje.Text = "No se encontraron resultados"
             lbl_afiliados_mensaje.Visible = True
@@ -93,7 +104,7 @@
             If c = 1 Then
                 str &= " AND "
             End If
-            str &= "a.nroDoc = " & txt_nroDoc.Text
+            str &= "a.nro_doc = " & txt_nroDoc.Text
             c = 1
         End If
 
@@ -125,9 +136,9 @@
         End If
 
         For Each row As DataRow In BDHelper.getDBHelper.ConsultaSQL(str).Rows
-            dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString, row.Item(2).ToString, row.Item(3).ToString,
+            dgv_resultados.Rows.Add(New String() {row.Item(0).ToString, row.Item(1).ToString, row.Item(13).ToString, row.Item(3).ToString,
                                                   row.Item(4).ToString, row.Item(5).ToString, row.Item(6).ToString, row.Item(7).ToString,
-                                                  row.Item(8).ToString, row.Item(15).ToString, row.Item(10).ToString, row.Item(11).ToString})
+                                                  row.Item(8).ToString, row.Item(15).ToString, row.Item(10).ToString, row.Item(11).ToString, row.Item(2).ToString, row.Item(9).ToString})
         Next
         'Valida si existen resultados o no
         If dgv_resultados.Rows.Count = 0 Then

@@ -9,20 +9,18 @@
 
         txt_nombre.Text = formConsulta.dgv_resultados.CurrentRow.Cells(0).Value
         txt_apellido.Text = formConsulta.dgv_resultados.CurrentRow.Cells(1).Value
-        cbo_tipoDoc.SelectedValue = formConsulta.dgv_resultados.CurrentRow.Cells(2).Value
+        cbo_tipoDoc.SelectedValue = formConsulta.dgv_resultados.CurrentRow.Cells(12).Value
         txt_nroDoc.Text = formConsulta.dgv_resultados.CurrentRow.Cells(3).Value
         dtp_fechaNac.Text = formConsulta.dgv_resultados.CurrentRow.Cells(4).Value
         txt_calle.Text = formConsulta.dgv_resultados.CurrentRow.Cells(5).Value
         txt_nroCalle.Text = formConsulta.dgv_resultados.CurrentRow.Cells(6).Value
         cbo_barrio.SelectedValue = formConsulta.dgv_resultados.CurrentRow.Cells(7).Value
         txt_telefono.Text = formConsulta.dgv_resultados.CurrentRow.Cells(8).Value
-        cbo_tipoAfiliado.SelectedValue = formConsulta.dgv_resultados.CurrentRow.Cells(9).Value
+        cbo_tipoAfiliado.SelectedValue = formConsulta.dgv_resultados.CurrentRow.Cells(13).Value
         txt_fechaAlta.Text = formConsulta.dgv_resultados.CurrentRow.Cells(10).Value
         txt_fechaAlta.Enabled = False
-
         cbo_tipoDoc.Enabled = False
         txt_nroDoc.Enabled = False
-
         txt_fechaBaja.Visible = False
 
 
@@ -53,6 +51,7 @@
             str &= "[id_tipoAfiliado] = " + cbo_tipoAfiliado.SelectedValue.ToString()
             str &= "WHERE nro_doc = " + txt_nroDoc.Text + " AND id_tipoDoc = " + cbo_tipoDoc.SelectedValue.ToString()
             BDHelper.getDBHelper.EjecutarSQL(str)
+            formConsulta.cargar_grilla_SD()
             Me.Close()
             'Else
             '    lbl_afiliados_mensaje.Text = "Debe ingresar TODOS los datos"

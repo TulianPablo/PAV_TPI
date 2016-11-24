@@ -320,7 +320,7 @@ Partial Class frm_CentroMedico
         Me.lbl_mensajeCtrosMedicos.AutoSize = True
         Me.lbl_mensajeCtrosMedicos.Font = New System.Drawing.Font("Segoe UI", 9.75!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbl_mensajeCtrosMedicos.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        Me.lbl_mensajeCtrosMedicos.Location = New System.Drawing.Point(417, 427)
+        Me.lbl_mensajeCtrosMedicos.Location = New System.Drawing.Point(373, 427)
         Me.lbl_mensajeCtrosMedicos.Name = "lbl_mensajeCtrosMedicos"
         Me.lbl_mensajeCtrosMedicos.Size = New System.Drawing.Size(182, 17)
         Me.lbl_mensajeCtrosMedicos.TabIndex = 19

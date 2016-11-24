@@ -56,6 +56,8 @@ Partial Class frm_Afiliados
         Me.col_tipoAfiliado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_fechaAlta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_fechaBaja = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_id_tipoDoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_id_tipoAfiliado = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.gb_titulo.SuspendLayout()
         CType(Me.dgv_resultados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -285,7 +287,7 @@ Partial Class frm_Afiliados
         'dgv_resultados
         '
         Me.dgv_resultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_resultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_nombre, Me.col_apellido, Me.col_tipoDoc, Me.col_nroDoc, Me.col_fechaNac, Me.col_calle, Me.col_nroCalle, Me.col_barrio, Me.col_telefono, Me.col_tipoAfiliado, Me.col_fechaAlta, Me.col_fechaBaja})
+        Me.dgv_resultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.col_nombre, Me.col_apellido, Me.col_tipoDoc, Me.col_nroDoc, Me.col_fechaNac, Me.col_calle, Me.col_nroCalle, Me.col_barrio, Me.col_telefono, Me.col_tipoAfiliado, Me.col_fechaAlta, Me.col_fechaBaja, Me.col_id_tipoDoc, Me.col_id_tipoAfiliado})
         Me.dgv_resultados.Location = New System.Drawing.Point(11, 139)
         Me.dgv_resultados.Name = "dgv_resultados"
         Me.dgv_resultados.Size = New System.Drawing.Size(758, 312)
@@ -356,6 +358,18 @@ Partial Class frm_Afiliados
         Me.col_fechaBaja.HeaderText = "Fecha Baja"
         Me.col_fechaBaja.Name = "col_fechaBaja"
         '
+        'col_id_tipoDoc
+        '
+        Me.col_id_tipoDoc.HeaderText = "id_tipoDoc"
+        Me.col_id_tipoDoc.Name = "col_id_tipoDoc"
+        Me.col_id_tipoDoc.Visible = False
+        '
+        'col_id_tipoAfiliado
+        '
+        Me.col_id_tipoAfiliado.HeaderText = "id_tipoAfiliado"
+        Me.col_id_tipoAfiliado.Name = "col_id_tipoAfiliado"
+        Me.col_id_tipoAfiliado.Visible = False
+        '
         'frm_Afiliados
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -387,6 +401,11 @@ Partial Class frm_Afiliados
     Friend WithEvents lbl_nomAfiliado As System.Windows.Forms.Label
     Friend WithEvents txt_nombre As System.Windows.Forms.TextBox
     Friend WithEvents dgv_resultados As System.Windows.Forms.DataGridView
+    Friend WithEvents btn_editar As System.Windows.Forms.Button
+    Friend WithEvents btn_borrar As System.Windows.Forms.Button
+    Friend WithEvents btn_agregar As System.Windows.Forms.Button
+    Friend WithEvents btn_buscar As System.Windows.Forms.Button
+    Friend WithEvents lbl_afiliados_mensaje As System.Windows.Forms.Label
     Friend WithEvents col_nombre As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_apellido As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_tipoDoc As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -399,9 +418,6 @@ Partial Class frm_Afiliados
     Friend WithEvents col_tipoAfiliado As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_fechaAlta As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_fechaBaja As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents btn_editar As System.Windows.Forms.Button
-    Friend WithEvents btn_borrar As System.Windows.Forms.Button
-    Friend WithEvents btn_agregar As System.Windows.Forms.Button
-    Friend WithEvents btn_buscar As System.Windows.Forms.Button
-    Friend WithEvents lbl_afiliados_mensaje As System.Windows.Forms.Label
+    Friend WithEvents col_id_tipoDoc As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_id_tipoAfiliado As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

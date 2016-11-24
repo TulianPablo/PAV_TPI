@@ -135,7 +135,14 @@
             txt_calle.Focus()
             Return False
         End If
-        If String.IsNullOrEmpty(txt_nroCalle.Text) Then
+        If Not String.IsNullOrEmpty(txt_nroCalle.Text) Then
+            If txt_nroCalle.TextLength <> 4 Then
+                lbl_mensajeCtrosMedicos.Text = "El Numero de calle debe ser de cuatro digitos"
+                lbl_mensajeCtrosMedicos.Visible = True
+                txt_nroCalle.Focus()
+                Return False
+            End If
+        Else
             lbl_mensajeCtrosMedicos.Text = "Debe ingresar el Nro. de Calle"
             lbl_mensajeCtrosMedicos.Visible = True
             txt_nroCalle.Focus()
@@ -147,8 +154,21 @@
             cmb_barrio.Focus()
             Return False
         End If
-        If String.IsNullOrEmpty(txt_telefono.Text) Then
-            lbl_mensajeCtrosMedicos.Text = "Debe ingresar el número de Teléfono"
+        If String.IsNullOrEmpty(txt_calle.Text) Then
+            lbl_mensajeCtrosMedicos.Text = "Debe ingresar la Calle"
+            lbl_mensajeCtrosMedicos.Visible = True
+            txt_calle.Focus()
+            Return False
+        End If
+        If Not String.IsNullOrEmpty(txt_telefono.Text) Then
+            If txt_telefono.TextLength <> 9 Then
+                lbl_mensajeCtrosMedicos.Text = "Si es un teléfono celular debe contener 9 dígitos y si es fijo 7 dígitos "
+                lbl_mensajeCtrosMedicos.Visible = True
+                txt_telefono.Focus()
+                Return False
+            End If
+        Else
+            lbl_mensajeCtrosMedicos.Text = "Debe ingresar el Teléfono"
             lbl_mensajeCtrosMedicos.Visible = True
             txt_telefono.Focus()
             Return False
@@ -159,6 +179,8 @@
             txt_mail.Focus()
             Return False
         End If
+
+
         Return True
     End Function
 
@@ -316,5 +338,47 @@
             lbl_mensajeCtrosMedicos.Visible = True
         End If
     End Sub
+
+    'valida los textBox numericos 
+    Private Sub txt_numero_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_numero.KeyPress, txt_nroCalle.KeyPress, txt_telefono.KeyPress
+
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSymbol(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsWhiteSpace(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+
+        txt_numero.Text = Trim(Replace(txt_numero.Text, "  ", " "))
+        txt_numero.Select(txt_numero.Text.Length, 0)
+
+
+    End Sub
+    ' valida los textBox alfabeticos  
+    Private Sub txt_denominacion_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_denominacion.KeyPress, txt_calle.KeyPress, txt_mail.KeyPress
+        If Char.IsLetter(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsSeparator(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+        End If
+
+        txt_denominacion.Text = Trim(Replace(txt_denominacion.Text, " ", ""))
+        txt_denominacion.Select(txt_denominacion.Text.Length, 0)
+
+    End Sub
+
+
+
 
 End Class

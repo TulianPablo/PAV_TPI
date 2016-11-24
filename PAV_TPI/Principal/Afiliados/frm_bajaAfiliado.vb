@@ -21,14 +21,14 @@
 
         txt_nombre.Text = formConsulta.dgv_resultados.CurrentRow.Cells(0).Value
         txt_apellido.Text = formConsulta.dgv_resultados.CurrentRow.Cells(1).Value
-        cbo_tipoDoc.SelectedValue = formConsulta.dgv_resultados.CurrentRow.Cells(2).Value
+        cbo_tipoDoc.SelectedValue = formConsulta.dgv_resultados.CurrentRow.Cells(12).Value
         txt_nroDoc.Text = formConsulta.dgv_resultados.CurrentRow.Cells(3).Value
         dtp_fechaNac.Value = formConsulta.dgv_resultados.CurrentRow.Cells(4).Value
         txt_calle.Text = formConsulta.dgv_resultados.CurrentRow.Cells(5).Value
         txt_nroCalle.Text = formConsulta.dgv_resultados.CurrentRow.Cells(6).Value
         cbo_barrio.SelectedValue = formConsulta.dgv_resultados.CurrentRow.Cells(7).Value
         txt_telefono.Text = formConsulta.dgv_resultados.CurrentRow.Cells(8).Value
-        cbo_tipoAfiliado.SelectedValue = formConsulta.dgv_resultados.CurrentRow.Cells(9).Value
+        cbo_tipoAfiliado.SelectedValue = formConsulta.dgv_resultados.CurrentRow.Cells(13).Value
         txt_fechaAlta.Text = formConsulta.dgv_resultados.CurrentRow.Cells(10).Value
         txt_fechaBaja.Text = DateTime.Now.ToShortDateString
 
@@ -43,15 +43,15 @@
 
     End Sub
 
-    Private Sub btn_aceptar_Click(sender As Object, e As FormClosingEventArgs) Handles btn_aceptar.Click
+    Private Sub btn_aceptar_Click(sender As Object, e As EventArgs) Handles btn_aceptar.Click
         If MessageBox.Show("¿Está seguro que desea dar de baja afiliado?", "Importante", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) = Windows.Forms.DialogResult.OK Then
             Dim str As String = "UPDATE Afiliado SET fecha_baja = '" & txt_fechaBaja.Text & "'"
             str &= "WHERE nro_doc = " & txt_nroDoc.Text
             BDHelper.getDBHelper.EjecutarSQL(str)
-            e.Cancel = False
+            formConsulta.cargar_grilla_SD()
             Me.Close()
-        Else
-            e.Cancel = True
+            'Else
+            '    e.Cancel = True
         End If
 
     End Sub
