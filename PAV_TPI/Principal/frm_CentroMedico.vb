@@ -19,7 +19,7 @@
     End Sub
 
     Private Sub frm_CentroMedico_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        lbl_mensajeCtrosMedicos.Visible = False
         dvg_centrosMedicos.Columns(7).Visible = False
         habilitar_desabilitar(False)
         CargarCombo(cmb_barrio, BDHelper.GetBarrios(), "id_barrio", "nombre")
@@ -80,7 +80,7 @@
 
     Private Sub btn_new_Click(sender As Object, e As EventArgs) Handles btn_new.Click
         clear_components()
-        'habilitar_desabilitar(True)
+        btn_editar.Enabled = False
         btn_borrar.Enabled = False
         txt_numero.Focus()
         Me.accion = estado.insertar
@@ -102,7 +102,7 @@
     End Sub
 
     Private Sub habilitar_desabilitar(ByVal opc As Boolean)
-        lbl_mensajeCtrosMedicos.Visible = opc
+
         btn_agregar.Enabled = opc
         txt_denominacion.Enabled = opc
         txt_calle.Enabled = opc
@@ -161,7 +161,7 @@
             Return False
         End If
         If Not String.IsNullOrEmpty(txt_telefono.Text) Then
-            If txt_telefono.TextLength <> 9 Then
+            If txt_telefono.TextLength > 9 Then
                 lbl_mensajeCtrosMedicos.Text = "Si es un teléfono celular debe contener 9 dígitos y si es fijo 7 dígitos "
                 lbl_mensajeCtrosMedicos.Visible = True
                 txt_telefono.Focus()
@@ -238,18 +238,22 @@
         BDHelper.getDBHelper.EjecutarSQL(comandStr)
 
     End Sub
-    Private Sub dvg_centroMedicos_CellClick(sender As Object, e As System.Windows.Forms.DataGridViewCellEventArgs) Handles dvg_centrosMedicos.CellClick
-        btn_borrar.Enabled = True
-        btn_editar.Enabled = True
-        row_selected = dvg_centrosMedicos.CurrentRow
-
+    Private Sub dvg_centroMedicos_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dvg_centrosMedicos.CellContentClick
+        If String.IsNullOrEmpty(dvg_centrosMedicos.CurrentRow.Cells(7).Value) Then
+            btn_editar.Enabled = True
+            btn_borrar.Enabled = True
+        Else
+            btn_editar.Enabled = False
+            btn_borrar.Enabled = False
+        End If
     End Sub
 
     Private Sub btn_editar_Click(sender As Object, e As EventArgs) Handles btn_editar.Click
+        btn_agregar.Enabled = True
         If MessageBox.Show("¿Desea editar el centro médico?", "Importante", MessageBoxButtons.YesNo, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.Yes Then
             habilitar_desabilitar(True)
             Dim tabla As New Data.DataTable
-            Dim consulta As String = "SELECT * FROM CentroMedico WHERE nro_centroMedico = " + row_selected.Cells(0).Value
+            Dim consulta As String = "SELECT * FROM CentroMedico WHERE nro_centroMedico = " + dvg_centrosMedicos.CurrentRow.Cells(0).Value.ToString
             tabla = BDHelper.getDBHelper.ConsultaSQL(consulta)
 
             txt_numero.Text = tabla.Rows(0)("nro_centroMedico")
@@ -283,7 +287,7 @@
     End Sub
 
     Private Sub btn_consultar_Click(sender As Object, e As EventArgs) Handles btn_consultar.Click
-
+        btn_agregar.Enabled = False
         Dim table As New Data.DataTable
         Dim str As String = "SELECT * FROM CentroMedico WHERE "
         Dim c As Integer = 0
@@ -362,7 +366,7 @@
 
     End Sub
     ' valida los textBox alfabeticos  
-    Private Sub txt_denominacion_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_denominacion.KeyPress, txt_calle.KeyPress, txt_mail.KeyPress
+    Private Sub txt_denominacion_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txt_denominacion.KeyPress, txt_mail.KeyPress
         If Char.IsLetter(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then

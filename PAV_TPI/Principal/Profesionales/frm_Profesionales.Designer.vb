@@ -57,6 +57,7 @@ Partial Class frm_Profesionales
         Me.col_telefono = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_fechaAlta = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.col_fechaBaja = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.col_idTipoDoc = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.box_datosPersonales.SuspendLayout()
         CType(Me.dgv_resultados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -305,7 +306,7 @@ Partial Class frm_Profesionales
         'dgv_resultados
         '
         Me.dgv_resultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgv_resultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.matricula, Me.col_apellido, Me.col_nombre, Me.col_tipoDoc, Me.col_nroDoc, Me.col_fechaNac, Me.col_calle, Me.col_nroCalle, Me.col_barrio, Me.col_telefono, Me.col_fechaAlta, Me.col_fechaBaja})
+        Me.dgv_resultados.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.matricula, Me.col_apellido, Me.col_nombre, Me.col_tipoDoc, Me.col_nroDoc, Me.col_fechaNac, Me.col_calle, Me.col_nroCalle, Me.col_barrio, Me.col_telefono, Me.col_fechaAlta, Me.col_fechaBaja, Me.col_idTipoDoc})
         Me.dgv_resultados.Location = New System.Drawing.Point(31, 261)
         Me.dgv_resultados.Name = "dgv_resultados"
         Me.dgv_resultados.Size = New System.Drawing.Size(1054, 275)
@@ -388,6 +389,12 @@ Partial Class frm_Profesionales
         Me.col_fechaBaja.Visible = False
         Me.col_fechaBaja.Width = 150
         '
+        'col_idTipoDoc
+        '
+        Me.col_idTipoDoc.HeaderText = "id_tipoDoc"
+        Me.col_idTipoDoc.Name = "col_idTipoDoc"
+        Me.col_idTipoDoc.Visible = False
+        '
         'frm_Profesionales
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -450,4 +457,5 @@ Partial Class frm_Profesionales
     Friend WithEvents col_telefono As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_fechaAlta As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents col_fechaBaja As System.Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents col_idTipoDoc As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class

@@ -29,9 +29,9 @@
         CargarCombo(cbo_barrio, BDHelper.GetBarrios(), "id_barrio", "nombre")
 
         txt_matricula.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(0).Value
-        txt_nombre.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(1).Value
-        txt_apellido.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(2).Value
-        cbo_tipoDoc.SelectedValue = form_Profesional.dgv_resultados.CurrentRow.Cells(3).Value
+        txt_apellido.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(1).Value
+        txt_nombre.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(2).Value
+        cbo_tipoDoc.SelectedValue = form_Profesional.dgv_resultados.CurrentRow.Cells(12).Value
         txt_nroDoc.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(4).Value
         dtp_fechaNac.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(5).Value
         txt_calle.Text = form_Profesional.dgv_resultados.CurrentRow.Cells(6).Value
